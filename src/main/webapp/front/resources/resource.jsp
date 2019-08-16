@@ -9,16 +9,16 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>超鲜网-资源</title>
-    <link rel="stylesheet" href="css/public.css"/>
-    <link rel="stylesheet" href="css/page.css"/>
-    <link rel="stylesheet" href="css/banner.css"/>
-    <link rel="stylesheet" href="css/tab.css"/>
-    <link rel="stylesheet" href="css/table.css"/>
-    <link rel="stylesheet" href="css/select.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/font-awesome-ie7.css">
+    <link rel="stylesheet" href="static/1-2/css/public.css"/>
+    <link rel="stylesheet" href="static/1-2/css/page.css"/>
+    <link rel="stylesheet" href="static/1-2/css/banner.css"/>
+    <link rel="stylesheet" href="static/1-2/css/tab.css"/>
+    <link rel="stylesheet" href="static/1-2/css/table.css"/>
+    <link rel="stylesheet" href="static/1-2/css/select.css">
+    <link rel="stylesheet" href="static/1-2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/1-2/css/font-awesome-ie7.css">
     <!--[if lt IE 10]>
-    <script src="js/html5shiv.min.js"></script>
+    <script src="static/1-2/js/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -42,14 +42,14 @@
             <div class="attention">
                 <p>关注我们：</p>
                 <a class="weixin" href="javascript:;">
-                    <img src="images/top-icon01.png" alt=""/>
+                    <img src="static/1-2/images/top-icon01.png" alt=""/>
                     <div class="weixin-erweima">
                         <i></i>
-                        <img src="images/erweima.png" alt=""/>
+                        <img src="static/1-2/images/erweima.png" alt=""/>
                     </div>
                 </a>
-                <a class="xl" href="javascript:;"><img src="images/top-icon02.png" alt=""/></a>
-                <a class="tx" href="javascript:;"><img src="images/top-icon03.png" alt=""/></a>
+                <a class="xl" href="javascript:;"><img src="static/1-2/images/top-icon02.png" alt=""/></a>
+                <a class="tx" href="javascript:;"><img src="static/1-2/images/top-icon03.png" alt=""/></a>
                 <span>|</span>
             </div>
             <a class="version" href="javascript:;">English</a></div>
@@ -59,7 +59,7 @@
 <header>
     <div class="container">
          <a href="javascript:;" class="logo">
-           <img src="images/logo.png" alt=""/>
+           <img src="static/1-2/images/logo.png" alt=""/>
          </a>
         <div class="search">
             <div class="search-form">
@@ -121,7 +121,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -155,7 +155,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -187,7 +187,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -218,7 +218,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -248,7 +248,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -274,7 +274,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                 </ul>
@@ -619,7 +619,7 @@
             </div>
             <!--找货助手-->
             <div class="helpMe">
-                <img src="images/helpMe-pic01.png" alt=""/>
+                <img src="static/1-2/images/helpMe-pic01.png" alt=""/>
             </div>
         </div>
     </div>
@@ -629,30 +629,30 @@
     <div class="footer-top">
         <div class="container">
             <div class="footer-left">
-                <div class="footer-logo"><img src="images/logo.png" alt=""/></div>
+                <div class="footer-logo"><img src="static/1-2/images/logo.png" alt=""/></div>
                 <div class="footer-tel">
                     <h6>服务热线：</h6>
                     <p>400-888-8888</p>
                 </div>
             </div>
             <div class="footer-nav">
-                <dl style="background: url(images/footer-icon01.png) no-repeat top left;">
+                <dl style="background: url(static/1-2/images/footer-icon01.png) no-repeat top left;">
                     <dt><a href="javascript:;">购物指南</a></dt>
                     <dd><a href="">购物流程</a><a href="">订货方式</a><a href="">联系客服</a><a href="">交易条款</a></dd>
                 </dl>
-                <dl style="background: url(images/footer-icon02.png) no-repeat top left;">
+                <dl style="background: url(static/1-2/images/footer-icon02.png) no-repeat top left;">
                     <dt><a href="javascript:;">支付方式</a></dt>
                     <dd><a href="">银行付款</a><a href="">在线支付</a><a href="">组合支付</a></dd>
                 </dl>
-                <dl style="background: url(images/footer-icon03.png) no-repeat top left;">
+                <dl style="background: url(static/1-2/images/footer-icon03.png) no-repeat top left;">
                     <dt><a href="javascript:;">物流帮助</a></dt>
                     <dd><a href="">如何找车</a><a href="">常见问题</a><a href="">运送流程</a></dd>
                 </dl>
-                <dl style="background: url(images/footer-icon04.png) no-repeat top left;">
+                <dl style="background: url(static/1-2/images/footer-icon04.png) no-repeat top left;">
                     <dt><a href="javascript:;">售后服务</a></dt>
                     <dd><a href="">售后服务总则</a><a href="">服务政策</a></dd>
                 </dl>
-                <dl style="background: url(images/footer-icon05.png) no-repeat top left;">
+                <dl style="background: url(static/1-2/images/footer-icon05.png) no-repeat top left;">
                     <dt><a href="javascript:;">帮助中心</a></dt>
                     <dd><a href="">网点分布</a><a href="">加盟商区</a></dd>
                 </dl>
@@ -674,11 +674,11 @@
         <p>Copyright <i class="fa fa-copyright"></i> 超鲜网 粤ICP备 13013915号-3  ICP证：粤B2-201401448</p>
     </div>
 </footer>
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript" src="js/jquery.accordion.js"></script>
-<script type="text/javascript" src="js/select.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="static/1-2/js/global.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery.accordion.js"></script>
+<script type="text/javascript" src="static/1-2/js/select.js"></script>
 <script type="text/javascript">
     jQuery("#bannerIndex").slide({mainCell:".bd ul",autoPlay:true});
     jQuery(".banner-quotes01").each(function(){
