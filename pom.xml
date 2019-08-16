@@ -23,7 +23,7 @@
     </dependency>
 
     <!--ajax依赖包-->
-    <dependency>
+   <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>2.9.8</version>
@@ -65,7 +65,7 @@
     </dependency>
 
     <!--mybatis和spring整合包-->
-    <dependency>
+   	<dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
       <version>1.2.2</version>
@@ -74,7 +74,7 @@
     <!--Oracle驱动包,必须手动安装jar到本地库,在引入-->
 
     <!--spring依赖-->
-    <dependency>
+   <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
       <version>${spring.version}</version>
@@ -92,7 +92,7 @@
       <version>${spring.version}</version>
     </dependency>
 
-    <dependency>
+   	<dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjweaver</artifactId>
       <version>1.8.13</version>
@@ -106,7 +106,7 @@
 
 
     <!--mvc依赖-->
-    <dependency>
+  	<dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
       <version>${spring.version}</version>
