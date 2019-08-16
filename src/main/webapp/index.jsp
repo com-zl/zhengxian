@@ -6,6 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-首页1
+首页2
 </body>
 </html>
