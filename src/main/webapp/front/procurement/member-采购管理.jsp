@@ -9,15 +9,15 @@
 <head lang="en">
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>供应商管理-采购管理</title>
-    <link rel="stylesheet" href="css/public.css"/>
-    <link rel="stylesheet" href="css/page.css"/>
-    <link rel="stylesheet" href="css/member.css"/>
-    <link rel="stylesheet" href="css/banner.css"/>
-    <link rel="stylesheet" href="css/tab.css"/>
-    <link rel="stylesheet" href="css/table.css"/>
-    <link rel="stylesheet" href="css/select.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/font-awesome-ie7.css">
+    <link rel="stylesheet" href="static/1-2/css/public.css"/>
+    <link rel="stylesheet" href="static/1-2/css/page.css"/>
+    <link rel="stylesheet" href="static/1-2/css/member.css"/>
+    <link rel="stylesheet" href="static/1-2/css/banner.css"/>
+    <link rel="stylesheet" href="static/1-2/css/tab.css"/>
+    <link rel="stylesheet" href="static/1-2/css/table.css"/>
+    <link rel="stylesheet" href="static/1-2/css/select.css">
+    <link rel="stylesheet" href="static/1-2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/1-2/css/font-awesome-ie7.css">
     <!--[if lt IE 10]>
     <script src="js/html5shiv.min.js"></script>
     <![endif]-->
