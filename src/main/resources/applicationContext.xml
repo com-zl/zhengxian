@@ -19,16 +19,16 @@
     <context:component-scan base-package="com.zl.st"/>
 
     <!--转换日期格式-->
-    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+    <!-- <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <set>
                 <ref bean="stringToDateConverter"/>
             </set>
         </property>
-    </bean>
+    </bean> -->
 
     <!--mvc开启默认注解,conversion-service="conversionService"将配置日期转换添加到mvc中的自动转换-->
-    <mvc:annotation-driven conversion-service="conversionService"/>
+    <mvc:annotation-driven />
 
     <!--允许扫描静态资源-->
     <mvc:default-servlet-handler/>
@@ -42,9 +42,9 @@
     <!--数据源-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/shitian"/>
-        <property name="username" value="root"/>
-        <property name="password" value="123456"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/baixian"/>
+        <property name="username" value="zhangsan"/>
+        <property name="password" value="abc"/>
     </bean>
 
     <!--创建连接工厂-->
