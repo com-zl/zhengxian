@@ -4,9 +4,9 @@
 	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <!DOCTYPE html>
-<base href="<%=basepath %>"/>
 <html>
 <head lang="en">
+	<base href="<%=basepath %>"/>
     <meta charset="UTF-8">
     <title>超鲜网-资源</title>
     <link rel="stylesheet" href="static/1-2/css/public.css"/>
@@ -17,9 +17,6 @@
     <link rel="stylesheet" href="static/1-2/css/select.css">
     <link rel="stylesheet" href="static/1-2/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/1-2/css/font-awesome-ie7.css">
-    <!--[if lt IE 10]>
-    <script src="static/1-2/js/html5shiv.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 <!--网站顶部-->

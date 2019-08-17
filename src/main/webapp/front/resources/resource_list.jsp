@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <% 
 	String path=request.getContextPath();
 	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,11 +7,10 @@
 <html>
 <base href="<%=basepath %>"/>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>资源-上传资源单</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>超鲜网-快速预览</title>
     <link rel="stylesheet" href="css/public.css"/>
     <link rel="stylesheet" href="css/page.css"/>
-    <link rel="stylesheet" href="css/member.css"/>
     <link rel="stylesheet" href="css/banner.css"/>
     <link rel="stylesheet" href="css/tab.css"/>
     <link rel="stylesheet" href="css/table.css"/>
@@ -291,8 +290,7 @@
         </dl>
     </div>
 </nav>
-<!-- 内容主体区 -->
-<div class="content-main">
+<div class="content">
     <div class="container">
         <!-- 面包屑导航 -->
         <div class="bread-crumbs">
@@ -300,173 +298,286 @@
             <span><i class="fa fa-angle-double-right"></i></span>
             <a href="javascript:;">资源</a>
             <span><i class="fa fa-angle-double-right"></i></span>
-            <a href="javascript:;" class="selected">上传资源单</a>
+            <a href="javascript:;" class="selected">快速预览</a>
         </div>
-        <!-- 资源上传资源单 -->
-        <div id="zy-upload">
-            <div class="member-right">
-                <!-- 会员升级 -->
-                <div class="member-upgrade">
-                    <img src="images/member-upgrade02.png" alt="">
+        <!-- 内容主体区 -->
+        <div class="content-main">
+            <!-- 搜索列表 -->
+            <div class="search-form01">
+                <dl>
+                    <dt>城市：</dt>
+                    <dd><span>广州</span><span>深圳</span><span>珠海</span><span>广州</span><span>深圳</span><span>珠海</span><span>广州</span><span>深圳</span><span>珠海</span><span>广州</span><span>深圳</span><span>珠海</span><span>广州</span><span>深圳</span><span>珠海</span><span>广州</span><span>深圳</span><span>珠海</span><span>广州</span><span>深圳</span><span>珠海</span><span>广州</span><span>深圳</span><span>珠海</span><span>广州</span><span>深圳</span><span>珠海</span>
+                    </dd>
+                </dl>
+                 <dl>
+                    <dt>分类：</dt>
+                    <dd><span>冻肉类</span><span>肉类</span><span>禽类</span><span>调理品</span><span>其它冻肉类</span><span>速冻食品类</span></dd>
+                </dl>
+                 <dl>
+                    <dt>检索：</dt>
+                    <dd>
+                        <label for="">
+                            <p>产品名称：</p>
+                            <input type="text" class="input02 w125"/>
+                        </label>
+                        <label for="">
+                            <p>公司名称：</p>
+                            <input type="text" class="input02 w125"/>
+                        </label>
+                        <label for="">
+                            <p>产品名称：</p>
+                            <input type="text" class="input02 w125"/>
+                        </label>
+                        <label for="">
+                            <p>产地：</p>
+                            <input type="text" class="input02 w125"/>
+                        </label>
+                        <div class="search-btn">
+                            <input type="submit" class="btn03" value="检索">
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <!-- 公司信息 -->
+            <div class="zy-infor">
+                <dl>
+                    <dt>公司名称：</dt>
+                    <dd>漯河市嘉沣商贸有限公司</dd>
+                </dl>
+                <dl>
+                    <dt>公司地址：</dt>
+                    <dd>漯河市XXX区小XXX路冷链工业园</dd>
+                </dl>
+                <dl>
+                    <dt>联系电话：</dt>
+                    <dd>0755-12345786   0755-12345786</dd>
+                </dl>
+                <dl>
+                    <dt>资源单说明：</dt>
+                    <dd>资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明资源单说明</dd>
+                </dl>
+            </div>
+               <!-- 搜索表格 -->
+                <div class="search-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>产品名称</th>
+                                <th>产地</th>
+                                <th style="width:100px;">品牌</th>
+                                <th>规格型号</th>
+                                <th>级别</th>
+                                <th>数量(KG)</th>
+                                <th>单价</th>
+                                <th>货币</th>
+                                <th>波动</th>
+                                <th>期/现货</th>
+                                <th style="width:170px">供应商</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>牛肉卷</td>
+                                <td>澳洲</td>
+                                <td>唐人基</td>
+                                <td>120g</td>
+                                <td>A级</td>
+                                <td>2000000</td>
+                                <td>RMB</td>
+                                <td>58.00</td>
+                                <td>+3.8%</td>
+                                <td>现货</td>
+                                <td>洛阳众品食业有限公司</td>
+                                <td>
+                                    <a class="btn04" href="javascript:;">查看详情</a>
+                                    <a class="btn04" href="javascript:;">加入购物车</a>
+                                    <a class="btn04" href="javascript:;">收藏</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>牛肉卷</td>
+                                <td>澳洲</td>
+                                <td>唐人基</td>
+                                <td>120g</td>
+                                <td>A级</td>
+                                <td>2000000</td>
+                                <td>RMB</td>
+                                <td>58.00</td>
+                                <td>+3.8%</td>
+                                <td>现货</td>
+                                <td>洛阳众品食业有限公司</td>
+                                <td>
+                                    <a class="btn04" href="javascript:;">查看详情</a>
+                                    <a class="btn04" href="javascript:;">加入购物车</a>
+                                    <a class="btn04" href="javascript:;">收藏</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>牛肉卷</td>
+                                <td>澳洲</td>
+                                <td>唐人基</td>
+                                <td>120g</td>
+                                <td>A级</td>
+                                <td>2000000</td>
+                                <td>RMB</td>
+                                <td>58.00</td>
+                                <td>+3.8%</td>
+                                <td>现货</td>
+                                <td>洛阳众品食业有限公司</td>
+                                <td>
+                                    <a class="btn04" href="javascript:;">查看详情</a>
+                                    <a class="btn04" href="javascript:;">加入购物车</a>
+                                    <a class="btn04" href="javascript:;">收藏</a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>牛肉卷</td>
+                                <td>澳洲</td>
+                                <td>唐人基</td>
+                                <td>120g</td>
+                                <td>A级</td>
+                                <td>2000000</td>
+                                <td>RMB</td>
+                                <td>58.00</td>
+                                <td>+3.8%</td>
+                                <td>现货</td>
+                                <td>洛阳众品食业有限公司</td>
+                                <td>
+                                    <a class="btn04" href="javascript:;">查看详情</a>
+                                    <a class="btn04" href="javascript:;">加入购物车</a>
+                                    <a class="btn04" href="javascript:;">收藏</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>牛肉卷</td>
+                                <td>澳洲</td>
+                                <td>唐人基</td>
+                                <td>120g</td>
+                                <td>A级</td>
+                                <td>2000000</td>
+                                <td>RMB</td>
+                                <td>58.00</td>
+                                <td>+3.8%</td>
+                                <td>现货</td>
+                                <td>洛阳众品食业有限公司</td>
+                                <td>
+                                    <a class="btn04" href="javascript:;">查看详情</a>
+                                    <a class="btn04" href="javascript:;">加入购物车</a>
+                                    <a class="btn04" href="javascript:;">收藏</a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>牛肉卷</td>
+                                <td>澳洲</td>
+                                <td>唐人基</td>
+                                <td>120g</td>
+                                <td>A级</td>
+                                <td>2000000</td>
+                                <td>RMB</td>
+                                <td>58.00</td>
+                                <td>+3.8%</td>
+                                <td>现货</td>
+                                <td>洛阳众品食业有限公司</td>
+                                <td>
+                                    <a class="btn04" href="javascript:;">查看详情</a>
+                                    <a class="btn04" href="javascript:;">加入购物车</a>
+                                    <a class="btn04" href="javascript:;">收藏</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>牛肉卷</td>
+                                <td>澳洲</td>
+                                <td>唐人基</td>
+                                <td>120g</td>
+                                <td>A级</td>
+                                <td>2000000</td>
+                                <td>RMB</td>
+                                <td>58.00</td>
+                                <td>+3.8%</td>
+                                <td>现货</td>
+                                <td>洛阳众品食业有限公司</td>
+                                <td>
+                                    <a class="btn04" href="javascript:;">查看详情</a>
+                                    <a class="btn04" href="javascript:;">加入购物车</a>
+                                    <a class="btn04" href="javascript:;">收藏</a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>牛肉卷</td>
+                                <td>澳洲</td>
+                                <td>唐人基</td>
+                                <td>120g</td>
+                                <td>A级</td>
+                                <td>2000000</td>
+                                <td>RMB</td>
+                                <td>58.00</td>
+                                <td>+3.8%</td>
+                                <td>现货</td>
+                                <td>洛阳众品食业有限公司</td>
+                                <td>
+                                    <a class="btn04" href="javascript:;">查看详情</a>
+                                    <a class="btn04" href="javascript:;">加入购物车</a>
+                                    <a class="btn04" href="javascript:;">收藏</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>牛肉卷</td>
+                                <td>澳洲</td>
+                                <td>唐人基</td>
+                                <td>120g</td>
+                                <td>A级</td>
+                                <td>2000000</td>
+                                <td>RMB</td>
+                                <td>58.00</td>
+                                <td>+3.8%</td>
+                                <td>现货</td>
+                                <td>洛阳众品食业有限公司</td>
+                                <td>
+                                    <a class="btn04" href="javascript:;">查看详情</a>
+                                    <a class="btn04" href="javascript:;">加入购物车</a>
+                                    <a class="btn04" href="javascript:;">收藏</a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>牛肉卷</td>
+                                <td>澳洲</td>
+                                <td>唐人基</td>
+                                <td>120g</td>
+                                <td>A级</td>
+                                <td>2000000</td>
+                                <td>RMB</td>
+                                <td>58.00</td>
+                                <td>+3.8%</td>
+                                <td>现货</td>
+                                <td>洛阳众品食业有限公司</td>
+                                <td>
+                                    <a class="btn04" href="javascript:;">查看详情</a>
+                                    <a class="btn04" href="javascript:;">加入购物车</a>
+                                    <a class="btn04" href="javascript:;">收藏</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                 <!-- 搜索表格 -->
-                 <div class="lib-tab5">
-                    <ul class="lib-menu">
-                        <li class="hover">方法一</li>
-                        <li>方法二</li>
-                        <li>方法三</li>
-                    </ul>
-                    <div class="lib-content">
-                        <div class="child-content" style="display: block;">
-                            <!-- 方法一 -->
-                            <div class="method">
-                                <dl class="method-left">
-                                    <dt>方法一：直接导入标准资源单</dt>
-                                    <dd>
-                                        <button class="btn12 w155"><i class="fa fa-upload"></i>选择文档</button>
-                                        <p>请务必上传标准资源单，</p>
-                                        <a href="javascript:;">【下载标准资源单】</a>
-                                    </dd>
-                                    <dd>
-                                        <input type="submit" value="发布资源" class="btn01 w155">
-                                        <div class="method-tips">说明：每次发布资源单在资源管理里只显示当天最后一次发布的为准，其他时间段的在资源管理中不显示</div>
-                                    </dd>
-                                </dl>
-                                <dl class="method-right">
-                                    <dt>操作说明</dt>
-                                    <dd>
-                                        <p> 1. 按照说明书指示的使用方法正确使用可以避免产品出现不必要的故障或损坏，并可保证使用者的安全。</p>
-                                        <p>2. 按照说明书使用是明智的选择，因为说明书编著经过了许多人的校对和实验。</p>
-                                        <p>3. 按照说明书指示的使用方法正确使用可以避免产品出现不必要的故障或损坏，并可保证使用者的安全。</p>
-                                        <p>4. 按照说明书使用是明智的选择，因为说明书编著经过了许多人的校对和实验。</p>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <div class="child-content" style="display: none;">
-                           <!-- 方法二 -->
-                            <div class="method">
-                                <dl class="method-left">
-                                    <dt>方法二：直接输入或复制您的资源单，由平台交易员为您完成后续的工作</dt>
-                                    <dd>
-                                        <div class="method-edit">
-                                            <img src="images/member-edit02.jpg" alt="">
-                                        </div>
-                                        <div class="controls">
-                                            <p><span>*</span>联系电话：</p>
-                                            <input type="text" class="input03 w250">
-                                        </div>
-                                        <div class="controls">
-                                            <p>资源单说明：</p>
-                                            <textarea class="textarea01 w450"></textarea>
-                                        </div>
-                                    </dd>
-                                    <dd>
-                                        <input type="submit" value="发布资源" class="btn01 w155">
-                                        <div class="method-tips">说明：默认读取会员联系电话</div>
-                                    </dd>
-                                </dl>
-                                <dl class="method-right">
-                                    <dt>操作说明</dt>
-                                    <dd>
-                                        <p> 1. 按照说明书指示的使用方法正确使用可以避免产品出现不必要的故障或损坏，并可保证使用者的安全。</p>
-                                        <p>2. 按照说明书使用是明智的选择，因为说明书编著经过了许多人的校对和实验。</p>
-                                        <p>3. 按照说明书指示的使用方法正确使用可以避免产品出现不必要的故障或损坏，并可保证使用者的安全。</p>
-                                        <p>4. 按照说明书使用是明智的选择，因为说明书编著经过了许多人的校对和实验。</p>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <div class="child-content" style="display: none;">
-                            <!-- 方法三 -->
-                            <div class="method">
-                                <dl class="method-center">
-                                    <dt>方法三：在线填写资源单</dt>
-                                    <dd>
-                                        <div class="method-table">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th width="90px;">产品类别</th>
-                                                        <th>名称</th>
-                                                        <th>产地</th>
-                                                        <th>规格型号</th>
-                                                        <th>级别</th>
-                                                        <th>数量(KG)</th>
-                                                        <th>单价</th>
-                                                        <th width="90px;">货币</th>
-                                                        <th>仓库</th>
-                                                        <th width="90px;">期/现货</th>
-                                                        <th>备注</th>
-                                                        <th style="width:90px; text-align: center;">操作</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                           <select class="w80">
-                                                                <option value="0">请选择</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                            </select>
-                                                        </td>
-                                                        <td><input type="text" class="input05"></td>
-                                                        <td><input type="text" class="input05"></td>
-                                                        <td><input type="text" class="input05"></td>
-                                                        <td><input type="text" class="input05"></td>
-                                                        <td><input type="text" class="input05"></td>
-                                                        <td><input type="text" class="input05"></td>
-                                                        <td>
-                                                           <select class="w80">
-                                                                <option value="0">请选择</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                            </select>
-                                                        </td>
-                                                        <td><input type="text" class="input05"></td>
-                                                        <td>
-                                                           <select class="w80">
-                                                                <option value="0">请选择</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                            </select></td>
-                                                        <td><input type="text" class="input05"></td>
-                                                        <td><a class="btn04 w65 del" href="javascript:;">删除</a></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <a href="javascript:;" class="btn09 add">增加</a>
-                                        </div>
-                                        <div class="controls">
-                                            <p><span>*</span>联系电话：</p>
-                                            <input type="text" class="input03 w250">
-                                        </div>
-                                        <div class="controls">
-                                            <p>资源单说明：</p>
-                                            <textarea class="textarea01 w450"></textarea>
-                                        </div>
-                                    </dd>
-                                    <dd>
-                                        <input type="submit" value="发布资源" class="btn01 w155">
-                                        <div class="method-tips">说明：当您找不到合适的分类时，请联系我们的客服，我们将为您解决</div>
-                                    </dd>
-                                </dl>
-                                <dl class="methodCenter-tips">
-                                    <dt>操作说明</dt>
-                                    <dd>
-                                        <p> 1. 按照说明书指示的使用方法正确使用可以避免产品出现不必要的故障或损坏，并可保证使用者的安全。</p>
-                                        <p>2. 按照说明书使用是明智的选择，因为说明书编著经过了许多人的校对和实验。</p>
-                                        <p>3. 按照说明书指示的使用方法正确使用可以避免产品出现不必要的故障或损坏，并可保证使用者的安全。</p>
-                                        <p>4. 按照说明书使用是明智的选择，因为说明书编著经过了许多人的校对和实验。</p>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- page -->
+            <div class="list-page">
+                <ul>
+                    <li><a href="javascript:;" class="prev-listPage prev-disable">上一页</a></li>
+                    <li><a href="javascript:;" id="hover-listPage">1</a></li>
+                    <li><a href="javascript:;">2</a></li>
+                    <li><a href="javascript:;">3</a></li>
+                    <li><a href="javascript:;">4</a></li>
+                    <li><a href="javascript:;" class="omitted">...</a></li>
+                    <li><a href="javascript:;">100</a></li>
+                    <li><a href="javascript:;" class="next-listPage">下一页</a></li>
+                    <li><span>到第</span><input type="text"><span>页</span></li>
+                    <li><a href="javascript:;" class="jump-page">确定</a></li>
+                </ul>
+            </div>
+            <!--找货助手-->
+            <div class="helpMe">
+                <img src="images/helpMe-pic01.png" alt=""/>
             </div>
         </div>
     </div>
@@ -522,8 +633,24 @@
     </div>
 </footer>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/jquery.accordion.js"></script>
 <script type="text/javascript" src="js/jquery.selectBox.js"></script>
+<script type="text/javascript">
+    jQuery("#bannerIndex").slide({mainCell:".bd ul",autoPlay:true});
+    jQuery(".banner-quotes01").each(function(){
+        $(this).slide({mainCell:".bd ul",autoPlay:false});
+    });
+     jQuery(".banner-quotes02").each(function(){
+        $(this).slide({mainCell:".bd ul",autoPlay:false});
+    });
+    jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:13});
+</script>
+<script type="text/javascript">
+    $(function(){
+      $('dl#my-accordion').accordion({open:true});
+     });
+</script>
 </body>
 </html>
