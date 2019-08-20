@@ -48,16 +48,17 @@
     <!--数据源-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/baixian"/>
-        <property name="username" value="zhangsan"/>
-        <property name="password" value="abc"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/shitian"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
     </bean>
 
     <!--创建连接工厂-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!--扫描包,给包下的所有类起别名-->
-        <property name="typeAliasesPackage" value="pojo"/>
+        <!-- <property name="typeAliasesPackage" value="pojo"/> -->
+        <property name="mapperLocations" value="classpath:com/zl/st/pojo/hyf/*.xml"></property>
         <!--
             扫描单个mapper
             <property name="mapperLocations" value="classpath:dao/IBookDAO.xml"/>
@@ -72,7 +73,7 @@
     <!--扫描dao接口,mapper路径-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-        <property name="basePackage" value="com.zl.st.dao"/>
+        <property name="basePackage" value="com.zl.st.dao.hyf"/>
     </bean>
 
     <!-- 上传文件,springmvc上传图片（文件）是通过MultipartResolver(Multipart解析器)处理的 -->
