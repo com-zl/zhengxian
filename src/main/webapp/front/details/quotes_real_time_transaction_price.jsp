@@ -3,23 +3,24 @@
 	String path=request.getContextPath();
 	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <base href="<%=basepath %>"/>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>超鲜网-行情-近期价格概况</title>
-    <link rel="stylesheet" href="css/public.css"/>
-    <link rel="stylesheet" href="css/page.css"/>
-    <link rel="stylesheet" href="css/banner.css"/>
-    <link rel="stylesheet" href="css/tab.css"/>
-    <link rel="stylesheet" href="css/table.css"/>
-    <link rel="stylesheet" href="css/select.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/font-awesome-ie7.css">
-    <link rel="stylesheet" href="css/hq.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>超鲜网-行情-实时成交价</title>
+    <link rel="stylesheet" href="static/1-2/css/public.css"/>
+    <link rel="stylesheet" href="static/1-2/css/page.css"/>
+    <link rel="stylesheet" href="static/1-2/css/banner.css"/>
+    <link rel="stylesheet" href="static/1-2/css/tab.css"/>
+    <link rel="stylesheet" href="static/1-2/css/table.css"/>
+    <link rel="stylesheet" href="static/1-2/css/select.css">
+    <link rel="stylesheet" href="static/1-2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/1-2/css/font-awesome-ie7.css">
+    <link rel="stylesheet" href="static/1-2/css/hq.css">
     <!--[if lt IE 10]>
-    <script src="js/html5shiv.min.js"></script>
+    <script src="static/1-2/js/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -43,14 +44,14 @@
             <div class="attention">
                 <p>关注我们：</p>
                 <a class="weixin" href="javascript:;">
-                    <img src="images/top-icon01.png" alt=""/>
+                    <img src="static/1-2/images/top-icon01.png" alt=""/>
                     <div class="weixin-erweima">
                         <i></i>
-                        <img src="images/erweima.png" alt=""/>
+                        <img src="static/1-2/images/erweima.png" alt=""/>
                     </div>
                 </a>
-                <a class="xl" href="javascript:;"><img src="images/top-icon02.png" alt=""/></a>
-                <a class="tx" href="javascript:;"><img src="images/top-icon03.png" alt=""/></a>
+                <a class="xl" href="javascript:;"><img src="static/1-2/images/top-icon02.png" alt=""/></a>
+                <a class="tx" href="javascript:;"><img src="static/1-2/images/top-icon03.png" alt=""/></a>
                 <span>|</span>
             </div>
             <a class="version" href="javascript:;">English</a></div>
@@ -60,7 +61,7 @@
 <header>
     <div class="container">
          <a href="javascript:;" class="logo">
-           <img src="images/logo.png" alt=""/>
+           <img src="static/1-2/images/logo.png" alt=""/>
          </a>
         <div class="search">
             <div class="search-form">
@@ -122,7 +123,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -156,7 +157,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -188,7 +189,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -219,7 +220,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -249,7 +250,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -275,7 +276,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                 </ul>
@@ -305,14 +306,14 @@
             <!-- 搜索表格 -->
             <div class="lib-tab4">
                 <ul class="lib-menu">
-                    <li>实时成交价</li>
+                    <li class="hover">实时成交价</li>
                     <li>供应商报价</li>
-                    <li class="hover">指数</li>
+                    <li>指数</li>
                     <li>近期价格概况</li>
                 </ul>
                 <div class="lib-content">
                     <div class="child-content" style="display: block;">
-                        <!-- 指数start -->
+                        <!-- 实时成交价start -->
                         <div class="bj_b">
                             <div class="kk-l"></div>
                             <div class="s_type">
@@ -326,185 +327,295 @@
                                 </ul>
                             </div>
                             <div class="s_l" style="display:block">
-                                <a href="" class="selected">牛肉类</a>
-                                <a href="">羊肉类</a>
-                                <a href="">猪肉类</a>
+                                <form action="">
+                             <div for="" class="select-b">
+                    <em>分类：</em>
+                    <select name="" id=""  class="selectpicker" data-width="150">
+                          <option value="">请选择</option>
+                          <option value="">类型一</option>
+                          <option value="">类型二</option>
+                          <option value="">类型三</option>
+                    </select>
+                </div>
+                            <label for="">规格: </label>
+                            <input type="text">
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
                             </div>
                              <div class="s_l">
-                                <a href="" class="selected">牛肉类</a>
-                                <a href="">羊肉类</a>
+                                <form action="">
+                                    <label for="">分类: </label>
+                                <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select> 
+                                <label for="">规格: </label>
+                                 <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select>
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
                             </div>
                             <div class="s_l">
-                                <a href="" class="selected">牛肉类</a>
-                                <a href="">羊肉类</a>
-                                <a href="">猪肉类</a>
+                                <form action="">
+                                    <label for="">分类: </label>
+                                <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select> 
+                                <label for="">规格: </label>
+                                 <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select>
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
                             </div>
                             <div class="s_l">
-                                <a href="" class="selected">牛肉类</a>
-                                <a href="">羊肉类</a>
-                                <a href="">猪肉类</a>
+                                <form action="">
+                                    <label for="">分类: </label>
+                                <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select> 
+                                <label for="">规格: </label>
+                                 <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select>
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
                             </div>
                             <div class="s_l">
-                                <a href="" class="selected">牛肉类</a>
-                                <a href="">羊肉类</a>
-                                <a href="">猪肉类</a>
+                                <form action="">
+                                    <label for="">分类: </label>
+                                <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select> 
+                                <label for="">规格: </label>
+                                 <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select>
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
                             </div>
                             <div class="s_l">
-                                <a href="" class="selected">牛肉类</a>
-                                <a href="">羊肉类</a>
-                                <a href="">猪肉类</a>
+                                <form action="">
+                                    <label for="">分类: </label>
+                                <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select> 
+                                <label for="">规格: </label>
+                                 <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select>
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
                             </div>
-                            <div class="zst_t">牛肉价格指数走势</div>
-                            <div class="zst-b">
-                                <div id="chartdiv" style="width: 100%; height: 400px;"></div>
-                            </div>
+
                             <div class="je_db">
                                 <table rules="rows" borderColor="#eee">
                                    <thead>
                                        <tr>
-                                           <th width="16.6%">分类</th>
-                                           <th width="16.6%">日期</th>
-                                           <th width="16.6%">今日</th>
-                                           <th width="16.6%">昨日</th>
-                                           <th width="16.6%">前日</th>
-                                           <th width="16.6%">同比</th>
+
+                                           <th width="10%">分类</th>
+                                           <th width="10%">产品名称</th>
+                                           <th width="10%">产地</th>
+                                           <th width="10%">规格型号</th>
+                                           <th width="10%">级别</th>
+                                           <th width="10%">期/现货</th>
+                                           <th width="10%">今日报价</th>
+                                           <th width="10%">成交价</th>
+                                           <th width="10%">成交量（KG）</th>
+                                           <th width="10%">成交时间</th>
                                        </tr>
                                    </thead>
                                    <tbody>
                                        <tr>
                                            <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
+                                           <td>牛肉卷</td>
+                                           <td>澳洲</td>
+                                           <td>120g</td>
+                                           <td>A级</td>
+                                           <td>现货</td>
+                                           <td>2060-2090</td>
+                                           <td>2060</td>
+                                           <td>3000</td>
+                                           <td>18:37</td>
+                                       </tr>
+                                         <tr>
+                                           <td>牛腩肉</td>
+                                           <td>牛肉卷</td>
+                                           <td>澳洲</td>
+                                           <td>120g</td>
+                                           <td>A级</td>
+                                           <td>现货</td>
+                                           <td>2060-2090</td>
+                                           <td>2060</td>
+                                           <td>3000</td>
+                                           <td>18:37</td>
                                        </tr>
                                         <tr>
                                            <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
+                                           <td>牛肉卷</td>
+                                           <td>澳洲</td>
+                                           <td>120g</td>
+                                           <td>A级</td>
+                                           <td>现货</td>
+                                           <td>2060-2090</td>
+                                           <td>2060</td>
+                                           <td>3000</td>
+                                           <td>18:37</td>
                                        </tr>
                                         <tr>
                                            <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
+                                           <td>牛肉卷</td>
+                                           <td>澳洲</td>
+                                           <td>120g</td>
+                                           <td>A级</td>
+                                           <td>现货</td>
+                                           <td>2060-2090</td>
+                                           <td>2060</td>
+                                           <td>3000</td>
+                                           <td>18:37</td>
                                        </tr>
                                         <tr>
                                            <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
-                                       </tr>
-                                       <tr>
-                                           <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
+                                           <td>牛肉卷</td>
+                                           <td>澳洲</td>
+                                           <td>120g</td>
+                                           <td>A级</td>
+                                           <td>现货</td>
+                                           <td>2060-2090</td>
+                                           <td>2060</td>
+                                           <td>3000</td>
+                                           <td>18:37</td>
                                        </tr>
                                         <tr>
                                            <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
+                                           <td>牛肉卷</td>
+                                           <td>澳洲</td>
+                                           <td>120g</td>
+                                           <td>A级</td>
+                                           <td>现货</td>
+                                           <td>2060-2090</td>
+                                           <td>2060</td>
+                                           <td>3000</td>
+                                           <td>18:37</td>
                                        </tr>
                                         <tr>
                                            <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
+                                           <td>牛肉卷</td>
+                                           <td>澳洲</td>
+                                           <td>120g</td>
+                                           <td>A级</td>
+                                           <td>现货</td>
+                                           <td>2060-2090</td>
+                                           <td>2060</td>
+                                           <td>3000</td>
+                                           <td>18:37</td>
                                        </tr>
                                         <tr>
                                            <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
-                                       </tr>
-                                       <tr>
-                                           <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
+                                           <td>牛肉卷</td>
+                                           <td>澳洲</td>
+                                           <td>120g</td>
+                                           <td>A级</td>
+                                           <td>现货</td>
+                                           <td>2060-2090</td>
+                                           <td>2060</td>
+                                           <td>3000</td>
+                                           <td>18:37</td>
                                        </tr>
                                         <tr>
                                            <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
+                                           <td>牛肉卷</td>
+                                           <td>澳洲</td>
+                                           <td>120g</td>
+                                           <td>A级</td>
+                                           <td>现货</td>
+                                           <td>2060-2090</td>
+                                           <td>2060</td>
+                                           <td>3000</td>
+                                           <td>18:37</td>
                                        </tr>
-                                        <tr>
-                                           <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
-                                       </tr>
-                                        <tr>
-                                           <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
-                                       </tr>
-                                       <tr>
-                                           <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
-                                       </tr>
-                                        <tr>
-                                           <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
-                                       </tr>
-                                        <tr>
-                                           <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
-                                       </tr>
-                                        <tr>
-                                           <td>牛腩肉</td>
-                                           <td>2015-05-22</td>
-                                           <td>58.6</td>
-                                           <td>60</td>
-                                           <td>59</td>
-                                           <td class="red">1.3%</td>
-                                       </tr>
-
                                    </tbody>
                                </table>
                             </div>
                         </div>
-                        <!-- 指数end -->
+                        <!-- page -->
+                        <div class="list-page">
+                            <ul>
+                                <li><a href="javascript:;" class="prev-listPage prev-disable">上一页</a></li>
+                                <li><a href="javascript:;" id="hover-listPage">1</a></li>
+                                <li><a href="javascript:;">2</a></li>
+                                <li><a href="javascript:;">3</a></li>
+                                <li><a href="javascript:;">4</a></li>
+                                <li><a href="javascript:;" class="omitted">...</a></li>
+                                <li><a href="javascript:;">100</a></li>
+                                <li><a href="javascript:;" class="next-listPage">下一页</a></li>
+                                <li><span>到第</span><input type="text"><span>页</span></li>
+                                <li><a href="javascript:;" class="jump-page">确定</a></li>
+                            </ul>
+                        </div>
+                        <!-- 实时成交价end -->
                         </div>
                         
                     </div>
@@ -518,30 +629,30 @@
     <div class="footer-top">
         <div class="container">
             <div class="footer-left">
-                <div class="footer-logo"><img src="images/logo.png" alt=""/></div>
+                <div class="footer-logo"><img src="static/1-2/images/logo.png" alt=""/></div>
                 <div class="footer-tel">
                     <h6>服务热线：</h6>
                     <p>400-888-8888</p>
                 </div>
             </div>
             <div class="footer-nav">
-                <dl style="background: url(images/footer-icon01.png) no-repeat top left;">
+                <dl style="background: url(static/1-2/images/footer-icon01.png) no-repeat top left;">
                     <dt><a href="javascript:;">购物指南</a></dt>
                     <dd><a href="">购物流程</a><a href="">订货方式</a><a href="">联系客服</a><a href="">交易条款</a></dd>
                 </dl>
-                <dl style="background: url(images/footer-icon02.png) no-repeat top left;">
+                <dl style="background: url(static/1-2/images/footer-icon02.png) no-repeat top left;">
                     <dt><a href="javascript:;">支付方式</a></dt>
                     <dd><a href="">银行付款</a><a href="">在线支付</a><a href="">组合支付</a></dd>
                 </dl>
-                <dl style="background: url(images/footer-icon03.png) no-repeat top left;">
+                <dl style="background: url(static/1-2/images/footer-icon03.png) no-repeat top left;">
                     <dt><a href="javascript:;">物流帮助</a></dt>
                     <dd><a href="">如何找车</a><a href="">常见问题</a><a href="">运送流程</a></dd>
                 </dl>
-                <dl style="background: url(images/footer-icon04.png) no-repeat top left;">
+                <dl style="background: url(static/1-2/images/footer-icon04.png) no-repeat top left;">
                     <dt><a href="javascript:;">售后服务</a></dt>
                     <dd><a href="">售后服务总则</a><a href="">服务政策</a></dd>
                 </dl>
-                <dl style="background: url(images/footer-icon05.png) no-repeat top left;">
+                <dl style="background: url(static/1-2/images/footer-icon05.png) no-repeat top left;">
                     <dt><a href="javascript:;">帮助中心</a></dt>
                     <dd><a href="">网点分布</a><a href="">加盟商区</a></dd>
                 </dl>
@@ -563,15 +674,16 @@
         <p>Copyright <i class="fa fa-copyright"></i> 超鲜网 粤ICP备 13013915号-3  ICP证：粤B2-201401448</p>
     </div>
 </footer>
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript" src="js/jquery.accordion.js"></script>
-<script type="text/javascript" src="js/jquery.selectBox.js"></script>
-<script type="text/javascript" src="js/hq.js"></script>
-<script src="js/amcharts.js" type="text/javascript"></script>
-<script src="js/serial.js" type="text/javascript"></script>
-<script src="js/dark.js" type="text/javascript"></script>
+<script type="text/javascript" src="static/1-2/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="static/1-2/js/global.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery.accordion.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery.selectBox.js"></script>
+<script type="text/javascript" src="static/1-2/js/hq.js"></script>
+<script src="static/1-2/js/amcharts.js" type="text/javascript"></script>
+<script src="static/1-2/js/serial.js" type="text/javascript"></script>
+<script src="static/1-2/js/dark.js" type="text/javascript"></script>
+<script src="static/1-2/js/select.js" type="text/javascript"></script>
 <script type="text/javascript">
     jQuery("#bannerIndex").slide({mainCell:".bd ul",autoPlay:true});
     jQuery(".banner-quotes01").each(function(){
