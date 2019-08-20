@@ -1,6 +1,7 @@
 package com.zl.st.pojo.hh;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Purchasecontact implements Serializable {
 
@@ -11,6 +12,13 @@ public class Purchasecontact implements Serializable {
 	private Integer buyersid;//采购商id PS:这个ID是证明采购商的
 	private String telphone;
 	private String fulladdress;//详细地址
+	private List<Purchaseform> purchaseform;
+	public List<Purchaseform> getPurchaseform() {
+		return purchaseform;
+	}
+	public void setPurchaseform(List<Purchaseform> purchaseform) {
+		this.purchaseform = purchaseform;
+	}
 	public Integer getPurchaserid() {
 		return purchaserid;
 	}

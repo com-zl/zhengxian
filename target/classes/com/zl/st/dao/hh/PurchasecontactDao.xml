@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zl.st.dao.hh.PurchasecontactDao" >
+	<select id="findContactByContactId" resultType="Purchaseform">
+		select p.purchasename, p.purchasenote, 
+				p.create_date, 
+				p.purchasestate, c.nickname from purchaseform p,purchasecontact c 
+				where p.purchaserid=c.purchaserid
+	</select>
+	
+	<resultMap type="com.zl.st.pojo.hh.Purchasecontact" id="Purchaseform">
+		<id column="" />
+	</resultMap>
+
+
+</mapper>

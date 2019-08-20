@@ -1,10 +1,10 @@
-package com.zl.st.dao.hh;
+package com.zl.st.service.hh;
 
 import java.util.List;
 
 import com.zl.st.pojo.hh.Purchaseform;
 
-public interface PurchaseformDao {
-	//全部采购页面的查询
+public interface PurchaseformService {
+
 	public List<Purchaseform> findAllDemandPurcha();
 }

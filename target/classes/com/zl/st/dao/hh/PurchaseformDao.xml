@@ -3,18 +3,12 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.zl.st.dao.hh.PurchaseformDao" >
-	<select id="findAllDemandPurcha" resultType="java.lang.Map">
-		select p.purchasename, p.purchasenote, 
-				p.create_date, 
-				p.purchasestate, c.nickname from purchaseform p,purchasecontact c 
-				where p.purchaserid=c.purchaserid
-	</select>
 	
-	<select id="">
+	<select id="findFormByContact" resultType="com.zl.st.pojo.hh.Purchaseform" >
 		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, 
 			level, warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, 
 			receivaddress, purchasetime, certificate, create_date as createDate, supid, 
-			purchaserid, purchasestate from purchaseform
+			purchaserid, purchasestate from purchaseform where purchaserid=purchaserid
 	</select>
 
 
