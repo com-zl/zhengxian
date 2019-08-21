@@ -20,7 +20,7 @@ public class Purchaseform implements Serializable {
 	private String receivaddress;//收货地址
 	private String purchasetime;//采购截止时间
 	private String certificate;//交易凭证(就是一个图片地址)
-	private Date create_date;//采购信息创建时间（当前时间）
+	private Date createDate;//采购信息创建时间（当前时间）
 	private Integer supid;//收到的供应商编号
 	private Integer purchaserid;//联系人编号
 	private String purchasestate;//采购状态(进行中or已结束采购)
@@ -114,11 +114,11 @@ public class Purchaseform implements Serializable {
 	public void setCertificate(String certificate) {
 		this.certificate = certificate;
 	}
-	public Date getCreate_date() {
-		return create_date;
+	public Date getCreateDate() {
+		return createDate;
 	}
-	public void setCreate_date(Date create_date) {
-		this.create_date = create_date;
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 	public Integer getSupid() {
 		return supid;
