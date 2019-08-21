@@ -14,7 +14,11 @@
 
   <dependencies>
 
+<<<<<<< HEAD
 	<!-- 分页插件 -->
+=======
+	<!-- 分页依赖 -->
+>>>>>>> refs/heads/quotes
 	<dependency>
 	    <groupId>com.github.pagehelper</groupId>
 	    <artifactId>pagehelper</artifactId>
