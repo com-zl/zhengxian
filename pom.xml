@@ -130,4 +130,8 @@
     </dependency>
 
 </dependencies>
+
+<build>
+	<finalName>shitian</finalName>
+</build>
 </project>
