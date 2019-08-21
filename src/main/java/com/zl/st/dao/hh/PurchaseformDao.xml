@@ -4,12 +4,34 @@
 
 <mapper namespace="com.zl.st.dao.hh.PurchaseformDao" >
 	
-	<select id="findFormByContact" resultType="com.zl.st.pojo.hh.Purchaseform" >
+	<select id="findFormByContact" resultMap="Purchaseforminfo" >
 		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, 
 			level, warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, 
 			receivaddress, purchasetime, certificate, create_date as createDate, supid, 
 			purchaserid, purchasestate from purchaseform where purchaserid=purchaserid
 	</select>
+	
+	<resultMap type="com.zl.st.pojo.hh.Purchaseform" id="Purchaseforminfo">
+		<id column="purchaseid" property="purchaseid" />
+		<result column="purchasename" property="purchasename" />
+		<result column="purchasegoods" property="purchasegoods" />
+		<result column="placeorigin" property="placeorigin" />
+		<result column="specificationtype" property="specificationtype" />
+		<result column="level" property="level" />
+		<result column="warehouse" property="warehouse" />
+		<result column="spotgoods" property="spotgoods" />
+		<result column="price" property="price" />
+		<result column="purchasenote" property="purchasenote" />
+		<result column="purchasemode" property="purchasemode" />
+		<result column="invoicetype" property="invoicetype" />
+		<result column="receivaddress" property="receivaddress" />
+		<result column="purchasetime" property="purchasetime" />
+		<result column="certificate" property="certificate" />
+		<result column="create_date" property="create_date" />
+		<result column="supid" property="supid" />
+		<result column="purchaserid" property="purchaserid" />
+		<result column="purchasestate" property="purchasestate" />
+	</resultMap>
 
 
 </mapper>
