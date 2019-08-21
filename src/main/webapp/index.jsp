@@ -285,7 +285,11 @@
             <dd><a href="javascript:;">采购</a></dd>
             <dd><a href="javascript:;">搜索</a></dd>
             <dd><a href="javascript:;">物流</a></dd>
-            <dd><a href="javascript:;">行情</a></dd>
+<<<<<<< HEAD
+            <dd><a href="djxqc/QuotesIndex">行情</a></dd>
+=======
+            <dd><a href="djxqc/qrttp">行情</a></dd>
+>>>>>>> refs/heads/quotes
             <dd><a href="javascript:;">积分商城</a></dd>
             <dd><a href="javascript:;">会员俱乐部</a></dd>
         </dl>
