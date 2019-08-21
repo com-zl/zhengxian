@@ -21,7 +21,6 @@
 	<!-- 通过上下文参数，找到spring配置文件的路径和名字 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<!-- <param-value>/WEB-INF/classes/app.xml</param-value> -->
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
 	
