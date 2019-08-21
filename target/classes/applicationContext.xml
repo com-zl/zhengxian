@@ -58,7 +58,28 @@
         <property name="dataSource" ref="dataSource"/>
         <!--扫描包,给包下的所有类起别名-->
         <property name="typeAliasesPackage" value="pojo"/>
+        <!-- 扫描单个mapper
+            <property name="mapperLocations" value="classpath:dao/IBookDAO.xml"/>
+            <property name="mapperLocations">
+            <array>
+                <value>classpath:dao/IBookDAO.xml</value>
+            </array>
+        </property>
+        -->
+        <!-- 分页pagehelper配置 -->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+　　　　　　　　　　　　　　　　helperDialect=mysql
+　　　　　　　　　　　　　　</value>
+                    </property>
+                </bean>
+            </array>
+        </property>
     </bean>
+    
 
     <!--扫描dao接口,mapper路径-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

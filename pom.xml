@@ -14,7 +14,8 @@
 
   <dependencies>
 
-	<!-- 分页插件 -->
+
+	<!-- 分页依赖 -->
 	<dependency>
 	    <groupId>com.github.pagehelper</groupId>
 	    <artifactId>pagehelper</artifactId>
