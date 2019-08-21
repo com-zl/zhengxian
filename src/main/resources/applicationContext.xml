@@ -68,7 +68,20 @@
             </array>
         </property>
         -->
+        <!-- 分页pagehelper配置 -->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+　　　　　　　　　　　　　　　　helperDialect=mysql
+　　　　　　　　　　　　　　</value>
+                    </property>
+                </bean>
+            </array>
+        </property>
     </bean>
+    
 
     <!--扫描dao接口,mapper路径-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
