@@ -400,7 +400,7 @@
                                     <td>${rl.instruction }</td>
                                     <td><fmt:formatDate value="${rl.uploadDate }" pattern="yyyy-MM-dd" /></td>
                                     <td>${rl.downTimes }</td>
-                                    <td><a href="" class="btn04">快速预览</a><a href="javascript:;" class="btn04">下载</a></td>
+                                    <td><a href="hyf/rc/fbid?supid=${rl.supid }" class="btn04">快速预览</a><a href="javascript:;" class="btn04">下载</a></td>
                                 </tr>
                                 </c:forEach>
                                 
