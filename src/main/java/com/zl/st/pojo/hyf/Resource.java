@@ -8,7 +8,7 @@ public class Resource implements Serializable {
 	private String supName;
 	private String supCategory;
 	private String major;
-	private String insturction;
+	private String instruction;
 	private Date uploadDate;
 	private Integer downTimes;
 	public Integer getSupid() {
@@ -35,11 +35,12 @@ public class Resource implements Serializable {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	public String getInsturction() {
-		return insturction;
+	
+	public String getInstruction() {
+		return instruction;
 	}
-	public void setInsturction(String insturction) {
-		this.insturction = insturction;
+	public void setInstruction(String instruction) {
+		this.instruction = instruction;
 	}
 	public Date getUploadDate() {
 		return uploadDate;

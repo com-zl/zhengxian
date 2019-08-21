@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <% 
 	String path=request.getContextPath();
 	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -384,102 +386,24 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            	<c:forEach items="${resourcelist }" var="rl">
                                 <tr>
                                     <td>
-                                        <a href="javascript:;" class="name">河南众品食业股份有限公司</a>
+                                        <a href="javascript:;" class="name">${rl.supName }</a>
                                         <a href="javascript:;" class="attention">【关注】</a>
                                     </td>
                                     <td>
-                                        <p>鱼类</p>
-                                        <p>牛肉</p>
-                                        <p>羊肉</p>
+                                        <p>${rl.supCategory }</p>
+                                        
                                     </td>
-                                    <td>三文鱼、海参、带鱼、墨鱼、绵羊肉、羊腿、羊排、羊肉卷、牛腩肉、牛排肉、黄牛肉、肥牛肉···</td>
-                                    <td>资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单</td>
-                                    <td>015-05-05 14：15</td>
-                                    <td>58</td>
-                                    <td><a href="javascript:;" class="btn04">快速预览</a><a href="javascript:;" class="btn04">下载</a></td>
+                                    <td>${rl.major }</td>
+                                    <td>${rl.instruction }</td>
+                                    <td><fmt:formatDate value="${rl.uploadDate }" pattern="yyyy-MM-dd" /></td>
+                                    <td>${rl.downTimes }</td>
+                                    <td><a href="" class="btn04">快速预览</a><a href="javascript:;" class="btn04">下载</a></td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <a href="javascript:;" class="name">河南众品食业股份有限公司</a>
-                                        <a href="javascript:;" class="attention">【关注】</a>
-                                    </td>
-                                    <td>
-                                        <p>鱼类</p>
-                                        <p>牛肉</p>
-                                        <p>羊肉</p>
-                                    </td>
-                                    <td>三文鱼、海参、带鱼、墨鱼、绵羊肉、羊腿、羊排、羊肉卷、牛腩肉、牛排肉、黄牛肉、肥牛肉···</td>
-                                    <td>资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单</td>
-                                    <td>015-05-05 14：15</td>
-                                    <td>58</td>
-                                    <td><a href="javascript:;" class="btn04">快速预览</a><a href="javascript:;" class="btn04">下载</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="javascript:;" class="name">河南众品食业股份有限公司</a>
-                                        <a href="javascript:;" class="attention">【关注】</a>
-                                    </td>
-                                    <td>
-                                        <p>鱼类</p>
-                                        <p>牛肉</p>
-                                        <p>羊肉</p>
-                                    </td>
-                                    <td>三文鱼、海参、带鱼、墨鱼、绵羊肉、羊腿、羊排、羊肉卷、牛腩肉、牛排肉、黄牛肉、肥牛肉···</td>
-                                    <td>资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单</td>
-                                    <td>015-05-05 14：15</td>
-                                    <td>58</td>
-                                    <td><a href="javascript:;" class="btn04">快速预览</a><a href="javascript:;" class="btn04">下载</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="javascript:;" class="name">河南众品食业股份有限公司</a>
-                                        <a href="javascript:;" class="attention">【关注】</a>
-                                    </td>
-                                    <td>
-                                        <p>鱼类</p>
-                                        <p>牛肉</p>
-                                        <p>羊肉</p>
-                                    </td>
-                                    <td>三文鱼、海参、带鱼、墨鱼、绵羊肉、羊腿、羊排、羊肉卷、牛腩肉、牛排肉、黄牛肉、肥牛肉···</td>
-                                    <td>资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单</td>
-                                    <td>015-05-05 14：15</td>
-                                    <td>58</td>
-                                    <td><a href="javascript:;" class="btn04">快速预览</a><a href="javascript:;" class="btn04">下载</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="javascript:;" class="name">河南众品食业股份有限公司</a>
-                                        <a href="javascript:;" class="attention">【关注】</a>
-                                    </td>
-                                    <td>
-                                        <p>鱼类</p>
-                                        <p>牛肉</p>
-                                        <p>羊肉</p>
-                                    </td>
-                                    <td>三文鱼、海参、带鱼、墨鱼、绵羊肉、羊腿、羊排、羊肉卷、牛腩肉、牛排肉、黄牛肉、肥牛肉···</td>
-                                    <td>资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单</td>
-                                    <td>015-05-05 14：15</td>
-                                    <td>58</td>
-                                    <td><a href="javascript:;" class="btn04">快速预览</a><a href="javascript:;" class="btn04">下载</a></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="javascript:;" class="name">河南众品食业股份有限公司</a>
-                                        <a href="javascript:;" class="attention">【关注】</a>
-                                    </td>
-                                    <td>
-                                        <p>鱼类</p>
-                                        <p>牛肉</p>
-                                        <p>羊肉</p>
-                                    </td>
-                                    <td>三文鱼、海参、带鱼、墨鱼、绵羊肉、羊腿、羊排、羊肉卷、牛腩肉、牛排肉、黄牛肉、肥牛肉···</td>
-                                    <td>资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单简介资源单</td>
-                                    <td>015-05-05 14：15</td>
-                                    <td>58</td>
-                                    <td><a href="javascript:;" class="btn04">快速预览</a><a href="javascript:;" class="btn04">下载</a></td>
-                                </tr>
+                                </c:forEach>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -498,6 +422,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            	
                                 <tr>
                                     <td>
                                         <a href="javascript:;" class="name">河南众品食业股份有限公司</a>

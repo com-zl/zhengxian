@@ -12,9 +12,8 @@ import com.zl.st.service.hyf.IResourceService;
 public class ResourceServiceImpl implements IResourceService {
 	@Autowired
 	private IResourceDAO resourcedao;
-	@Override
+	
 	public List<Resource> findAllResource() {
-		
 		return resourcedao.findAllResource();
 	}
 

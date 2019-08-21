@@ -18,9 +18,12 @@ public class ResourceController {
 	private IResourceService resourceService;
 	@RequestMapping("sr")
 	public String showallresource(HttpServletRequest request) {
-		
 		List<Resource> resourcelist = resourceService.findAllResource();
 		request.setAttribute("resourcelist", resourcelist);
 		return "front/resources/resource";
+	}
+	@RequestMapping("fbid")
+	public String findresourcebysupid() {
+		return "";
 	}
 }
