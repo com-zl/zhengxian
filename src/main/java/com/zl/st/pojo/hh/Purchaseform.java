@@ -22,8 +22,16 @@ public class Purchaseform implements Serializable {
 	private String certificate;//交易凭证(就是一个图片地址)
 	private Date createDate;//采购信息创建时间
 	private Integer supid;//收到的供应商编号
-	private Integer purchaserid; //联系人编号
+	private Purchasecontact purchasecontact;
+	//private Integer purchaserid; //联系人编号   (这里换成了purchasecontact,直接存一个对象,同时下面set/get方法也注释了)
 	private String purchasestate;//采购状态(进行中or已结束采购)
+	
+	public Purchasecontact getPurchasecontact() {
+		return purchasecontact;
+	}
+	public void setPurchasecontact(Purchasecontact purchasecontact) {
+		this.purchasecontact = purchasecontact;
+	}
 	public Integer getPurchaseid() {
 		return purchaseid;
 	}
@@ -126,12 +134,12 @@ public class Purchaseform implements Serializable {
 	public void setSupid(Integer supid) {
 		this.supid = supid;
 	}
-	public Integer getPurchaserid() {
+	/*public Integer getPurchaserid() {
 		return purchaserid;
 	}
 	public void setPurchaserid(Integer purchaserid) {
 		this.purchaserid = purchaserid;
-	}
+	}*/
 	public String getPurchasestate() {
 		return purchasestate;
 	}

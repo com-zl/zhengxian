@@ -19,4 +19,12 @@ public class PurchaseformServiceImpl implements PurchaseformService {
 		return purchaseDao.findAllDemandPurcha();
 	}
 
+	@Override
+	public Purchaseform findFormByContact() {
+		
+		return purchaseDao.findFormByContact();
+	}
+
+	
+
 }

@@ -49,7 +49,7 @@
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/shitian"/>
-        <property name="username" value="hhh"/>
+        <property name="username" value="root"/>
         <property name="password" value="123"/>
     </bean>
 

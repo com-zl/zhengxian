@@ -23,7 +23,13 @@ public class PurchaseController {
 	public String listFindAll(Model model) {
 		System.out.println("进入了操蛋的控制器");
 		List<Purchaseform> purList = purchaseServiceImpl.findAllDemandPurcha();
+		Purchaseform purchaserid = purchaseServiceImpl.findFormByContact();
+		System.out.println("purchaserid:"+purchaserid.getPurchasecontact().getNickname());
+		for (int i = 0; i < purList.size(); i++) {
+			System.out.println("purList:"+purList.get(i));
+		}
 		model.addAttribute("purList",purList);
+		model.addAttribute("purchaserid", purchaserid);
 		return "front/procurement/allPurchase";
 	}
 	

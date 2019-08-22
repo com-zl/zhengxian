@@ -334,7 +334,7 @@
                                         <a href="javascript:;" class="otw">${purList.purchasename}</a>
                                         <span class="goOn">【进行中】</span>
                                     </div>
-                                    <div class="user">lrxl***&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
+                                    <div class="user">${purchaserid.getPurchasecontact().getNickname()}&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
                                     <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
                                  </dd>
                                  <dd>

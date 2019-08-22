@@ -7,4 +7,6 @@ import com.zl.st.pojo.hh.Purchaseform;
 public interface PurchaseformService {
 
 	public List<Purchaseform> findAllDemandPurcha();
+	
+	public Purchaseform findFormByContact();
 }

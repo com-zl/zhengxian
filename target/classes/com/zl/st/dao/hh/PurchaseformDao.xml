@@ -4,12 +4,20 @@
 
 <mapper namespace="com.zl.st.dao.hh.PurchaseformDao" >
 	
-	<select id="findFormByContact" resultMap="Purchaseforminfo" >
+	<select id="findAllDemandPurcha" resultType="purchaseform" >
 		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, 
 			level, warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, 
 			receivaddress, purchasetime, certificate, create_date as createDate, supid, 
+			purchaserid, purchasestate from purchaseform
+	</select>
+	
+	<select id="findFormByContact" resultMap="Purchaseforminfo" >
+		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, 
+			level, warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, 
+			receivaddress, purchasetime, certificate, create_date, supid, 
 			purchaserid, purchasestate from purchaseform where purchaserid=purchaserid
 	</select>
+	
 	
 	<resultMap type="com.zl.st.pojo.hh.Purchaseform" id="Purchaseforminfo">
 		<id column="purchaseid" property="purchaseid" />
@@ -29,8 +37,8 @@
 		<result column="certificate" property="certificate" />
 		<result column="create_date" property="create_date" />
 		<result column="supid" property="supid" />
-		<result column="purchaserid" property="purchaserid" />
 		<result column="purchasestate" property="purchasestate" />
+		<association property="purchasecontact" column="purchaserid" select="com.zl.st.dao.hh.PurchasecontactDao.findContactByContactId" ></association>
 	</resultMap>
 
 
