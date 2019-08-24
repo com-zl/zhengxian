@@ -20,12 +20,13 @@ public class Product implements Serializable {
 	private Integer supid;//供应商id
 	private String supName;//供应商名称
 	private String storeHouse;//仓库
-	private String proCateNum;//产品分类编号
+	private Integer proCateNum;//产品分类编号
 	private Integer userid;//用户编号
 	private Date createTime;//创建时间
 	private Date updateTime;//更新时间
 	private String status;//审核状态
 	private String type;//类型（默认为非标准单，不用写约束）
+	private Procategory procategory;//所属类别
 	public Integer getProid() {
 		return proid;
 	}
@@ -116,11 +117,18 @@ public class Product implements Serializable {
 	public void setStoreHouse(String storeHouse) {
 		this.storeHouse = storeHouse;
 	}
-	public String getProCateNum() {
+	
+	public Integer getProCateNum() {
 		return proCateNum;
 	}
-	public void setProCateNum(String proCateNum) {
+	public void setProCateNum(Integer proCateNum) {
 		this.proCateNum = proCateNum;
+	}
+	public Procategory getProcategory() {
+		return procategory;
+	}
+	public void setProcategory(Procategory procategory) {
+		this.procategory = procategory;
 	}
 	public Integer getUserid() {
 		return userid;
