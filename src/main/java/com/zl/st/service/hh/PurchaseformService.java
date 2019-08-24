@@ -8,5 +8,6 @@ public interface PurchaseformService {
 
 	public List<Purchaseform> findAllDemandPurcha();
 	
-	public Purchaseform findFormByContact();
+	public List<Purchaseform> findFormByContact(String purchasestate);
+	
 }

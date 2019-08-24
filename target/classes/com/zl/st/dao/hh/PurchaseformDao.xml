@@ -4,20 +4,30 @@
 
 <mapper namespace="com.zl.st.dao.hh.PurchaseformDao" >
 	
-	<select id="findAllDemandPurcha" resultType="purchaseform" >
+	<select id="findAllDemandPurcha" resultType="com.zl.st.pojo.hh.Purchaseform" >
 		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, 
 			level, warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, 
-			receivaddress, purchasetime, certificate, create_date as createDate, supid, 
+			receivaddress, purchasetime, certificate, create_date as createDate, supplierid, 
 			purchaserid, purchasestate from purchaseform
 	</select>
 	
-	<select id="findFormByContact" resultMap="Purchaseforminfo" >
-		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, 
-			level, warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, 
-			receivaddress, purchasetime, certificate, create_date, supid, 
-			purchaserid, purchasestate from purchaseform where purchaserid=purchaserid
+	<select id="findFormByContact"  resultMap="Purchaseforminfo" >
+		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, level, 
+		warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, receivaddress, 
+		purchasetime, certificate, create_date as createDate, supplierid, purchaserid, 
+		purchasestate from purchaseform where 1=1
+		<if test="_parameter!=null">
+			and purchasestate=#{_parameter,jdbcType=VARCHAR}
+		</if>
+		
 	</select>
 	
+	<select id="findForming" resultMap="Purchaseforminfo" >
+		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, level, 
+		warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, receivaddress, 
+		purchasetime, certificate, create_date as createDate, supplierid, purchaserid, 
+		purchasestate from purchaseform
+	</select>
 	
 	<resultMap type="com.zl.st.pojo.hh.Purchaseform" id="Purchaseforminfo">
 		<id column="purchaseid" property="purchaseid" />
@@ -35,11 +45,13 @@
 		<result column="receivaddress" property="receivaddress" />
 		<result column="purchasetime" property="purchasetime" />
 		<result column="certificate" property="certificate" />
-		<result column="create_date" property="create_date" />
-		<result column="supid" property="supid" />
+		<result column="create_date" property="createDate" />
+		<result column="supplierid" property="supplierid" />
+		<result column="purchaserid" property="purchaserid" />
 		<result column="purchasestate" property="purchasestate" />
-		<association property="purchasecontact" column="purchaserid" select="com.zl.st.dao.hh.PurchasecontactDao.findContactByContactId" ></association>
+		<association property="purchasecontact" column="purchaserid" select="com.zl.st.dao.hh.PurchasecontactDao.findContactByContactId"></association>
 	</resultMap>
+	
 
 
 </mapper>

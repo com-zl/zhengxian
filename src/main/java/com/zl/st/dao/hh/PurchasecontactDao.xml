@@ -3,9 +3,9 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.zl.st.dao.hh.PurchasecontactDao" >
-	<select id="findContactByContactId" resultType="com.zl.st.pojo.hh.Purchasecontact">
-		select purchaserid, username, userpwd, nickname, buyersid, telphone, fulladdress,  
-		from purchasecontact where purchaserid=purchaserid
+	<select id="findContactByContactId" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.hh.Purchasecontact">
+		select purchaserid, username, userpwd, nickname, buyersid, telphone, fulladdress
+		from purchasecontact where purchaserid=#{purchaserid}
 	</select>
 	
 	

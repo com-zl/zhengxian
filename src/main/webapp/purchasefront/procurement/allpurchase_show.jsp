@@ -282,9 +282,9 @@
                     </li>
                 </ul>
             </dt>
-            <dd><a class="selected" href="javascript:;">首页</a></dd>
+            <dd><a  href="javascript:;">首页</a></dd>
             <dd><a href="javascript:;">资源</a></dd>
-            <dd><a href="javascript:;">采购</a></dd>
+            <dd><a class="selected" href="javascript:;">采购</a></dd>
             <dd><a href="javascript:;">搜索</a></dd>
             <dd><a href="javascript:;">物流</a></dd>
             <dd><a href="javascript:;">行情</a></dd>
@@ -308,9 +308,9 @@
             <!-- 搜索表格 -->
             <div class="lib-tab4">
                 <ul class="lib-menu">
-                    <li class="hover">全部采购</li>
-                    <li>正在进行采购</li>
-                    <li>已结束采购</li>
+                    <li class="hover" ><a href="pc/fid" >全部采购</a></li>
+                    <li><a href="pc/forming" >正在进行采购</a></li>
+                    <li><a href="pc/formend" >已结束采购</a></li>
                 </ul>
                 <div class="lib-content">
                     <div class="child-content" style="display: block;">
@@ -327,98 +327,21 @@
                         </dl>
                         <!-- 采购左边 -->
                         <div class="purchase-left">
+                        	<c:forEach items="${purList }" var="pl" >
                             <dl>
                                 <dd>
                                     <i class="fa fa-comment"></i>
                                     <div class="tit">
-                                        <a href="javascript:;" class="otw">${purList.purchasename}</a>
-                                        <span class="goOn">【进行中】</span>
+                                        <a href="javascript:;" class="otw">${pl.purchasename}</a>
+                                        <span class="goOn">【${pl.purchasestate}】</span>
                                     </div>
-                                    <div class="user">${purchaserid.getPurchasecontact().getNickname()}&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
-                                    <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
+                                    <div class="user">${pl.purchasecontact.nickname}&nbsp;&nbsp;&nbsp;
+                                    <span>于<fmt:formatDate value="${pl.createDate}" pattern="yyyy-MM-dd HH:mm" />发表</span></div>
+                                    <div class="intro">${pl.purchasenote} </div>
                                  </dd>
-                                 <dd>
-                                    <i class="fa fa-comment"></i>
-                                    <div class="tit">
-                                        <a href="javascript:;" class="otw">我想要采购1吨进口的鸡翅我想要采购1吨进口的鸡翅我想要采购1吨</a>
-                                        <span class="goOn">【进行中】</span>
-                                    </div>
-                                    <div class="user">lrxl***&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
-                                    <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
-                                 </dd>
-                                <dd>
-                                    <i class="fa fa-comment"></i>
-                                    <div class="tit">
-                                        <a href="javascript:;" class="otw">我想要采购1吨进口的鸡翅我想要采购1吨进口的鸡翅我想要采购1吨</a>
-                                        <span class="goOn">【进行中】</span>
-                                    </div>
-                                    <div class="user">lrxl***&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
-                                    <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
-                                 </dd>
-                                 <dd>
-                                    <i class="fa fa-comment"></i>
-                                    <div class="tit">
-                                        <a href="javascript:;" class="otw">我想要采购1吨进口的鸡翅我想要采购1吨进口的鸡翅我想要采购1吨</a>
-                                        <span class="goOn">【进行中】</span>
-                                    </div>
-                                    <div class="user">lrxl***&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
-                                    <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
-                                 </dd>
-                                <dd>
-                                    <i class="fa fa-comment"></i>
-                                    <div class="tit">
-                                        <a href="javascript:;" class="otw">我想要采购1吨进口的鸡翅我想要采购1吨进口的鸡翅我想要采购1吨</a>
-                                        <span class="goOn">【进行中】</span>
-                                    </div>
-                                    <div class="user">lrxl***&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
-                                    <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
-                                 </dd>
-                                 <dd>
-                                    <i class="fa fa-comment"></i>
-                                    <div class="tit">
-                                        <a href="javascript:;" class="otw">我想要采购1吨进口的鸡翅我想要采购1吨进口的鸡翅我想要采购1吨</a>
-                                        <span class="goOn">【进行中】</span>
-                                    </div>
-                                    <div class="user">lrxl***&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
-                                    <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
-                                 </dd>
-                                <dd>
-                                    <i class="fa fa-comment"></i>
-                                    <div class="tit">
-                                        <a href="javascript:;" class="otw">我想要采购1吨进口的鸡翅我想要采购1吨进口的鸡翅我想要采购1吨</a>
-                                        <span class="goOn">【进行中】</span>
-                                    </div>
-                                    <div class="user">lrxl***&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
-                                    <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
-                                 </dd>
-                                 <dd>
-                                    <i class="fa fa-comment"></i>
-                                    <div class="tit">
-                                        <a href="javascript:;" class="otw">我想要采购1吨进口的鸡翅我想要采购1吨进口的鸡翅我想要采购1吨</a>
-                                        <span class="goOn">【进行中】</span>
-                                    </div>
-                                    <div class="user">lrxl***&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
-                                    <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
-                                 </dd>
-                                 <dd>
-                                    <i class="fa fa-comment"></i>
-                                    <div class="tit">
-                                        <a href="javascript:;" class="otw">我想要采购1吨进口的鸡翅我想要采购1吨进口的鸡翅我想要采购1吨</a>
-                                        <span class="goOn">【进行中】</span>
-                                    </div>
-                                    <div class="user">lrxl***&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
-                                    <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
-                                 </dd>
-                                 <dd>
-                                    <i class="fa fa-comment"></i>
-                                    <div class="tit">
-                                        <a href="javascript:;" class="otw">我想要采购1吨进口的鸡翅我想要采购1吨进口的鸡翅我想要采购1吨</a>
-                                        <span class="goOn">【进行中】</span>
-                                    </div>
-                                    <div class="user">lrxl***&nbsp;&nbsp;&nbsp;于2015-5-4 16:38 发表</div>
-                                    <div class="intro">简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明简要说明···</div>
-                                 </dd>
+                                 
                              </dl>
+                             </c:forEach>
                              <!-- page -->
                             <div class="list-page">
                                 <ul>

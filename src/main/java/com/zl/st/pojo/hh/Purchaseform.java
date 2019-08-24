@@ -3,8 +3,10 @@ package com.zl.st.pojo.hh;
 import java.io.Serializable;
 import java.util.Date;
 
+
 public class Purchaseform implements Serializable {
 
+	//private static final long serialVersionUID = 1L;//这是序列号,存在硬盘上
 	private Integer purchaseid;
 	private String purchasename;
 	private String purchasegoods;//采购物品
@@ -21,9 +23,9 @@ public class Purchaseform implements Serializable {
 	private String purchasetime;//采购截止时间
 	private String certificate;//交易凭证(就是一个图片地址)
 	private Date createDate;//采购信息创建时间
-	private Integer supid;//收到的供应商编号
+	private Integer supplierid;//收到的供应商编号
 	private Purchasecontact purchasecontact;
-	//private Integer purchaserid; //联系人编号   (这里换成了purchasecontact,直接存一个对象,同时下面set/get方法也注释了)
+	private Integer purchaserid; //联系人编号   (这里换成了purchasecontact,直接存一个对象,同时下面set/get方法也注释了)
 	private String purchasestate;//采购状态(进行中or已结束采购)
 	
 	public Purchasecontact getPurchasecontact() {
@@ -128,23 +130,24 @@ public class Purchaseform implements Serializable {
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-	public Integer getSupid() {
-		return supid;
-	}
-	public void setSupid(Integer supid) {
-		this.supid = supid;
-	}
-	/*public Integer getPurchaserid() {
+	
+	public Integer getPurchaserid() {
 		return purchaserid;
 	}
 	public void setPurchaserid(Integer purchaserid) {
 		this.purchaserid = purchaserid;
-	}*/
+	}
 	public String getPurchasestate() {
 		return purchasestate;
 	}
 	public void setPurchasestate(String purchasestate) {
 		this.purchasestate = purchasestate;
+	}
+	public Integer getSupplierid() {
+		return supplierid;
+	}
+	public void setSupplierid(Integer supplierid) {
+		this.supplierid = supplierid;
 	}
 	
 	
