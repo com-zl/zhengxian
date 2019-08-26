@@ -10,4 +10,6 @@ public interface PurchaseformDao {
 	
 	public List<Purchaseform> findFormByContact(String purchasestate);
 	
+	public boolean listAddPurchaseFromRelease(Purchaseform purchaseform);
+	
 }

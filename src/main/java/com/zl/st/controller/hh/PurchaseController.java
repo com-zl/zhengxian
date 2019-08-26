@@ -2,6 +2,8 @@ package com.zl.st.controller.hh;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,28 +18,27 @@ import com.zl.st.service.hh.PurchaseformService;
 public class PurchaseController {
 
 	@Autowired
-	private PurchaseformService purchaseServiceImpl;
+	private PurchaseformService purchaseService;
 	
 	//从首页跳到采购的查询页面控制器
 	@RequestMapping(value="fid",method=RequestMethod.GET)
 	public String listFindAll(Model model) {
-		System.out.println("进入了操蛋的控制器");
-		List<Purchaseform> purList = purchaseServiceImpl.findFormByContact(null);
-		for (int i = 0; i < purList.size(); i++) {
+		System.out.println("进入了控制器");
+		List<Purchaseform> purList = purchaseService.findFormByContact(null);
+		/*for (int i = 0; i < purList.size(); i++) {
 			System.out.println(purList.get(i).getPurchasename());
 			System.out.println("刁大神最帅:"+purList.get(i).getPurchasecontact().getNickname()+"==="+purList.get(i).getPurchasenote()+"=="+purList.get(i).getPurchasestate());
-		}
+		}*/
 		model.addAttribute("purList",purList);
 		
-		System.out.println(2);
 		return "purchasefront/procurement/allpurchase_show";
 	}		
 	
 	//查询正在进行的采购单
 		@RequestMapping(value="forming",method=RequestMethod.GET)
 		public String listFindPurchaseforming(Model model) {
-			System.out.println("进入了22222");
-			List<Purchaseform> purList = purchaseServiceImpl.findFormByContact("进行中");
+			List<Purchaseform> purList = purchaseService.findFormByContact("进行中");
+			
 			model.addAttribute("purList",purList);
 			
 			return "purchasefront/procurement/allpurchase_show";
@@ -46,16 +47,26 @@ public class PurchaseController {
 	//查询已结束的采购单
 	@RequestMapping(value="formend",method=RequestMethod.GET)
 	public String listFindEndPurchaseform(Model model) {
-		System.out.println("进入了3333");
-		List<Purchaseform> purList = purchaseServiceImpl.findFormByContact("已结束");
+		List<Purchaseform> purList = purchaseService.findFormByContact("已结束");
 		model.addAttribute("purList",purList);
 		return "purchasefront/procurement/allpurchase_show";
 	}
 	
-	//防止页面跳页面的方法
+	//发布采购需求清单
+	@RequestMapping(value="addform",method=RequestMethod.POST)
+	public String listAddPurchaseFrom(Purchaseform purchaseform,HttpServletRequest request) {
+		System.out.println("进入了3333");
+		System.out.println("purchaseform:"+purchaseform.getPurchasename()+"spotgoods:"+purchaseform.getSpotgoods());
+		boolean flag = purchaseService.listAddPurchaseFromRelease(purchaseform);
+		
+		//return "";
+		return "redirect:/pc/fid";
+	}
+	
+	//防止页面跳页面的方法,这里是从全部采购页面跳到→我要发布采购清单页面
 	@RequestMapping(value="jump",method=RequestMethod.GET)
 	public String jspJumpjsp() {
-		return "";
+		return "purchasefront/procurement/purchase_release";
 	}
 	
 	

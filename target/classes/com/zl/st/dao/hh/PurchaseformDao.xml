@@ -52,6 +52,13 @@
 		<association property="purchasecontact" column="purchaserid" select="com.zl.st.dao.hh.PurchasecontactDao.findContactByContactId"></association>
 	</resultMap>
 	
-
-
+	<insert id="listAddPurchaseFromRelease" parameterType="com.zl.st.pojo.hh.Purchaseform" >
+		insert into purchaseform(purchasename,purchasegoods,placeorigin,specificationtype,level,warehouse,spotgoods,price,purchasenote,purchasemode,invoicetype,receivaddress,purchasetime,certificate,create_date,supplierid,purchaserid,purchasestate) 
+		values(#{purchasename,jdbcType=VARCHAR},#{purchasegoods,jdbcType=VARCHAR},#{placeorigin,jdbcType=VARCHAR},#{specificationtype,jdbcType=VARCHAR},#{level,jdbcType=VARCHAR},#{warehouse,jdbcType=VARCHAR},#{spotgoods,jdbcType=VARCHAR},#{price,jdbcType=DOUBLE},#{purchasenote,jdbcType=VARCHAR},#{purchasemode,jdbcType=VARCHAR},#{invoicetype,jdbcType=VARCHAR},#{receivaddress,jdbcType=VARCHAR},#{purchasetime,jdbcType=VARCHAR},#{certificate,jdbcType=VARCHAR},#{createDate,jdbcType=DATE},#{supplierid,jdbcType=INTEGER},#{purchaserid,jdbcType=INTEGER},#{purchasestate,jdbcType=VARCHAR})
+	</insert>
+	
+	
+	
+	
+	
 </mapper>

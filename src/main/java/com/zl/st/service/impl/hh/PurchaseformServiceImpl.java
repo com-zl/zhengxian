@@ -25,6 +25,11 @@ public class PurchaseformServiceImpl implements PurchaseformService {
 		return purchaseDao.findFormByContact(purchasestate);
 	}
 
+	@Override
+	public boolean listAddPurchaseFromRelease(Purchaseform purchaseform) {
+		return purchaseDao.listAddPurchaseFromRelease(purchaseform);
+	}
+
 	
 
 	

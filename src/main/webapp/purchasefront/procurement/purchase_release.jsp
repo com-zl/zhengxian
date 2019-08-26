@@ -280,9 +280,9 @@
                     </li>
                 </ul>
             </dt>
-            <dd><a class="selected" href="javascript:;">首页</a></dd>
+            <dd><a href="javascript:;">首页</a></dd>
             <dd><a href="javascript:;">资源</a></dd>
-            <dd><a href="javascript:;">采购</a></dd>
+            <dd><a class="selected" href="javascript:;">采购</a></dd>
             <dd><a href="javascript:;">搜索</a></dd>
             <dd><a href="javascript:;">物流</a></dd>
             <dd><a href="javascript:;">行情</a></dd>
@@ -307,40 +307,40 @@
             <div class="member-tit">
                 <p>发布采购单</p>
             </div>
+            <form action="pc/addform" method="post" >
             <div class="proof">
                 <div class="member-right">
                     <div class="member-column">
                        <div class="controls">
                             <p>采购单名称：</p>
-                            <input type="text" class="input03 w320">
+                            <input type="text" class="input03 w320" name="purchasename" value="" >
                         </div>
                          <div class="controls">
                             <p>采购物品：</p>
-                            <input type="text" class="input03 w320">
+                            <input type="text" class="input03 w320" name="purchasegoods" value="" >
                         </div>
                          <div class="controls">
                             <p>产地要求：</p>
-                            <input type="text" class="input03 w320">
+                            <input type="text" class="input03 w320" name="placeorigin" value="" >
                         </div>
                         <div class="controls">
                             <p>规格型号：</p>
-                            <input type="text" class="input03 w320">
+                            <input type="text" class="input03 w320" name="specificationtype" value="" >
                         </div>
                         <div class="controls">
                             <p>级别要求：</p>
-                            <input type="text" class="input03 w320">
+                            <input type="text" class="input03 w320" name="level" value="" >
                         </div>
                         <div class="controls">
                             <p>仓库要求：</p>
-                            <input type="text" class="input03 w320">
+                            <input type="text" class="input03 w320" name="warehouse" value="" >
                         </div>
                         <div class="controls">
                             <p>期/现货：</p>
-                           <select class="w250">
+                           <select class="w250" name="spotgoods" >
                                 <option value="0">请选择</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option value="1">期货</option>
+                                <option value="2">现货</option>
                             </select>
                         </div>
                         <div class="controls">
@@ -362,17 +362,17 @@
                         </div>
                         <div class="controls">
                             <p>付款方式：</p>
-                            <input type="text" class="input03 w320">
-                            <i>如预付款、货到付款、30%定金70%交货时付等</i>
+                            <input type="text" class="input03 w320" name="purchasemode" value="" >
+                            <i>如:预付款、货到付款、30%定金70%交货时付等</i>
                         </div>
                         <div class="controls">
                             <p>发票类型：</p>
                             <div class="controls-radio">
-                                 <input type="radio" name="radio02" class="radio">
+                                 <input type="radio"  class="radio" name="invoicetype" >
                                  <i>增值税发票</i>
                             </div>
                             <div class="controls-radio">
-                                 <input type="radio" name="radio02" class="radio">
+                                 <input type="radio"  class="radio" name="invoicetype" >
                                  <i>普通发票</i>
                             </div>
                         </div>
@@ -399,27 +399,29 @@
                         </div>
                         <div class="controls">
                             <p>采购截止时间：</p>
-                            <input type="text" class="input03 w155">
+                            <input type="text" class="input03 w155" name="purchasetime" value="2019-09-26" >
                         </div>
                     </div>
                     <div class="member-column">
                         <div class="member-subtit">联系方式</div>
                         <div class="controls">
                             <p>联系人：</p>
-                            <input type="text" class="input03 w320">
+                            <input type="text" class="input03 w320" name="" value="张国强" >
                         </div>
                         <div class="controls">
                             <p>公司名称：</p>
-                            <input type="text" class="input03 w320">
+                            <input type="text" class="input03 w320" name="" value="一定发一定赚贸易公司" >
                         </div>
                         <div class="controls">
                             <p>手机号：</p>
-                            <input type="text" class="input03 w320">
+                            <input type="text" class="input03 w320" name="" value="13724680656" >
                         </div>
-                         <input type="text" class="btn01 submit w155" value="发布采购单">
+                         <input type="submit" class="btn01 submit w155" value="发布采购单" >
+                         
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -459,7 +461,7 @@
         </div>
     </div>
     <div class="copy">
-        <div class="copy-nav"  style="text-align: center;">
+        <div class="copy-nav"  style="text-align: center;" >
             <a href="javascript:;">关于我们</a>
             <span>|</span>
             <a href="javascript:;">法律声明</a>

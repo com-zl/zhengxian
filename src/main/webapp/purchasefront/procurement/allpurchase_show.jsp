@@ -361,7 +361,7 @@
                         <!-- 采购右边 -->
                         <div class="purchase-right">
                            <!-- 发布清单按钮 -->
-                           <a href="javascript:;" class="btn05"><i class="fa fa-file-text-o"></i>我要发布采购清单</a>
+                           <a href="pc/jump" class="btn05"><i class="fa fa-file-text-o"></i>我要发布采购清单</a>
                            <!-- 热门采购单 -->
                            <div class="inventory">
                                <div class="tit">热门采购清单</div>
@@ -913,7 +913,7 @@
     <div class="footer-top">
         <div class="container">
             <div class="footer-left">
-                <div class="footer-logo"><img src="static/1-2/images/logo.png" alt=""/></div>
+                <div class="fofaoter-logo"><img src="static/1-2/images/logo.png" alt=""/></div>
                 <div class="footer-tel">
                     <h6>服务热线：</h6>
                     <p>400-888-8888</p>
