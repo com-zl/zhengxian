@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zl.st.dao.djx.IProcategoryDAO">
+	<select id="getAllProcategoryByParent" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Procategory">
+		select categoryid,categoryName from procategory where parentid=#{parentid} order by categoryid
+	</select>
+	
+	<select id="getProcategoryById" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Procategory">
+		select categoryid,categoryName,parentid from procategory where categoryid=#{categoryid}
+	</select>
+</mapper>
