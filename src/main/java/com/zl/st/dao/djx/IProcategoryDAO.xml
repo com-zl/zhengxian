@@ -7,6 +7,6 @@
 	</select>
 	
 	<select id="getProcategoryById" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Procategory">
-		select categoryid,categoryName,parentid from procategory where categoryid=#{categoryid}
+		select categoryid,categoryName,parentid from procategory where parentid=#{parentid}
 	</select>
 </mapper>

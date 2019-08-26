@@ -322,7 +322,7 @@
                             <div class="s_type">
                                 <ul id="procategoryList" >
                                     <c:forEach items="${procategoryList}" var="pl" varStatus="s">
-                                    	<li  ${s.index==0?"class='selected'":"" } onclick="showAllTransaction('${pl.categoryid}');">${pl.categoryName }</li>
+                                    	<li  ${s.index==0?"class='selected'":"" } onclick="showAllTransaction('${pl.categoryid}');">${pl.categoryid}${pl.categoryName }</li>
                                     </c:forEach>
                                 </ul>
                             </div>
