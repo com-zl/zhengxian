@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <% 
 	String path=request.getContextPath();
-	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/static/1-2/";
+	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/static/1-5/";
 %>
 <!DOCTYPE html>
 <html>
@@ -18,8 +18,6 @@
     <link rel="stylesheet" href="css/select.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/font-awesome-ie7.css">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <link href="css/timeTo.css" type="text/css" rel="stylesheet"/>
     <!--[if lt IE 10]>
     <script src="js/html5shiv.min.js"></script>
     <![endif]-->
@@ -352,7 +350,7 @@
          </div>
          <!-- 会员右侧 -->
          <div class="member-right">
-            <div class="member-tit"><p>采购单详情</p><div style="text-align:right ">有效期：</div><div style="margin-left:800px;" id="countdown-1"></div></div>
+            <div class="member-tit"><p>采购单详情</p></div>
             <div class="member-main">
                 <div class="member-column">
                     <div class="member-detailtit">我想采购2吨进口的鸡翅</div>
@@ -747,18 +745,14 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/jquery.accordion.js"></script>
 <script type="text/javascript" src="js/select.js"></script>
-<script src="js/jquery.time-to.js"></script>
 <script type="text/javascript">
     $(function(){
-      	$('dl#my-accordion').accordion({open:true});
+      $('dl#my-accordion').accordion({open:true});
      });
-    $('#countdown-1').timeTo(${time}, function(){
-	    alert('Countdown finished');
-	});
 </script>
 </body>
 </html>

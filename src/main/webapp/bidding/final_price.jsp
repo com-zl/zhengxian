@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <% 
 	String path=request.getContextPath();
-	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/static/1-5/";
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,11 +9,11 @@
 <base href="<%=basepath %>"/>
 	<meta charset="UTF-8">
 	<title>Trading-供应管理-管理竞价-详情(已结束)</title>
-	<link rel="stylesheet" href="static/1.5/css/main.css">
-    <link rel="stylesheet" href="static/1.5/css/member.css">
-	<link rel="stylesheet" href="static/1.5/css/css.css">
-	<link rel="stylesheet" href="static/1.5/css/font-awesome.min.css">
-    <link rel="stylesheet" href="static/1.5/css/font-awesome-ie7.css">
+	<link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/member.css">
+	<link rel="stylesheet" href="css/css.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome-ie7.css">
 </head>
 <body class="rel">
 	<div class="header">

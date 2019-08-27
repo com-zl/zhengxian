@@ -10,15 +10,15 @@ import com.zl.st.utils.yk.MyThread;
 @Controller
 @RequestMapping("/purchase")
 public class PurchaseController {
-
 	@Autowired
 	private MyThread myThread;
 	
-	@RequestMapping("detail")
+	@RequestMapping("purdetail")
 	public String detail(Model model) {
 		Thread t = new Thread(myThread);
 		t.start();
-		model.addAttribute("time", myThread.getTime());
-		return "detail";
+		System.out.println(myThread.getDate());
+		model.addAttribute("time", myThread.getDate());
+		return "bidding/detail";
 	}
 }

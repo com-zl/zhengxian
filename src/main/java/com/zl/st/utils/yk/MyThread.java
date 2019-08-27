@@ -5,25 +5,26 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyThread implements Runnable {
 
-	private volatile int time = 600;
-	
-	public int getTime() {
-		return time;
+	private volatile Integer date = 600;
+
+	public Integer getDate() {
+		return date;
 	}
 
-
-
 	@Override
-	public void run() {
-		//创建线程执行请求的采购单有效期
-		for (int i = time; i >= 0; i--) {
-			time--;
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+	public synchronized void run() {
+		//创建线程执行请求的采购单有效期)
+		if(date>0) {
+			for (int i = 0; i < 600; i++) {
+				date--;
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		}
+		return;
 	}
 
 }
