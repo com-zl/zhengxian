@@ -313,88 +313,89 @@
                     <div class="member-column">
                        <div class="controls">
                             <p>采购单名称：</p>
-                            <input type="text" class="input03 w320" name="purchasename" value="" >
+                            <input type="text" class="input03 w320" name="purchasename" value="我要三文鱼6吨" >
                         </div>
                          <div class="controls">
                             <p>采购物品：</p>
-                            <input type="text" class="input03 w320" name="purchasegoods" value="" >
+                            <input type="text" class="input03 w320" name="purchasegoods" value="三文鱼" >
                         </div>
                          <div class="controls">
                             <p>产地要求：</p>
-                            <input type="text" class="input03 w320" name="placeorigin" value="" >
+                            <input type="text" class="input03 w320" name="placeorigin" value="国内、国外即可" >
                         </div>
                         <div class="controls">
                             <p>规格型号：</p>
-                            <input type="text" class="input03 w320" name="specificationtype" value="" >
+                            <input type="text" class="input03 w320" name="specificationtype" value="250g、500g" >
                         </div>
                         <div class="controls">
                             <p>级别要求：</p>
-                            <input type="text" class="input03 w320" name="level" value="" >
+                            <input type="text" class="input03 w320" name="level" value="B类以上" >
                         </div>
                         <div class="controls">
                             <p>仓库要求：</p>
-                            <input type="text" class="input03 w320" name="warehouse" value="" >
+                            <input type="text" class="input03 w320" name="warehouse" value="国内" >
                         </div>
                         <div class="controls">
                             <p>期/现货：</p>
                            <select class="w250" name="spotgoods" >
-                                <option value="0">请选择</option>
-                                <option value="1">期货</option>
-                                <option value="2">现货</option>
+                                <option value="现货">请选择</option>
+                                <option value="期货">期货</option>
+                                <option value="现货">现货</option>
                             </select>
                         </div>
                         <div class="controls">
                             <p>价格要求：</p>
                             <select class="w125">
                                 <option value="0">请选择</option>
-                                <option value="1">1</option>
+                                <option  value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                             </select>
-                            <input type="text" class="input03 w125">
+                            <input type="text" class="input03 w125" name="price" value="230" >
                             <i>元/千克</i>
                         </div>
                         <div class="controls">
                             <p>采购说明：</p>
                             <div class="method-edit">
-                                <img src="static/1-2/images/member-edit02.jpg" alt="">
+                                <!-- <img src="static/1-2/images/member-edit02.jpg" alt=""> -->
+                                <textarea style="font-size:18px " rows="10" cols="50" id="purchasenote" name="purchasenote"></textarea>
                             </div>
                         </div>
                         <div class="controls">
                             <p>付款方式：</p>
-                            <input type="text" class="input03 w320" name="purchasemode" value="" >
+                            <input type="text" class="input03 w320" name="purchasemode" value="30%定金" >
                             <i>如:预付款、货到付款、30%定金70%交货时付等</i>
                         </div>
                         <div class="controls">
                             <p>发票类型：</p>
                             <div class="controls-radio">
-                                 <input type="radio"  class="radio" name="invoicetype" >
+                                 <input type="radio"  class="radio" name="invoicetype" value="增值税发票" >
                                  <i>增值税发票</i>
                             </div>
                             <div class="controls-radio">
-                                 <input type="radio"  class="radio" name="invoicetype" >
+                                 <input type="radio"  class="radio" name="invoicetype" value="普通发票" >
                                  <i>普通发票</i>
                             </div>
                         </div>
                         <div class="controls">
                             <p>收货地址：</p>
-                           <select class="w125">
+                           <select class="w125" name="receivaddress" >
                                 <option value="0">请选择</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option value="安徽省">安徽省</option>
+                                <option value="广西省">广西省</option>
+                                <option value="四川省">四川省</option>
                             </select>
-                            <select class="w125">
+                            <select class="w125" name="receivaddress" >
                                 <option value="0">请选择</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option value="安逸市">安逸市</option>
+                                <option value="广北市">广北市</option>
+                                <option value="流川市">流川市</option>
                             </select>
-                            <select class="w125">
+                            <select class="w125" name="receivaddress" >
                                 <option value="0">请选择</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option value="一点都不安逸区不知道什么街道乱的很巷110号">一点都不安逸区不知道什么街道乱的很巷110号</option>
+                                <option value="一点都不北区专门打架的街道棍棒飞舞巷120号">一点都不北区专门打架的街道棍棒飞舞巷120号</option>
+                                <option value="一点都不流川枫区篮球一条街街道打的起火巷119号">一点都不流川枫区篮球一条街街道打的起火巷119号</option>
                             </select>
                         </div>
                         <div class="controls">
@@ -406,15 +407,15 @@
                         <div class="member-subtit">联系方式</div>
                         <div class="controls">
                             <p>联系人：</p>
-                            <input type="text" class="input03 w320" name="" value="张国强" >
+                            <input type="text" class="input03 w320" name="contacts" value="张国强" >
                         </div>
                         <div class="controls">
                             <p>公司名称：</p>
-                            <input type="text" class="input03 w320" name="" value="一定发一定赚贸易公司" >
+                            <input type="text" class="input03 w320" name="companyname" value="一定发一定赚贸易公司" >
                         </div>
                         <div class="controls">
                             <p>手机号：</p>
-                            <input type="text" class="input03 w320" name="" value="13724680656" >
+                            <input type="text" class="input03 w320" name="contactphone" value="13724680656" >
                         </div>
                          <input type="submit" class="btn01 submit w155" value="发布采购单" >
                          

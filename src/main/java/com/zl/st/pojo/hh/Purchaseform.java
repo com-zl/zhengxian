@@ -27,6 +27,9 @@ public class Purchaseform implements Serializable {
 	private Purchasecontact purchasecontact;
 	private Integer purchaserid; //联系人编号   (这里换成了purchasecontact,直接存一个对象,同时下面set/get方法也注释了)
 	private String purchasestate;//采购状态(进行中or已结束采购)
+	private String contacts;//联系人
+	private String companyname;//公司名称
+	private String contactphone;//联系电话
 	
 	public Purchasecontact getPurchasecontact() {
 		return purchasecontact;
@@ -148,6 +151,24 @@ public class Purchaseform implements Serializable {
 	}
 	public void setSupplierid(Integer supplierid) {
 		this.supplierid = supplierid;
+	}
+	public String getContacts() {
+		return contacts;
+	}
+	public void setContacts(String contacts) {
+		this.contacts = contacts;
+	}
+	public String getCompanyname() {
+		return companyname;
+	}
+	public void setCompanyname(String companyname) {
+		this.companyname = companyname;
+	}
+	public String getContactphone() {
+		return contactphone;
+	}
+	public void setContactphone(String contactphone) {
+		this.contactphone = contactphone;
 	}
 	
 	

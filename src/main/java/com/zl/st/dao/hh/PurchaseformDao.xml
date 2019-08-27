@@ -26,7 +26,7 @@
 		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, level, 
 		warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, receivaddress, 
 		purchasetime, certificate, create_date as createDate, supplierid, purchaserid, 
-		purchasestate from purchaseform
+		purchasestate, contacts, companyname, contactphone from purchaseform
 	</select>
 	
 	<resultMap type="com.zl.st.pojo.hh.Purchaseform" id="Purchaseforminfo">
@@ -49,12 +49,15 @@
 		<result column="supplierid" property="supplierid" />
 		<result column="purchaserid" property="purchaserid" />
 		<result column="purchasestate" property="purchasestate" />
+		<result column="contacts" property="contacts" />
+		<result column="companyname" property="companyname" />
+		<result column="contactphone" property="contactphone" />
 		<association property="purchasecontact" column="purchaserid" select="com.zl.st.dao.hh.PurchasecontactDao.findContactByContactId"></association>
 	</resultMap>
 	
 	<insert id="listAddPurchaseFromRelease" parameterType="com.zl.st.pojo.hh.Purchaseform" >
-		insert into purchaseform(purchasename,purchasegoods,placeorigin,specificationtype,level,warehouse,spotgoods,price,purchasenote,purchasemode,invoicetype,receivaddress,purchasetime,certificate,create_date,supplierid,purchaserid,purchasestate) 
-		values(#{purchasename,jdbcType=VARCHAR},#{purchasegoods,jdbcType=VARCHAR},#{placeorigin,jdbcType=VARCHAR},#{specificationtype,jdbcType=VARCHAR},#{level,jdbcType=VARCHAR},#{warehouse,jdbcType=VARCHAR},#{spotgoods,jdbcType=VARCHAR},#{price,jdbcType=DOUBLE},#{purchasenote,jdbcType=VARCHAR},#{purchasemode,jdbcType=VARCHAR},#{invoicetype,jdbcType=VARCHAR},#{receivaddress,jdbcType=VARCHAR},#{purchasetime,jdbcType=VARCHAR},#{certificate,jdbcType=VARCHAR},#{createDate,jdbcType=DATE},#{supplierid,jdbcType=INTEGER},#{purchaserid,jdbcType=INTEGER},#{purchasestate,jdbcType=VARCHAR})
+		insert into purchaseform(purchasename,purchasegoods,placeorigin,specificationtype,level,warehouse,spotgoods,price,purchasenote,purchasemode,invoicetype,receivaddress,purchasetime,certificate,create_date,supplierid,purchaserid,purchasestate,contacts,companyname,contactphone) 
+		values(#{purchasename,jdbcType=VARCHAR},#{purchasegoods,jdbcType=VARCHAR},#{placeorigin,jdbcType=VARCHAR},#{specificationtype,jdbcType=VARCHAR},#{level,jdbcType=VARCHAR},#{warehouse,jdbcType=VARCHAR},#{spotgoods,jdbcType=VARCHAR},#{price,jdbcType=DOUBLE},#{purchasenote,jdbcType=VARCHAR},#{purchasemode,jdbcType=VARCHAR},#{invoicetype,jdbcType=VARCHAR},#{receivaddress,jdbcType=VARCHAR},#{purchasetime,jdbcType=VARCHAR},#{certificate,jdbcType=VARCHAR},SYSDATE(),#{supplierid,jdbcType=INTEGER},#{purchaserid,jdbcType=INTEGER},'进行中',#{contacts,jdbcType=VARCHAR},#{companyname,jdbcType=VARCHAR},#{contactphone,jdbcType=VARCHAR})
 	</insert>
 	
 	

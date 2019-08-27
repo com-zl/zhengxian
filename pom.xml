@@ -13,7 +13,12 @@
   </properties>
 
   <dependencies>
-
+	<!-- 分页依赖 -->
+	<dependency>
+		<groupId>com.github.pagehelper</groupId>
+		<artifactId>pagehelper</artifactId>
+		<version>4.1.6</version>
+	</dependency>
 
     <!--文件上传-->
     <dependency>
