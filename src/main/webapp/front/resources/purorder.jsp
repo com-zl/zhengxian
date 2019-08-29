@@ -128,7 +128,7 @@
                                 <td>${pl.purchaseid }</td>
                                 <td>${pl.purchasename }</td>
                                 <td>${pl.purchasenote }</td>
-                                <td><fmt:formatDate value="${pl.create_date }" pattern="yyyy-MM-dd HH:mm" /></td>
+                                <td><fmt:formatDate value="${pl.createDate }" pattern="yyyy-MM-dd HH:mm" /></td>
                                 <td>
                                    ${pl.purchasestate }
                                 </td>
