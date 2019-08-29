@@ -119,7 +119,7 @@
     </bean>
 
     <!--开启事务注解-->
-    <tx:annotation-driven/>
+    <!-- <tx:annotation-driven/> -->
 
     <!--配置通知-->
 <!--    <tx:advice id="myadvice">-->

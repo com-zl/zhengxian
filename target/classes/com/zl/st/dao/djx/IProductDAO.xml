@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zl.st.dao.djx.IProductDAO">
+	<select id="getProductById" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Product">
+		SELECT proid,proCateNum,proName,proPlace,proSpecific,proGrade,proCurrent FROM product where proid=#{proid}
+	</select>
+	
+	<select id="listProductByProCateNum" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Product">
+		SELECT proid,proCateNum,proName,proPlace,proSpecific,proGrade,proCurrent FROM product where proCateNum=#{proCateNum}
+	</select>
+	
+	<select id="listProductBySupid" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Product">
+		SELECT proName,proSpecific,proGrade,proCurrent,proPric,money,createTime FROM product where supid=#{supid}
+	</select>
+	
+	<select id="listSupid" resultType="java.lang.Integer">
+		SELECT supid from product GROUP BY supid
+	</select>
+	
+</mapper>
