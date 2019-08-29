@@ -412,6 +412,7 @@
                            <th style="text-align: center;">操作</th>
                        </tr>
                    </thead>
+                   <c:forEach items="${purlist }" var="pr" >
                    <tbody>
                         <!-- 控制间距 -->
                         <tr>
@@ -419,11 +420,11 @@
                         </tr>
                        <tr class="order-tit">
                            <td colspan="8">
-                               <div class="buyers">采购商：深圳XXXX公司</div>
+                               <div class="buyers">采购商：${pr.companyname }</div>
                                <div class="num">订单编号：201505070001</div>
-                               <div class="time">订单时间：2014-07-10 11:12:25</div>
-                               <div class="tel">联系电话：18911111111</div>
-                               <div class="address">地址：福建省福州市XXXXXX工业园</div>
+                               <div class="time">订单时间：${pr.createDate }</div>
+                               <div class="tel">联系电话：${pr.contactphone }</div>
+                               <div class="address">地址：${pr.receivaddress }</div>
                            </td>
                        </tr>
                        <tr class="order-con">
@@ -431,9 +432,9 @@
                            <td colspan="4" class="pro-infors">
                                 <table>
                                     <tr>
-                                        <td><a href="javascript:;">牛圈肉</a></td>
-                                        <td>160g</td>
-                                        <td><span>￥500.00</span>RBM/kg</td>
+                                        <td><a href="javascript:;">${pr.purchasegoods }</a></td>
+                                        <td>${pr.specificationtype }</td>
+                                        <td><span>￥${pr.price }</span>RBM/kg</td>
                                         <td>1000</td>
                                     </tr>
                                     <tr>
@@ -451,139 +452,7 @@
                            <td><a href="javascript:;" class="btn04">上传付款凭证</a></td>
                        </tr>
                    </tbody>
-                   <tbody>
-                        <!-- 控制间距 -->
-                        <tr>
-                            <td colspan="8" style="height: 10px; border: none;"></td>
-                        </tr>
-                       <tr class="order-tit">
-                           <td colspan="8">
-                               <div class="buyers">采购商：深圳XXXX公司</div>
-                               <div class="num">订单编号：201505070001</div>
-                               <div class="time">订单时间：2014-07-10 11:12:25</div>
-                               <div class="tel">联系电话：18911111111</div>
-                               <div class="address">地址：福建省福州市XXXXXX工业园</div>
-                           </td>
-                       </tr>
-                       <tr class="order-con">
-                           <td><input type="checkbox"></td>
-                           <td colspan="4" class="pro-infors">
-                                <table>
-                                    <tr>
-                                        <td>牛圈肉</td>
-                                        <td>160g</td>
-                                        <td><span>￥500.00</span>RBM/kg</td>
-                                        <td>1000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>牛圈肉</td>
-                                        <td>160g</td>
-                                        <td><span>￥500.00</span>RBM/kg</td>
-                                        <td>1000</td>
-                                    </tr>
-                                </table>
-                           </td>
-                           <td>
-                            <div class="pro-totalPrice">￥100000.00</div>
-                            <a href="javascript:;" class="pro-note pop-btn"><img src="static/1-2/images/pro-note.png" alt=""></a>
-                            <!-- 弹层02 -->
-                            <div class="pop pop03">
-                                <div class="tit"><i class="fa fa-times-circle-o"></i></div>
-                                <div class="con">
-                                    <p>备注：经协商同意降价出售</p>
-                                </div>
-                            </div>
-                           </td>
-                           <td>已生成</td>
-                           <td><a href="javascript:;" class="btn04">上传付款凭证</a></td>
-                       </tr>
-                   </tbody>
-                    <tbody>
-                        <!-- 控制间距 -->
-                        <tr>
-                            <td colspan="8" style="height: 10px; border: none;"></td>
-                        </tr>
-                       <tr class="order-tit">
-                           <td colspan="8">
-                               <div class="buyers">采购商：深圳XXXX公司</div>
-                               <div class="num">订单编号：201505070001</div>
-                               <div class="time">订单时间：2014-07-10 11:12:25</div>
-                               <div class="tel">联系电话：18911111111</div>
-                               <div class="address">地址：福建省福州市XXXXXX工业园</div>
-                           </td>
-                       </tr>
-                       <tr class="order-con">
-                           <td><input type="checkbox"></td>
-                           <td colspan="4" class="pro-infors">
-                                <table>
-                                    <tr>
-                                        <td>牛圈肉</td>
-                                        <td>160g</td>
-                                        <td><span>￥500.00</span>RBM/kg</td>
-                                        <td>1000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>牛圈肉</td>
-                                        <td>160g</td>
-                                        <td><span>￥500.00</span>RBM/kg</td>
-                                        <td>1000</td>
-                                    </tr>
-                                </table>
-                           </td>
-                           <td>
-                            <div class="pro-totalPrice">￥100000.00</div>
-                           </td>
-                           <td>已付款</td>
-                           <td>
-                               <a href="javascript:;" class="btn04 pop-pay" data-src="static/1-2/images/upload-img02.png">查看付款凭证</a>
-                               <a href="javascript:;" class="btn04">查看开票信息</a>
-                               <a href="javascript:;" class="btn04">给交易员评分</a>
-                           </td>
-                       </tr>
-                   </tbody>
-                    <tbody>
-                        <!-- 控制间距 -->
-                        <tr>
-                            <td colspan="8" style="height: 10px; border: none;"></td>
-                        </tr>
-                       <tr class="order-tit">
-                           <td colspan="8">
-                               <div class="buyers">采购商：深圳XXXX公司</div>
-                               <div class="num">订单编号：201505070001</div>
-                               <div class="time">订单时间：2014-07-10 11:12:25</div>
-                               <div class="tel">联系电话：18911111111</div>
-                               <div class="address">地址：福建省福州市XXXXXX工业园</div>
-                           </td>
-                       </tr>
-                       <tr class="order-con">
-                           <td><input type="checkbox"></td>
-                           <td colspan="4" class="pro-infors">
-                                <table>
-                                    <tr>
-                                        <td>牛圈肉</td>
-                                        <td>160g</td>
-                                        <td><span>￥500.00</span>RBM/kg</td>
-                                        <td>1000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>牛圈肉</td>
-                                        <td>160g</td>
-                                        <td><span>￥500.00</span>RBM/kg</td>
-                                        <td>1000</td>
-                                    </tr>
-                                </table>
-                           </td>
-                           <td>
-                            <div class="pro-totalPrice">￥100000.00</div>
-                           </td>
-                           <td>已完成</td>
-                           <td>
-                               <a href="javascript:;" class="btn04 pop-pay" data-src="static/1-2/images/upload-img02.png">查看付款凭证</a>
-                               <a href="javascript:;" class="btn04">查看开票信息</a>
-                               <a href="javascript:;" class="btn04">已评分</a>
-                           </td>
-                       </tr>
-                   </tbody>
+                   </c:forEach>
                </table>
             </div>
             <div class="member-upgrade">

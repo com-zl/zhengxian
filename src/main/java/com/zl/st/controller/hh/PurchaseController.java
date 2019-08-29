@@ -30,10 +30,6 @@ public class PurchaseController {
 		System.out.println("进入了控制器");
 		PageHelper.startPage(page, 5);
 		List<Purchaseform> purList = purchaseService.findFormByContact(null);
-		/*for (int i = 0; i < purList.size(); i++) {
-			System.out.println(purList.get(i).getPurchasename());
-			System.out.println("刁大神最帅:"+purList.get(i).getPurchasecontact().getNickname()+"==="+purList.get(i).getPurchasenote()+"=="+purList.get(i).getPurchasestate());
-		}*/
 		PageInfo<Purchaseform> blist = new PageInfo<Purchaseform>(purList);
 		model.addAttribute("page", purList);
 		model.addAttribute("purList",purList);
@@ -41,20 +37,20 @@ public class PurchaseController {
 		return "purchasefront/procurement/allpurchase_show";
 	}		
 	
-	
-	//点击采购单名字查看采购单详情页面
-	@RequestMapping(value="supervise",method=RequestMethod.POST)
+	/*//发布完采购单后跳转到-采购管理-我的订单 (未完成商品总计的计算)
+	//@RequestMapping(value="supervise",method=RequestMethod.POST)
 	public String listFindDetailsById(Model model) {
 		List<Purchaseform> purlist = purchaseService.findAllDemandPurcha();
 		model.addAttribute("purlist",purlist);
-		return "";
-	}
+		return "purchasefront/procurement/mypurchaseformsupervise_show";
+	}*/
 	
-	//发布完采购单后跳转到采购管理-我的订单
+	//点击采购单名字查看采购单详情页面
 	@RequestMapping(value="details",method=RequestMethod.GET)
-	public String lisfa(Model model) {
-		List<Purchaseform> purId = purchaseService.findAllDemandPurcha();
-		return "";
+	public String lisfa(Integer pur,Model model) {
+		Purchaseform pcf = purchaseService.findPurchaseformId(pur);
+		model.addAttribute("pcf", pcf);
+		return "purchasefront/procurement/purchaseformdetails_show";
 	}
 	
 	
@@ -82,7 +78,6 @@ public class PurchaseController {
 		
 		boolean flag = purchaseService.listAddPurchaseFromRelease(purchaseform);
 		
-		//return "";
 		return "redirect:/pc/fid";
 	}
 	
