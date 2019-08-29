@@ -345,12 +345,12 @@
                         </div>
                         <div class="controls">
                             <p>价格要求：</p>
-                            <select class="w125">
+                            <!-- <select class="w125">
                                 <option value="0">请选择</option>
                                 <option  value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
-                            </select>
+                            </select> -->
                             <input type="text" class="input03 w125" name="price" value="230" >
                             <i>元/千克</i>
                         </div>

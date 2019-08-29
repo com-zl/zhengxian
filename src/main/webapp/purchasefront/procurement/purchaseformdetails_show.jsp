@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="static/1-2/css/select.css">
     <link rel="stylesheet" href="static/1-2/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/1-2/css/font-awesome-ie7.css">
+    <link rel="stylesheet" type="static/1-2/css" href="css/normalize.css" />
+    <link href="static/1-2/css/timeTo.css" type="text/css" rel="stylesheet"/>
+   
     <!--[if lt IE 10]>
     <script src="js/html5shiv.min.js"></script>
     <![endif]-->
@@ -306,7 +309,10 @@
         <div id="caigou">
             <div class="member-tit">
                 <p>采购单详情</p>
+                <div style="text-align:right ">有效期：</div>
+           	 	<div style="margin-left:800px;" id="countdown-1"></div>
             </div>
+            
              <div class="proof">
                  <div class="member-column">
                      <div class="member-detailtit">我想要采购2吨进口的鸡翅</div>
@@ -325,7 +331,7 @@
                             <dt>期/现货：</dt>
                             <dd>${pcf.spotgoods }</dd>
                             <dt>价格要求：</dt>
-                            <dd>${pcf.price }</dd>
+                            <dd>${pcf.price } &nbsp;<i>元/千克</i></dd>
                             <dt>采购说明：</dt>
                             <dd>${pcf.purchasenote }</dd>
                             <dt>付款方式：</dt>
@@ -565,6 +571,11 @@
         <p>Copyright <i class="fa fa-copyright"></i> 超鲜网 粤ICP备 13013915号-3  ICP证：粤B2-201401448</p>
     </div>
 </footer>
+ <script src="js/jquery.time-to.js"></script>
+ <script type="text/javascript"> $('#countdown-1').timeTo(${time}, function(){
+     alert('Countdown finished');
+ });
+</script>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/jquery.accordion.js"></script>

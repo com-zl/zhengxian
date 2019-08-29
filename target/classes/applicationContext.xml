@@ -68,12 +68,7 @@
         <property name="basePackage" value="com.zl.st.dao"/>
     </bean>
 
-    <!-- 配置mp全局设置 -->
-    <bean id="globalConfiguration" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
-    	<property name="dbColumnUnderline" value="true"/>
-    	<property name="idType" value="0"/>
-    	<property name="tablePrefix" value="t_"/>
-    </bean>
+    
     
     <!-- 上传文件,springmvc上传图片（文件）是通过MultipartResolver(Multipart解析器)处理的 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

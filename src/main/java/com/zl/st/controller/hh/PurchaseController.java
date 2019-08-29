@@ -2,8 +2,6 @@ package com.zl.st.controller.hh;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.zl.st.pojo.hh.Purchaseform;
 import com.zl.st.service.hh.PurchaseformService;
+import com.zl.st.utils.yk.MyThread;
 
 
 @Controller
@@ -24,15 +21,18 @@ public class PurchaseController {
 	@Autowired
 	private PurchaseformService purchaseService;
 	
+	@Autowired
+	private MyThread myThread;
+	
 	//从首页跳到采购的查询页面控制器
 	@RequestMapping(value="fid",method=RequestMethod.GET)
 	public String listFindAll(@RequestParam(required=true,defaultValue="1") Integer page,Model model) {
 		System.out.println("进入了控制器");
-		PageHelper.startPage(page, 5);
+		//PageHelper.startPage(page, 5);
 		List<Purchaseform> purList = purchaseService.findFormByContact(null);
-		PageInfo<Purchaseform> blist = new PageInfo<Purchaseform>(purList);
+		//PageInfo<Purchaseform> blist = new PageInfo<Purchaseform>(purList);
 		System.out.println("黄杨飞黄燕飞");
-		model.addAttribute("page", purList);
+		//model.addAttribute("page", purList);
 		model.addAttribute("purList",purList);
 		
 		return "purchasefront/procurement/allpurchase_show";
@@ -51,6 +51,10 @@ public class PurchaseController {
 	public String lisfa(Integer pur,Model model) {
 		Purchaseform pcf = purchaseService.findPurchaseformId(pur);
 		model.addAttribute("pcf", pcf);
+		Thread t = new Thread(myThread);
+		t.start();
+		System.out.println(myThread.getDate());
+		model.addAttribute("time", myThread.getDate());
 		return "purchasefront/procurement/purchaseformdetails_show";
 	}
 	
@@ -89,7 +93,15 @@ public class PurchaseController {
 		return "purchasefront/procurement/purchase_release";
 	}
 	
-	
+	/*//倒计时效果
+	@RequestMapping("purdetail")
+	public String detail(Model model) {
+		Thread t = new Thread(myThread);
+		t.start();
+		System.out.println(myThread.getDate());
+		model.addAttribute("time", myThread.getDate());
+		return "purchasefront/procurement/purchaseformdetails_show";
+	}*/
 	
 	
 }

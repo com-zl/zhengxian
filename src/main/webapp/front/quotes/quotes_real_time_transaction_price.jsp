@@ -21,9 +21,157 @@
     <link rel="stylesheet" href="static/1-2/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/1-2/css/font-awesome-ie7.css">
     <link rel="stylesheet" href="static/1-2/css/hq.css">
-    <!--[if lt IE 10]>
-    <script src="static/1-2/js/html5shiv.min.js"></script>
-    <![endif]-->
+    <script type="text/javascript" src="static/1-2/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="static/1-2/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="static/1-2/js/global.js"></script>
+	<script type="text/javascript" src="static/1-2/js/jquery.accordion.js"></script>
+	<script type="text/javascript" src="static/1-2/js/jquery.selectBox.js"></script>
+	<script type="text/javascript" src="static/1-2/js/hq.js"></script>
+	<script src="static/1-2/js/amcharts.js" type="text/javascript"></script>
+	<script src="static/1-2/js/serial.js" type="text/javascript"></script>
+	<script src="static/1-2/js/dark.js" type="text/javascript"></script>
+	<script src="static/1-2/js/select.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+    jQuery("#bannerIndex").slide({mainCell:".bd ul",autoPlay:true});
+    jQuery(".banner-quotes01").each(function(){
+        $(this).slide({mainCell:".bd ul",autoPlay:false});
+    });
+     jQuery(".banner-quotes02").each(function(){
+        $(this).slide({mainCell:".bd ul",autoPlay:false});
+    });
+    jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:13});
+</script>
+<script type="text/javascript">
+    $(function(){
+      $('dl#my-accordion').accordion({open:true});
+     });
+</script>
+<script>
+    var chart = AmCharts.makeChart("chartdiv", {
+        "type": "serial",
+        "theme": "dark",
+        "dataDateFormat": "YYYY-MM-DD",
+        "color":"#666",
+
+        "dataProvider": [{
+            "date": "2013-11-30",
+            "value": 104
+        }, {
+            "date": "2013-12-01",
+            "value": 108
+        }, {
+            "date": "2013-12-02",
+            "value": 103
+        }, {
+            "date": "2013-12-03",
+            "value": 105
+        }, {
+            "date": "2013-12-04",
+            "value": 136
+        }, {
+            "date": "2013-12-05",
+            "value": 138
+        }, {
+            "date": "2013-12-06",
+            "value": 113
+        }, {
+            "date": "2013-12-07",
+            "value": 131
+        }, {
+            "date": "2013-12-08",
+            "value": 114
+        }, {
+            "date": "2013-12-09",
+            "value": 124
+        }],
+        "graphs": [{
+            "bullet": "round",
+            "dashLength": 4,
+            "valueField": "value"
+        }],
+        "chartCursor": {
+            "cursorAlpha": 0
+        },
+        "categoryField": "date",
+        "categoryAxis": {
+            "parseDates": true
+        }
+    });
+</script>
+<script type="text/javascript">
+	$(function(){
+		$.post("djxqc/qrttpbpi",{"parentid":1},function(data){
+			console.log(data);
+    		$("#transaction_suc_tb tbody").html("");
+    		$.each(data,function(i,n){
+    			$("#transaction_suc_tb tbody").append("<tr><td>"+n.product.procategory.categoryName+"</td>"+
+    					"<td>"+n.product.proName+"</td>"+
+    					"<td>"+n.product.proPlace+"</td>"+
+    					"<td>"+n.product.proSpecific+"</td>"+
+    					"<td>"+n.product.proGrade+"</td>"+
+    					"<td>"+n.product.proCurrent+"</td>"+
+    					"<td>2060-2090</td>"+
+    					"<td>"+n.orderDetailsPrice+"</td>"+
+    					"<td>"+n.count+"</td>"+
+    					"<td>"+(new Date(n.ordertime)).Format("hh:mm")+"</td></tr>");
+    		});
+    		
+    	},"json");
+  	});
+  	function getMyDate(str){  
+        var oDate = new Date(str),  
+        oYear = oDate.getFullYear(),  
+        oMonth = oDate.getMonth()+1,  
+        oDay = oDate.getDate(),  
+        oHour = oDate.getHours(),  
+        oMin = oDate.getMinutes(),  
+        oSen = oDate.getSeconds(),  
+        oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);//最后拼接时间  
+        return oTime;  
+    }; 
+    Date.prototype.Format = function (fmt) { //author: meizz  
+        var o = {  
+            "M+": this.getMonth() + 1, //月份  
+            "d+": this.getDate(), //日  
+            "h+": this.getHours(), //小时  
+            "m+": this.getMinutes(), //分  
+            "s+": this.getSeconds(), //秒  
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度  
+            "S": this.getMilliseconds() //毫秒  
+        };  
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));  
+        for (var k in o)  
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
+        return fmt;  
+    }; 
+    
+
+    function showAllTransaction(parentid){
+  		
+    	$.post("djxqc/qrttpbpi",{"parentid":parentid},function(data){
+    		$("#transaction_suc_tb tbody").html("");
+    		$.each(data,function(i,n){
+    			$("#transaction_suc_tb tbody").append("<tr><td>"+n.product.procategory.categoryName+"</td>"+
+    					"<td>"+n.product.proName+"</td>"+
+    					"<td>"+n.product.proPlace+"</td>"+
+    					"<td>"+n.product.proSpecific+"</td>"+
+    					"<td>"+n.product.proGrade+"</td>"+
+    					"<td>"+n.product.proCurrent+"</td>"+
+    					"<td>2060-2090</td>"+
+    					"<td>"+n.orderDetailsPrice+"</td>"+
+    					"<td>"+n.count+"</td>"+
+    					"<td>"+(new Date(n.ordertime)).Format("hh:mm")+"</td></tr>");
+    		});
+    		
+    	},"json");
+    }
+    
+    function toOtherJSP(path){
+    	location.href=path;
+    }
+</script>
+    
 </head>
 
 <body>
@@ -568,153 +716,7 @@
         <p>Copyright <i class="fa fa-copyright"></i> 超鲜网 粤ICP备 13013915号-3  ICP证：粤B2-201401448</p>
     </div>
 </footer>
-<script type="text/javascript" src="static/1-2/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="static/1-2/js/jquery.SuperSlide.2.1.1.js"></script>
-<script type="text/javascript" src="static/1-2/js/global.js"></script>
-<script type="text/javascript" src="static/1-2/js/jquery.accordion.js"></script>
-<script type="text/javascript" src="static/1-2/js/jquery.selectBox.js"></script>
-<script type="text/javascript" src="static/1-2/js/hq.js"></script>
-<script src="static/1-2/js/amcharts.js" type="text/javascript"></script>
-<script src="static/1-2/js/serial.js" type="text/javascript"></script>
-<script src="static/1-2/js/dark.js" type="text/javascript"></script>
-<script src="static/1-2/js/select.js" type="text/javascript"></script>
-<script type="text/javascript">
-    jQuery("#bannerIndex").slide({mainCell:".bd ul",autoPlay:true});
-    jQuery(".banner-quotes01").each(function(){
-        $(this).slide({mainCell:".bd ul",autoPlay:false});
-    });
-     jQuery(".banner-quotes02").each(function(){
-        $(this).slide({mainCell:".bd ul",autoPlay:false});
-    });
-    jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:13});
-</script>
-<script type="text/javascript">
-    $(function(){
-      $('dl#my-accordion').accordion({open:true});
-     });
-</script>
-<script>
-    var chart = AmCharts.makeChart("chartdiv", {
-        "type": "serial",
-        "theme": "dark",
-        "dataDateFormat": "YYYY-MM-DD",
-        "color":"#666",
 
-        "dataProvider": [{
-            "date": "2013-11-30",
-            "value": 104
-        }, {
-            "date": "2013-12-01",
-            "value": 108
-        }, {
-            "date": "2013-12-02",
-            "value": 103
-        }, {
-            "date": "2013-12-03",
-            "value": 105
-        }, {
-            "date": "2013-12-04",
-            "value": 136
-        }, {
-            "date": "2013-12-05",
-            "value": 138
-        }, {
-            "date": "2013-12-06",
-            "value": 113
-        }, {
-            "date": "2013-12-07",
-            "value": 131
-        }, {
-            "date": "2013-12-08",
-            "value": 114
-        }, {
-            "date": "2013-12-09",
-            "value": 124
-        }],
-        "graphs": [{
-            "bullet": "round",
-            "dashLength": 4,
-            "valueField": "value"
-        }],
-        "chartCursor": {
-            "cursorAlpha": 0
-        },
-        "categoryField": "date",
-        "categoryAxis": {
-            "parseDates": true
-        }
-    });
-</script>
-<script type="text/javascript">
-	$(function(){
-		$.post("djxqc/qrttpbpi",{"parentid":1},function(data){
-    		$("#transaction_suc_tb tbody").html("");
-    		$.each(data,function(i,n){
-    			$("#transaction_suc_tb tbody").append("<tr><td>"+n.product.procategory.categoryName+"</td>"+
-    					"<td>"+n.product.proName+"</td>"+
-    					"<td>"+n.product.proPlace+"</td>"+
-    					"<td>"+n.product.proSpecific+"</td>"+
-    					"<td>"+n.product.proGrade+"</td>"+
-    					"<td>"+n.product.proCurrent+"</td>"+
-    					"<td>2060-2090</td>"+
-    					"<td>"+n.orderDetailsPrice+"</td>"+
-    					"<td>"+n.count+"</td>"+
-    					"<td>"+(new Date(n.ordertime)).Format("hh:mm")+"</td></tr>");
-    		});
-    		
-    	},"json");
-  	});
-  	function getMyDate(str){  
-        var oDate = new Date(str),  
-        oYear = oDate.getFullYear(),  
-        oMonth = oDate.getMonth()+1,  
-        oDay = oDate.getDate(),  
-        oHour = oDate.getHours(),  
-        oMin = oDate.getMinutes(),  
-        oSen = oDate.getSeconds(),  
-        oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);//最后拼接时间  
-        return oTime;  
-    }; 
-    Date.prototype.Format = function (fmt) { //author: meizz  
-        var o = {  
-            "M+": this.getMonth() + 1, //月份  
-            "d+": this.getDate(), //日  
-            "h+": this.getHours(), //小时  
-            "m+": this.getMinutes(), //分  
-            "s+": this.getSeconds(), //秒  
-            "q+": Math.floor((this.getMonth() + 3) / 3), //季度  
-            "S": this.getMilliseconds() //毫秒  
-        };  
-        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));  
-        for (var k in o)  
-            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
-        return fmt;  
-    }; 
-    
 
-    function showAllTransaction(parentid){
-  		
-    	$.post("djxqc/qrttpbpi",{"parentid":parentid},function(data){
-    		$("#transaction_suc_tb tbody").html("");
-    		$.each(data,function(i,n){
-    			$("#transaction_suc_tb tbody").append("<tr><td>"+n.product.procategory.categoryName+"</td>"+
-    					"<td>"+n.product.proName+"</td>"+
-    					"<td>"+n.product.proPlace+"</td>"+
-    					"<td>"+n.product.proSpecific+"</td>"+
-    					"<td>"+n.product.proGrade+"</td>"+
-    					"<td>"+n.product.proCurrent+"</td>"+
-    					"<td>2060-2090</td>"+
-    					"<td>"+n.orderDetailsPrice+"</td>"+
-    					"<td>"+n.count+"</td>"+
-    					"<td>"+(new Date(n.ordertime)).Format("hh:mm")+"</td></tr>");
-    		});
-    		
-    	},"json");
-    }
-    
-    function toOtherJSP(path){
-    	location.href=path;
-    }
-</script>
 </body>
 </html>

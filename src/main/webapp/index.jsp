@@ -285,11 +285,9 @@
             </dt>
             <dd><a class="selected" href="javascript:;">首页</a></dd>
             <dd><a href="javascript:;">资源</a></dd>
-<<<<<<< HEAD
-            <dd><a href="purchase/purdetail">采购</a></dd>
-=======
+
             <dd><a href="pc/fid">采购</a></dd>
->>>>>>> refs/heads/purchase
+
             <dd><a href="javascript:;">搜索</a></dd>
             <dd><a href="javascript:;">物流</a></dd>
 
