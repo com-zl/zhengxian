@@ -1,29 +1,42 @@
-package com.zl.st.pojo;
+package com.zl.st.pojo.hh;
 
 import java.io.Serializable;
 import java.util.Date;
 
+
 public class Purchaseform implements Serializable {
-	
-	private Integer purchaseid;//采购单编号
-	private String purchasename;//采购单名称
+
+	//private static final long serialVersionUID = 1L;//这是序列号,存在硬盘上
+	private Integer purchaseid;
+	private String purchasename;
 	private String purchasegoods;//采购物品
 	private String placeorigin;//产地要求
 	private String specificationtype;//规格型号
 	private String level;//级别要求
-	private String warehouse;//仓库要求
+	private String warehouse;
 	private String spotgoods;//期/现货
-	private Double price;//价格要求
-	private String purchasenote;//采购说明
+	private Double price;//价格
+	private String purchasenote;//说明
 	private String purchasemode;//付款方式
 	private String invoicetype;//发票类型
-	private String receivaddress;//收货地址
+	private String receivaddress;
 	private String purchasetime;//采购截止时间
 	private String certificate;//交易凭证(就是一个图片地址)
-	private Date createDate;//采购信息创建时间（当前时间）
-	private Integer supid;//收到的供应商编号
-	private Integer purchaserid;//联系人编号
+	private Date createDate;//采购信息创建时间
+	private Integer supplierid;//收到的供应商编号
+	private Purchasecontact purchasecontact;
+	private Integer purchaserid; //联系人编号   (这里换成了purchasecontact,直接存一个对象,同时下面set/get方法也注释了)
 	private String purchasestate;//采购状态(进行中or已结束采购)
+	private String contacts;//联系人
+	private String companyname;//公司名称
+	private String contactphone;//联系电话
+	
+	public Purchasecontact getPurchasecontact() {
+		return purchasecontact;
+	}
+	public void setPurchasecontact(Purchasecontact purchasecontact) {
+		this.purchasecontact = purchasecontact;
+	}
 	public Integer getPurchaseid() {
 		return purchaseid;
 	}
@@ -120,12 +133,7 @@ public class Purchaseform implements Serializable {
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-	public Integer getSupid() {
-		return supid;
-	}
-	public void setSupid(Integer supid) {
-		this.supid = supid;
-	}
+	
 	public Integer getPurchaserid() {
 		return purchaserid;
 	}
@@ -138,6 +146,31 @@ public class Purchaseform implements Serializable {
 	public void setPurchasestate(String purchasestate) {
 		this.purchasestate = purchasestate;
 	}
+	public Integer getSupplierid() {
+		return supplierid;
+	}
+	public void setSupplierid(Integer supplierid) {
+		this.supplierid = supplierid;
+	}
+	public String getContacts() {
+		return contacts;
+	}
+	public void setContacts(String contacts) {
+		this.contacts = contacts;
+	}
+	public String getCompanyname() {
+		return companyname;
+	}
+	public void setCompanyname(String companyname) {
+		this.companyname = companyname;
+	}
+	public String getContactphone() {
+		return contactphone;
+	}
+	public void setContactphone(String contactphone) {
+		this.contactphone = contactphone;
+	}
 	
-
+	
+	
 }

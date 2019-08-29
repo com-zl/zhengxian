@@ -13,20 +13,19 @@
   </properties>
 
   <dependencies>
-
-	
-		<!-- MP依赖 -->
-		<dependency>
-		    <groupId>com.baomidou</groupId>
-		    <artifactId>mybatis-plus</artifactId>
-		    <version>2.3</version>
-		</dependency>
-		
-		<dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity-engine-core</artifactId>
-            <version>2.0</version>
-		</dependency>
+		<!-- mybatis依赖 -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.2.3</version>
+	</dependency>
+  	
+  	<!-- spring中要想使用mybatis，必须要添加mybatis-spring支持包 -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis-spring</artifactId>
+	    <version>1.2.2</version>
+	</dependency>
 		
 		<dependency>
 	      <groupId>org.slf4j</groupId>
@@ -46,6 +45,9 @@
 			<artifactId>pagehelper</artifactId>
 			<version>5.1.2</version>
 		</dependency>
+
+	
+
 
     <!--文件上传-->
     <dependency>
@@ -74,6 +76,11 @@
       <version>2.5</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+         <groupId>javax.servlet.jsp</groupId>
+         <artifactId>javax.servlet.jsp-api</artifactId>
+         <version>2.3.1</version>
+     </dependency>
 
     <!--c标签-->
     <dependency>
