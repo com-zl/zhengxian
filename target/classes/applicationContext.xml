@@ -22,17 +22,6 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.zl.st"/>
 
-    <!--转换日期格式-->
-    <!-- <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
-        <property name="converters">
-            <set>
-                <ref bean="stringToDateConverter"/>
-            </set>
-        </property>
-    </bean> -->
-
-    <!--mvc开启默认注解,conversion-service="conversionService"将配置日期转换添加到mvc中的自动转换-->
-
     <mvc:annotation-driven />
 
 
@@ -54,18 +43,12 @@
     </bean>
 
     <!--创建连接工厂-->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!--扫描包,给包下的所有类起别名-->
         <property name="typeAliasesPackage" value="pojo"/>
-        <!-- 扫描单个mapper
-            <property name="mapperLocations" value="classpath:dao/IBookDAO.xml"/>
-            <property name="mapperLocations">
-            <array>
-                <value>classpath:dao/IBookDAO.xml</value>
-            </array>
-        </property>
-        -->
+		<!-- 添加mp配置 -->
+		<!-- <property name="globalConfig" ref="globalConfiguration"/> -->        
         <!-- 分页pagehelper配置 -->
         <property name="plugins">
             <array>
@@ -85,6 +68,13 @@
         <property name="basePackage" value="com.zl.st.dao"/>
     </bean>
 
+    <!-- 配置mp全局设置 -->
+    <bean id="globalConfiguration" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+    	<property name="dbColumnUnderline" value="true"/>
+    	<property name="idType" value="0"/>
+    	<property name="tablePrefix" value="t_"/>
+    </bean>
+    
     <!-- 上传文件,springmvc上传图片（文件）是通过MultipartResolver(Multipart解析器)处理的 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="defaultEncoding" value="GBK"/>
