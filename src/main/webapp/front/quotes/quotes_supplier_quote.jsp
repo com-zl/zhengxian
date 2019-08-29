@@ -9,15 +9,15 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>超鲜网-行情-供应商报价</title>
-    <link rel="stylesheet" href="statric/1-2/css/public.css"/>
-    <link rel="stylesheet" href="statric/1-2/css/page.css"/>
-    <link rel="stylesheet" href="statric/1-2/css/banner.css"/>
-    <link rel="stylesheet" href="statric/1-2/css/tab.css"/>
-    <link rel="stylesheet" href="statric/1-2/css/table.css"/>
-    <link rel="stylesheet" href="statric/1-2/css/select.css">
-    <link rel="stylesheet" href="statric/1-2/css/font-awesome.min.css">
-    <link rel="stylesheet" href="statric/1-2/css/font-awesome-ie7.css">
-    <link rel="stylesheet" href="statric/1-2/css/hq.css">
+    <link rel="stylesheet" href="static/1-2/css/public.css"/>
+    <link rel="stylesheet" href="static/1-2/css/page.css"/>
+    <link rel="stylesheet" href="static/1-2/css/banner.css"/>
+    <link rel="stylesheet" href="static/1-2/css/tab.css"/>
+    <link rel="stylesheet" href="static/1-2/css/table.css"/>
+    <link rel="stylesheet" href="static/1-2/css/select.css">
+    <link rel="stylesheet" href="static/1-2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/1-2/css/font-awesome-ie7.css">
+    <link rel="stylesheet" href="static/1-2/css/hq.css">
     <!--[if lt IE 10]>
     <script src="static/1-2/js/html5shiv.min.js"></script>
     <![endif]-->
