@@ -41,15 +41,30 @@ public class PurchaseController {
 		return "purchasefront/procurement/allpurchase_show";
 	}		
 	
+	
+	//点击采购单名字查看采购单详情页面
+	@RequestMapping(value="supervise",method=RequestMethod.POST)
+	public String listFindDetailsById(Model model) {
+		List<Purchaseform> purlist = purchaseService.findAllDemandPurcha();
+		model.addAttribute("purlist",purlist);
+		return "";
+	}
+	
+	//发布完采购单后跳转到采购管理-我的订单
+	@RequestMapping(value="details",method=RequestMethod.GET)
+	public String lisfa(Model model) {
+		List<Purchaseform> purId = purchaseService.findAllDemandPurcha();
+		return "";
+	}
+	
+	
 	//查询正在进行的采购单
-		@RequestMapping(value="forming",method=RequestMethod.GET)
-		public String listFindPurchaseforming(Model model) {
-			List<Purchaseform> purList = purchaseService.findFormByContact("进行中");
-			
-			model.addAttribute("purList",purList);
-			
-			return "purchasefront/procurement/allpurchase_show";
-		}
+	@RequestMapping(value="forming",method=RequestMethod.GET)
+	public String listFindPurchaseforming(Model model) {
+		List<Purchaseform> purList = purchaseService.findFormByContact("进行中");
+		model.addAttribute("purList",purList);
+		return "purchasefront/procurement/allpurchase_show";
+	}
 	
 	//查询已结束的采购单
 	@RequestMapping(value="formend",method=RequestMethod.GET)
@@ -76,6 +91,8 @@ public class PurchaseController {
 	public String jspJumpjsp() {
 		return "purchasefront/procurement/purchase_release";
 	}
+	
+	
 	
 	
 }

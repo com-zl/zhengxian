@@ -12,4 +12,6 @@ public interface PurchaseformDao {
 	
 	public boolean listAddPurchaseFromRelease(Purchaseform purchaseform);
 	
+	public Purchaseform findPurchaseformId(Integer pur);
+	
 }

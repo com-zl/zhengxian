@@ -8,9 +8,10 @@
 		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, 
 			level, warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, 
 			receivaddress, purchasetime, certificate, create_date as createDate, supplierid, 
-			purchaserid, purchasestate from purchaseform
+			purchaserid, purchasestate, contacts, companyname, contactphone from purchaseform
 	</select>
 	
+	<!-- 查询正在进行中和已结束的采购单sql语句 -->
 	<select id="findFormByContact"  resultMap="Purchaseforminfo" >
 		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, level, 
 		warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, receivaddress, 
@@ -60,7 +61,13 @@
 		values(#{purchasename,jdbcType=VARCHAR},#{purchasegoods,jdbcType=VARCHAR},#{placeorigin,jdbcType=VARCHAR},#{specificationtype,jdbcType=VARCHAR},#{level,jdbcType=VARCHAR},#{warehouse,jdbcType=VARCHAR},#{spotgoods,jdbcType=VARCHAR},#{price,jdbcType=DOUBLE},#{purchasenote,jdbcType=VARCHAR},#{purchasemode,jdbcType=VARCHAR},#{invoicetype,jdbcType=VARCHAR},#{receivaddress,jdbcType=VARCHAR},#{purchasetime,jdbcType=VARCHAR},#{certificate,jdbcType=VARCHAR},SYSDATE(),#{supplierid,jdbcType=INTEGER},#{purchaserid,jdbcType=INTEGER},'进行中',#{contacts,jdbcType=VARCHAR},#{companyname,jdbcType=VARCHAR},#{contactphone,jdbcType=VARCHAR})
 	</insert>
 	
-	
+	<!-- 根据ID查订单详情 -->
+	<select id="findPurchaseformId" resultType="com.zl.st.pojo.hh.Purchaseform" >
+		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, 
+			level, warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, 
+			receivaddress, purchasetime, certificate, create_date as createDate, supplierid, 
+			purchaserid, purchasestate, contacts, companyname, contactphone from purchaseform where purchaseid=#{purchaseid}
+	</select>
 	
 	
 	

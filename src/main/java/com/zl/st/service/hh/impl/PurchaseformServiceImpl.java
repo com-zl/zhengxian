@@ -1,4 +1,4 @@
-package com.zl.st.service.impl.hh;
+package com.zl.st.service.hh.impl;
 
 import java.util.List;
 
@@ -28,6 +28,11 @@ public class PurchaseformServiceImpl implements PurchaseformService {
 	@Override
 	public boolean listAddPurchaseFromRelease(Purchaseform purchaseform) {
 		return purchaseDao.listAddPurchaseFromRelease(purchaseform);
+	}
+
+	@Override
+	public Purchaseform findPurchaseformId(Integer pur) {
+		return purchaseDao.findPurchaseformId(pur);
 	}
 
 	

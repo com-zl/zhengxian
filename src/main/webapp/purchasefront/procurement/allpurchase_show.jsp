@@ -332,7 +332,7 @@
                                 <dd>
                                     <i class="fa fa-comment"></i>
                                     <div class="tit">
-                                        <a href="javascript:;" class="otw">${pl.purchasename}</a>
+                                        <a href="pc/details?pur=${pl.purchaseid }" class="otw">${pl.purchasename}</a>
                                         <span class="goOn">【${pl.purchasestate}】</span>
                                     </div>
                                     <div class="user">${pl.purchasecontact.nickname}&nbsp;&nbsp;&nbsp;

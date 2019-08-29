@@ -13,4 +13,6 @@ public interface PurchaseformService {
 	
 	public boolean listAddPurchaseFromRelease(Purchaseform purchaseform);
 	
+	public Purchaseform findPurchaseformId(Integer pur);
+	
 }
