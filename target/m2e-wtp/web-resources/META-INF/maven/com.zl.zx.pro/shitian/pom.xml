@@ -14,13 +14,38 @@
 
   <dependencies>
 
+	
+		<!-- MP依赖 -->
+		<dependency>
+		    <groupId>com.baomidou</groupId>
+		    <artifactId>mybatis-plus</artifactId>
+		    <version>2.3</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.0</version>
+		</dependency>
+		
+		<dependency>
+	      <groupId>org.slf4j</groupId>
+	      <artifactId>slf4j-api</artifactId>
+	      <version>1.7.21</version>
+	    </dependency>
+	    <dependency>
+	      <groupId>org.slf4j</groupId>
+	      <artifactId>slf4j-log4j12</artifactId>
+	      <version>1.7.21</version>
+	    </dependency>
+		
 
-	<!-- 分页依赖 -->
-	<dependency>
-	    <groupId>com.github.pagehelper</groupId>
-	    <artifactId>pagehelper</artifactId>
-	    <version>5.1.2</version>
-	</dependency>
+		<!-- 分页依赖 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>5.1.2</version>
+		</dependency>
 
     <!--文件上传-->
     <dependency>
@@ -56,26 +81,24 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
+    
+     <!-- 数据源 -->
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-pool</groupId>
+      <artifactId>commons-pool</artifactId>
+      <version>1.6</version>
+    </dependency>
 
     <!--连接池-->
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
       <version>1.1.10</version>
-    </dependency>
-
-    <!--mybatis核心包-->
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
-      <version>3.2.3</version>
-    </dependency>
-
-    <!--mybatis和spring整合包-->
-   	<dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis-spring</artifactId>
-      <version>1.2.2</version>
     </dependency>
 
     <!--mysql驱动包-->
@@ -131,8 +154,4 @@
     </dependency>
 
 </dependencies>
-
-<build>
-	<finalName>shitian</finalName>
-</build>
 </project>

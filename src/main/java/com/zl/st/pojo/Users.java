@@ -2,13 +2,22 @@ package com.zl.st.pojo;
 
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableName;
+
 /**
  * 	用户
  * @author djx
  *
  */
+@TableName(value="t_users")
 public class Users implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6369902379296536993L;
+	@TableId("userid")
 	private Integer userid;//用户编号
 	private String loginname;//登录账号
 	private String loginpwd;//登录密码
@@ -43,6 +52,11 @@ public class Users implements Serializable {
 	}
 	public void setRealname(String realname) {
 		this.realname = realname;
+	}
+	@Override
+	public String toString() {
+		return "Users [userid=" + userid + ", loginname=" + loginname + ", loginpwd=" + loginpwd + ", phone=" + phone
+				+ ", realname=" + realname + "]";
 	}
 	
 }
