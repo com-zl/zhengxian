@@ -8,7 +8,7 @@
 <head lang="en">
 <base href="<%=basepath %>"/>
     <meta charset="UTF-8">
-    <title>升级会员</title>
+    <title>升级会员-升级采供商-公司</title>
     <link rel="stylesheet" href="static/1-2/css/public.css"/>
     <link rel="stylesheet" href="static/1-2/css/page.css"/>
     <link rel="stylesheet" href="static/1-2/css/member.css"/>
@@ -43,7 +43,7 @@
             <div class="attention">
                 <p>关注我们：</p>
                 <a class="weixin" href="javascript:;">
-                    <img src="static/1-2/images/top-icon01.png" alt=""/>
+                    <img src="images/top-icon01.png" alt=""/>
                     <div class="weixin-erweima">
                         <i></i>
                         <img src="static/1-2/images/erweima.png" alt=""/>
@@ -298,7 +298,13 @@
         <div class="bread-crumbs">
             <a href="javascript:;">首页</a>
             <span><i class="fa fa-angle-double-right"></i></span>
-            <a href="javascript:;" class="selected">升级会员</a>
+            <a href="javascript:;">会员中心</a>
+            <span><i class="fa fa-angle-double-right"></i></span>
+            <a href="javascript:;">升级会员</a>
+            <span><i class="fa fa-angle-double-right"></i></span>
+            <a href="javascript:;">升级采购商</a>
+            <span><i class="fa fa-angle-double-right"></i></span>
+            <a href="javascript:;" class="selected">公司</a>
         </div>
         <!-- 会员左侧 -->
         <div class="member-left">
@@ -313,7 +319,7 @@
                 <dd>
                     <a href="javascript:;" class="menuPro-first selected"><i class="fa fa-plus-square"></i>升级会员</a>
                     <div class="menuPro-second">
-                        <a href="javascript:;"><i class="fa fa-angle-right"></i>升级供应商</a>
+                        <a href="javascript:;" class="selected"><i class="fa fa-angle-right"></i>升级供应商</a>
                         <a href="javascript:;"><i class="fa fa-angle-right"></i>升级采购商</a>
                         <a href="javascript:;"><i class="fa fa-angle-right"></i>升级承运方</a>
                         <a href="javascript:;"><i class="fa fa-angle-right"></i>升级托运方</a>
@@ -344,57 +350,131 @@
             </dl>
          </div>
          <!-- 会员右侧 -->
+         <form action="tUsers/createPurComp" method="post">
+         <input type="hidden" name="userid" value="${userid }" />
+         <input type="hidden" name="type" value="${type }" />
          <div class="member-right">
-            <!-- 会员升级 -->
-            <div class="member-upgrade">
-                <img src="static/1-2/images/member-upgrade01.png" alt="">
-            </div>
             <div class="member-main">
                 <div class="member-column">
-                    <div class="member-tit"><p>我想认证成为</p></div>
+                    <div class="member-tit"><p>升级采购商</p> <a href="javascript:;" style="color:#e42122;">说明：认证过其他级别后，已经提交的信息自动读取过来不需要填写第二次</a></div>
                      <div class="member-con">
-                        <ul class="upgrade-list">
-                            <li>
-                                <div class="img">
-                                    <img src="static/1-2/images/upgrade-icon01.png" alt="">
+                        <div class="member-subtit">基本信息填写</div>
+                        <div class="controls">
+                            <p><span>*</span>公司名称：</p>
+                            <input name="compName" type="text" class="input03 w450">
+                        </div>
+                        <div class="controls">
+                            <p><span>*</span>所在地：</p>
+                            <select name="address1" class="w146">
+                                <option value="0">请选择</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <select name="address1 class="w146">
+                                <option value="0">请选择</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <select name="address1 class="w146">
+                                <option value="0">请选择</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="controls">
+                            <p><span>*</span>详细地址：</p>
+                            <input name="addressDetail" type="text" class="input03 w450">
+                        </div>
+                        <div class="controls">
+                            <p><span>*</span>证件上传：</p>
+                            <div class="upload-controls">
+                                <div class="upload-img sfz-img"><img src="static/1-2/images/upload-img02.png" alt=""></div>
+                                <input type="button" value="点击上传营业执照" class="upload-btn w148">
+                            </div>
+                            <div class="upload-controls">
+                                <div class="upload-img sfz-img"><img src="static/1-2/images/upload-img02.png" alt=""></div>
+                                <input type="button" value="组织机构代码" class="upload-btn w148">
+                            </div>
+                             <div class="upload-controls">
+                                <div class="upload-img sfz-img"><img src="static/1-2/images/upload-img02.png" alt=""></div>
+                                <input type="button" value="税务登记证" class="upload-btn w148">
+                            </div>
+                             <div class="upload-controls">
+                                <div class="upload-img sfz-img"><img src="static/1-2/images/upload-img02.png" alt=""></div>
+                                <input type="button" value="办公场所图片" class="upload-btn w148">
+                            </div>
+                             <div class="upload-controls">
+                                <div class="upload-img sfz-img"><img src="static/1-2/images/upload-img02.png" alt=""></div>
+                                <input type="button" value="食品流通许可证" class="upload-btn w148">
+                            </div>
+                             <div class="member-tips">需加盖公章、清晰无涂抹的jpg格式文件(文件大小最大3M。也支持gif/png格式，但建议转换为jpg后再上传)
+                             </div>
+                        </div>
+                        <div class="controls">
+                            <p><span>*</span>其他证件上传：</p>
+                            <div class="upload-controls">
+                                <div class="upload-img sfz-img"><img src="static/1-2/images/upload-img02.png" alt=""></div>
+                                <input type="button" value="上传图片" class="upload-btn w148">
+                            </div>
+                            <div class="upload-controls">
+                                <div class="upload-img sfz-img"><img src="static/1-2/images/upload-img02.png" alt=""></div>
+                                <input type="button" value="上传图片" class="upload-btn w148">
+                            </div>
+                             <div class="upload-controls">
+                                <div class="upload-img sfz-img"><img src="static/1-2/images/upload-img02.png" alt=""></div>
+                                <input type="button" value="上传图片" class="upload-btn w148">
+                            </div>
+                             <div class="upload-controls">
+                                <div class="upload-img sfz-img"><img src="static/1-2/images/upload-img02.png" alt=""></div>
+                                <input type="button" value="上传图片" class="upload-btn w148">
+                            </div>
+                             <div class="upload-controls">
+                                <div class="upload-img sfz-img"><img src="static/1-2/images/upload-img02.png" alt=""></div>
+                                <input type="button" value="上传图片" class="upload-btn w148">
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <p><span>*</span>企业法人姓名：</p>
+                            <input name="legalPer" type="text" class="input03 w250">
+                        </div>
+                        <div class="member-subtit">授权运营者信息填写</div>
+                        <div class="controls">
+                            <p><span>*</span>运营者姓名：</p>
+                            <input name="operationPer" type="text" class="input03 w250">
+                        </div>
+                        <div class="controls">
+                            <p><span>*</span>运营者职务：</p>
+                            <input name="operationPosition" type="text" class="input03 w250">
+                        </div>
+                        <div class="controls">
+                            <p><span>*</span>运营者联系方式：</p>
+                            <input name="operaionTel" type="text" class="input03 w250">
+                        </div>
+                        <div class="controls">
+                            <div class="member-tips">授权运营书：请下载授权运营书按要求填写表格后，上传加盖公章的扫描件支持.jpg .jpeg .bmp .gif格式照片，大小不超过2M。
+                            </div>
+                            <div class="warrant-btn">
+                                 <a href="javascript:;" class="btn01 w125">下载授权书</a>
+                                 <a href="javascript:;" class="btn01 w125">上传授权书</a>
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <div class="provision">
+                                <input type="checkbox">
+                                <div class="provision-tip">
+                                    我已阅读并统一《<a href="javascript:;">供应商注册协议</a>》
                                 </div>
-                                <div class="con">
-                                   <p>认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。</p>
-                                   <a href="javascript:cert('${userId }','1');" class="btn01">立即认证</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img">
-                                    <img src="static/1-2/images/upgrade-icon02.png" alt="">
-                                </div>
-                                <div class="con">
-                                   <p>认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。</p>
-                                   <a href="javascript:cert('${userId }','2');" class="btn01">立即认证</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img">
-                                    <img src="static/1-2/images/upgrade-icon03.png" alt="">
-                                </div>
-                                <div class="con">
-                                   <p>认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。</p>
-                                   <a href="javascript:cert('${userId }','3');" class="btn01">立即认证</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img">
-                                    <img src="static/1-2/images/upgrade-icon04.png" alt="">
-                                </div>
-                                <div class="con">
-                                   <p>认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。</p>
-                                   <a href="javascript:cert('${userId }','4');" class="btn01">立即认证</a>
-                                </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+                        <input type="submit" value="提交审核" class="btn01 submit w155">
                      </div>
                 </div>
             </div>
          </div>
+         </form>
     </div>
 </div>
 <!--网站底部-->
@@ -447,14 +527,9 @@
         <p>Copyright <i class="fa fa-copyright"></i> 超鲜网 粤ICP备 13013915号-3  ICP证：粤B2-201401448</p>
     </div>
 </footer>
-<script type="text/javascript" src="static/1-2/js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="static/1-2/js/global.js"></script>
 <script type="text/javascript" src="static/1-2/js/jquery.accordion.js"></script>
-<script type="text/javascript" src="static/1-2/renjs/select.js"></script>
-<script>
-	function cert(userid,uType){
-		location.href="tUsers/tp?userid="+userid+"&userType="+uType;
-	}
-</script>
+<script type="text/javascript" src="static/1-2/js/select.js"></script>
 </body>
 </html>

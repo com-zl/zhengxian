@@ -8,7 +8,7 @@
 <head lang="en">
 <base href="<%=basepath %>"/>
     <meta charset="UTF-8">
-    <title>升级会员</title>
+    <title>升级会员-升级采购商</title>
     <link rel="stylesheet" href="static/1-2/css/public.css"/>
     <link rel="stylesheet" href="static/1-2/css/page.css"/>
     <link rel="stylesheet" href="static/1-2/css/member.css"/>
@@ -43,7 +43,7 @@
             <div class="attention">
                 <p>关注我们：</p>
                 <a class="weixin" href="javascript:;">
-                    <img src="static/1-2/images/top-icon01.png" alt=""/>
+                    <img src="images/top-icon01.png" alt=""/>
                     <div class="weixin-erweima">
                         <i></i>
                         <img src="static/1-2/images/erweima.png" alt=""/>
@@ -298,7 +298,11 @@
         <div class="bread-crumbs">
             <a href="javascript:;">首页</a>
             <span><i class="fa fa-angle-double-right"></i></span>
-            <a href="javascript:;" class="selected">升级会员</a>
+            <a href="javascript:;">会员中心</a>
+            <span><i class="fa fa-angle-double-right"></i></span>
+            <a href="javascript:;">升级会员</a>
+            <span><i class="fa fa-angle-double-right"></i></span>
+            <a href="javascript:;" class="selected">升级采购商</a>
         </div>
         <!-- 会员左侧 -->
         <div class="member-left">
@@ -314,7 +318,7 @@
                     <a href="javascript:;" class="menuPro-first selected"><i class="fa fa-plus-square"></i>升级会员</a>
                     <div class="menuPro-second">
                         <a href="javascript:;"><i class="fa fa-angle-right"></i>升级供应商</a>
-                        <a href="javascript:;"><i class="fa fa-angle-right"></i>升级采购商</a>
+                        <a href="javascript:;" class="selected"><i class="fa fa-angle-right"></i>升级采购商</a>
                         <a href="javascript:;"><i class="fa fa-angle-right"></i>升级承运方</a>
                         <a href="javascript:;"><i class="fa fa-angle-right"></i>升级托运方</a>
                         <a href="javascript:;"><i class="fa fa-angle-right"></i>提交成功</a>
@@ -345,52 +349,18 @@
          </div>
          <!-- 会员右侧 -->
          <div class="member-right">
-            <!-- 会员升级 -->
-            <div class="member-upgrade">
-                <img src="static/1-2/images/member-upgrade01.png" alt="">
-            </div>
             <div class="member-main">
                 <div class="member-column">
-                    <div class="member-tit"><p>我想认证成为</p></div>
+                    <div class="member-tit"><p>升级采购商</p></div>
                      <div class="member-con">
-                        <ul class="upgrade-list">
-                            <li>
-                                <div class="img">
-                                    <img src="static/1-2/images/upgrade-icon01.png" alt="">
-                                </div>
-                                <div class="con">
-                                   <p>认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。</p>
-                                   <a href="javascript:cert('${userId }','1');" class="btn01">立即认证</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img">
-                                    <img src="static/1-2/images/upgrade-icon02.png" alt="">
-                                </div>
-                                <div class="con">
-                                   <p>认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。</p>
-                                   <a href="javascript:cert('${userId }','2');" class="btn01">立即认证</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img">
-                                    <img src="static/1-2/images/upgrade-icon03.png" alt="">
-                                </div>
-                                <div class="con">
-                                   <p>认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。</p>
-                                   <a href="javascript:cert('${userId }','3');" class="btn01">立即认证</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img">
-                                    <img src="static/1-2/images/upgrade-icon04.png" alt="">
-                                </div>
-                                <div class="con">
-                                   <p>认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单，商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。商品信息发布更新将不再繁琐，认证成为供应商之后可以在线发布自己的资源单。</p>
-                                   <a href="javascript:cert('${userId }','4');" class="btn01">立即认证</a>
-                                </div>
-                            </li>
-                        </ul>
+                        <div class="attest">
+                            <a href="javascript:;" class="attest01">
+                               <img onclick="comp_cert('${userid}','${type }')" src="static/1-2/images/upgrade-icon05.png" alt="">
+                           </a>
+                           <a href="javascript:;" class="attest02">
+                               <img onclick="comp_cert('${userid}','${type }')" src="static/1-2/images/upgrade-icon06.png" alt="">
+                           </a>
+                        </div>
                      </div>
                 </div>
             </div>
@@ -450,10 +420,10 @@
 <script type="text/javascript" src="static/1-2/js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="static/1-2/js/global.js"></script>
 <script type="text/javascript" src="static/1-2/js/jquery.accordion.js"></script>
-<script type="text/javascript" src="static/1-2/renjs/select.js"></script>
+<script type="text/javascript" src="static/1-2/js/select.js"></script>
 <script>
-	function cert(userid,uType){
-		location.href="tUsers/tp?userid="+userid+"&userType="+uType;
+	function comp_cert(id,type){
+		location.href="tUsers/purComp?userid="+id+"&type="+type;
 	}
 </script>
 </body>
