@@ -284,10 +284,8 @@
                 </ul>
             </dt>
             <dd><a class="selected" href="javascript:;">首页</a></dd>
-            <dd><a href="javascript:;">资源</a></dd>
-
+			<dd><a href="hyf/rc/sr">资源</a></dd>
             <dd><a href="pc/fid">采购</a></dd>
-
             <dd><a href="javascript:;">搜索</a></dd>
             <dd><a href="javascript:;">物流</a></dd>
 

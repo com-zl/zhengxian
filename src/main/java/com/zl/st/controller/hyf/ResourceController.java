@@ -62,7 +62,7 @@ public class ResourceController {
 			p.setStoreHouse(storeHouse[i]);
 			p.setProCurrent(proCurrent[i]);
 			p.setProRemarks(proRemarks[i]);
-			p.setStatus("未审核");
+			p.setStatus("已发布");
 			prolist.add(p);
 		}
 		resourceService.addProduct(prolist);
@@ -107,4 +107,13 @@ public class ResourceController {
 		
 		return "forward:gp";
 	}
+	
+	@ResponseBody
+	@RequestMapping("fpro")
+	public Product findPro(Integer proid) {
+		Product p = resourceService.findProByProid(proid);
+		return p;
+	}
+	
+	
 }
