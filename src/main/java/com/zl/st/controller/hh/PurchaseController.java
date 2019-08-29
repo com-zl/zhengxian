@@ -31,6 +31,7 @@ public class PurchaseController {
 		PageHelper.startPage(page, 5);
 		List<Purchaseform> purList = purchaseService.findFormByContact(null);
 		PageInfo<Purchaseform> blist = new PageInfo<Purchaseform>(purList);
+		System.out.println("黄杨飞黄燕飞");
 		model.addAttribute("page", purList);
 		model.addAttribute("purList",purList);
 		
@@ -57,6 +58,7 @@ public class PurchaseController {
 	//查询正在进行的采购单
 	@RequestMapping(value="forming",method=RequestMethod.GET)
 	public String listFindPurchaseforming(Model model) {
+		System.out.println("222");
 		List<Purchaseform> purList = purchaseService.findFormByContact("进行中");
 		model.addAttribute("purList",purList);
 		return "purchasefront/procurement/allpurchase_show";
