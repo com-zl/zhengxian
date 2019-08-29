@@ -48,7 +48,7 @@
     <!--数据源-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/shitian"/>
+        <property name="url" value="jdbc:mysql://10.1.14.191:3306/shitian"/>
         <property name="username" value="root"/>
         <property name="password" value="123456"/>
     </bean>
@@ -58,9 +58,7 @@
         <property name="dataSource" ref="dataSource"/>
         <!--扫描包,给包下的所有类起别名-->
         <property name="typeAliasesPackage" value="pojo"/>
-       <!--  <property name="mapperLocations" value="classpath:com/zl/st/pojo/*/*.xml"></property> -->
-        <!--
-            扫描单个mapper
+        <!-- 扫描单个mapper
             <property name="mapperLocations" value="classpath:dao/IBookDAO.xml"/>
             <property name="mapperLocations">
             <array>
@@ -73,9 +71,7 @@
             <array>
                 <bean class="com.github.pagehelper.PageInterceptor">
                     <property name="properties">
-                        <value>
-　　　　　　　　　　　　　　　　helperDialect=mysql
-　　　　　　　　　　　　　　</value>
+                        <value>helperDialect=mysql</value>
                     </property>
                 </bean>
             </array>
@@ -123,7 +119,7 @@
     </bean>
 
     <!--开启事务注解-->
-    <tx:annotation-driven/>
+    <!-- <tx:annotation-driven/> -->
 
     <!--配置通知-->
 <!--    <tx:advice id="myadvice">-->

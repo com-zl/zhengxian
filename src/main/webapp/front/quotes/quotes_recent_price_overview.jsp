@@ -305,10 +305,10 @@
             <!-- 搜索表格 -->
             <div class="lib-tab4">
                 <ul class="lib-menu">
-                    <li>实时成交价</li>
-                    <li>供应商报价</li>
-                    <li>指数</li>
-                    <li class="hover">近期价格概况</li>
+                    <li onclick="toOtherJSP('djxqc/qrttp');">实时成交价</li>
+                    <li onclick="toOtherJSP('djxqc/qsq');">供应商报价</li>
+                    <li onclick="toOtherJSP('djxqc/qi');">指数</li>
+                    <li class="hover" onclick="toOtherJSP('djxqc/qrpo');">近期价格概况</li>
                 </ul>
                 <div class="lib-content">
                     <div class="child-content" style="display: block;">
