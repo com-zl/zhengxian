@@ -309,10 +309,10 @@
             <!-- 搜索表格 -->
             <div class="lib-tab4">
                 <ul class="lib-menu">
-                    <li class="hover">实时成交价</li>
-                    <li>供应商报价</li>
-                    <li>指数</li>
-                    <li>近期价格概况</li>
+                    <li class="hover" onclick="toOtherJSP('djxqc/qrttpbpi');">实时成交价</li>
+                    <li onclick="toOtherJSP('djxqc/qsq');">供应商报价</li>
+                    <li onclick="toOtherJSP('djxqc/qi');">指数</li>
+                    <li onclick="toOtherJSP('djxqc/qrpo');">近期价格概况</li>
                 </ul>
                 <div class="lib-content">
                     <div class="child-content" style="display: block;">
@@ -322,7 +322,7 @@
                             <div class="s_type">
                                 <ul id="procategoryList" >
                                     <c:forEach items="${procategoryList}" var="pl" varStatus="s">
-                                    	<li  ${s.index==0?"class='selected'":"" } onclick="showAllTransaction('${pl.categoryid}');">${pl.categoryid}${pl.categoryName }</li>
+                                    	<li  ${s.index==0?"class='selected'":"" } onclick="showAllTransaction('${pl.categoryid}');">${pl.categoryName }</li>
                                     </c:forEach>
                                 </ul>
                             </div>
@@ -495,7 +495,7 @@
                             </div>
                         </div>
                         <!-- page -->
-                        <div class="list-page">
+                        <!-- <div class="list-page">
                             <ul>
                                 <li><a href="javascript:;" class="prev-listPage prev-disable">上一页</a></li>
                                 <li><a href="javascript:;" id="hover-listPage">1</a></li>
@@ -508,7 +508,7 @@
                                 <li><span>到第</span><input type="text"><span>页</span></li>
                                 <li><a href="javascript:;" class="jump-page">确定</a></li>
                             </ul>
-                        </div>
+                        </div> -->
                         <!-- 实时成交价end -->
                         </div>
                         
@@ -646,11 +646,24 @@
     });
 </script>
 <script type="text/javascript">
-	/* $(function(){
-		$.post("djxqc/qrttpbpi",{},function(data){
-			
+	$(function(){
+		$.post("djxqc/qrttpbpi",{"parentid":1},function(data){
+    		$("#transaction_suc_tb tbody").html("");
+    		$.each(data,function(i,n){
+    			$("#transaction_suc_tb tbody").append("<tr><td>"+n.product.procategory.categoryName+"</td>"+
+    					"<td>"+n.product.proName+"</td>"+
+    					"<td>"+n.product.proPlace+"</td>"+
+    					"<td>"+n.product.proSpecific+"</td>"+
+    					"<td>"+n.product.proGrade+"</td>"+
+    					"<td>"+n.product.proCurrent+"</td>"+
+    					"<td>2060-2090</td>"+
+    					"<td>"+n.orderDetailsPrice+"</td>"+
+    					"<td>"+n.count+"</td>"+
+    					"<td>"+(new Date(n.ordertime)).Format("hh:mm")+"</td></tr>");
+    		});
+    		
     	},"json");
-  	}); */
+  	});
   	function getMyDate(str){  
         var oDate = new Date(str),  
         oYear = oDate.getFullYear(),  
@@ -677,12 +690,9 @@
             if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
         return fmt;  
     }; 
+    
 
     function showAllTransaction(parentid){
-  		
-  		/*  $("#procategoryList li").each(function(){
-  		    alert($(this).attr("id"));
-  		  }); */
   		
     	$.post("djxqc/qrttpbpi",{"parentid":parentid},function(data){
     		$("#transaction_suc_tb tbody").html("");
@@ -694,12 +704,16 @@
     					"<td>"+n.product.proGrade+"</td>"+
     					"<td>"+n.product.proCurrent+"</td>"+
     					"<td>2060-2090</td>"+
+    					"<td>"+n.orderDetailsPrice+"</td>"+
     					"<td>"+n.count+"</td>"+
-    					"<td>"+n.productPrice+"</td>"+
     					"<td>"+(new Date(n.ordertime)).Format("hh:mm")+"</td></tr>");
     		});
     		
     	},"json");
+    }
+    
+    function toOtherJSP(path){
+    	location.href=path;
     }
 </script>
 </body>

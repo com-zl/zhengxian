@@ -6,4 +6,16 @@
 		SELECT proid,proCateNum,proName,proPlace,proSpecific,proGrade,proCurrent FROM product where proid=#{proid}
 	</select>
 	
+	<select id="listProductByProCateNum" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Product">
+		SELECT proid,proCateNum,proName,proPlace,proSpecific,proGrade,proCurrent FROM product where proCateNum=#{proCateNum}
+	</select>
+	
+	<select id="listProductBySupid" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Product">
+		SELECT proName,proSpecific,proGrade,proCurrent,proPric,money,createTime FROM product where supid=#{supid}
+	</select>
+	
+	<select id="listSupid" resultType="java.lang.Integer">
+		SELECT supid from product GROUP BY supid
+	</select>
+	
 </mapper>

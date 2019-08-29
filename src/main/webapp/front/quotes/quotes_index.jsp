@@ -305,10 +305,10 @@
             <!-- 搜索表格 -->
             <div class="lib-tab4">
                 <ul class="lib-menu">
-                    <li>实时成交价</li>
-                    <li>供应商报价</li>
-                    <li class="hover">指数</li>
-                    <li>近期价格概况</li>
+                    <li onclick="toOtherJSP('djxqc/qrttp');">实时成交价</li>
+                    <li onclick="toOtherJSP('djxqc/qsq');">供应商报价</li>
+                    <li class="hover" onclick="toOtherJSP('djxqc/qi');">指数</li>
+                    <li onclick="toOtherJSP('djxqc/qrpo');">近期价格概况</li>
                 </ul>
                 <div class="lib-content">
                     <div class="child-content" style="display: block;">
@@ -588,56 +588,61 @@
      });
 </script>
 <script>
-            var chart = AmCharts.makeChart("chartdiv", {
-                "type": "serial",
-                "theme": "dark",
-                "dataDateFormat": "YYYY-MM-DD",
-                "color":"#666",
+    var chart = AmCharts.makeChart("chartdiv", {
+        "type": "serial",
+        "theme": "dark",
+        "dataDateFormat": "YYYY-MM-DD",
+        "color":"#666",
 
-                "dataProvider": [{
-                    "date": "2013-11-30",
-                    "value": 104
-                }, {
-                    "date": "2013-12-01",
-                    "value": 108
-                }, {
-                    "date": "2013-12-02",
-                    "value": 103
-                }, {
-                    "date": "2013-12-03",
-                    "value": 105
-                }, {
-                    "date": "2013-12-04",
-                    "value": 136
-                }, {
-                    "date": "2013-12-05",
-                    "value": 138
-                }, {
-                    "date": "2013-12-06",
-                    "value": 113
-                }, {
-                    "date": "2013-12-07",
-                    "value": 131
-                }, {
-                    "date": "2013-12-08",
-                    "value": 114
-                }, {
-                    "date": "2013-12-09",
-                    "value": 124
-                }],
-                "graphs": [{
-                    "bullet": "round",
-                    "dashLength": 4,
-                    "valueField": "value"
-                }],
-                "chartCursor": {
-                    "cursorAlpha": 0
-                },
-                "categoryField": "date",
-                "categoryAxis": {
-                    "parseDates": true
-                }
-            });
-        </script>
+        "dataProvider": [{
+            "date": "2013-11-30",
+            "value": 90
+        }, {
+            "date": "2013-12-01",
+            "value": 88
+        }, {
+            "date": "2013-12-02",
+            "value": 103
+        }, {
+            "date": "2013-12-03",
+            "value": 105
+        }, {
+            "date": "2013-12-04",
+            "value": 136
+        }, {
+            "date": "2013-12-05",
+            "value": 138
+        }, {
+            "date": "2013-12-06",
+            "value": 113
+        }, {
+            "date": "2013-12-07",
+            "value": 131
+        }, {
+            "date": "2013-12-08",
+            "value": 114
+        }, {
+            "date": "2013-12-09",
+            "value": 124
+        }],
+        "graphs": [{
+            "bullet": "round",
+            "dashLength": 4,
+            "valueField": "value"
+        }],
+        "chartCursor": {
+            "cursorAlpha": 0
+        },
+        "categoryField": "date",
+        "categoryAxis": {
+            "parseDates": true
+        }
+    });
+</script>
+<script type="text/javascript">
+function toOtherJSP(path){
+	location.href=path;
+}
+</script>
 </body>
 </html>

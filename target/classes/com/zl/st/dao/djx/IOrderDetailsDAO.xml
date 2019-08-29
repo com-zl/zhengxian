@@ -2,21 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zl.st.dao.djx.IOrderDetailsDAO">
-	<select id="listOrderDetails" resultMap="OrderDetailsinfo">
-		SELECT order_details_id,orderid,purchaserid,ordertime,count,proid,state,supplierid,order_details_price,product_price FROM order_details
+	<select id="listOrderDetails" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.OrderDetails">
+		SELECT order_details_id,orderid,purchaserid,ordertime,count,proid,state,supplierid,order_details_price as orderDetailsPrice,product_price as productPrice FROM order_details 
+		where proid=#{proid}
 	</select>
 	
-	<resultMap type="com.zl.st.pojo.OrderDetails" id="OrderDetailsinfo">
-		<id column="order_details_id" property="orderDetailsId"/>
-		<result column="orderid" property="orderid"/>
-		<result column="purchaserid" property="purchaserid"/>
-		<result column="count" property="count"/>
-		<result column="proid" property="proid"/>
-		<result column="state" property="state"/>
-		<result column="supplierid" property="supplierid"/>
-		<result column="order_details_price" property="orderDetailsPrice"/>
-		<result column="product_price" property="productPrice"/>
-		<association property="product" column="proid" select="com.zl.st.dao.djx.IProductDAO.getProductById"></association>
-	</resultMap>
 	
 </mapper>

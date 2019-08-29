@@ -6,6 +6,6 @@ import com.zl.st.pojo.OrderDetails;
 
 public interface IQuotesService {
 	
-	List<OrderDetails> listOrderDetails();
+	List<OrderDetails> listOrderDetails(Integer proCateNum);
 
 }

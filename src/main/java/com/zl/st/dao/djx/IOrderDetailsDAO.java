@@ -6,6 +6,6 @@ import com.zl.st.pojo.OrderDetails;
 
 public interface IOrderDetailsDAO {
 	
-	List<OrderDetails> listOrderDetails();
+	List<OrderDetails> listOrderDetails(Integer proid);
 
 }
