@@ -1,27 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <% 
 	String path=request.getContextPath();
 	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <base href="<%=basepath %>"/>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>超鲜网-行情-供应商报价</title>
-    <link rel="stylesheet" href="statric/1-2/css/public.css"/>
-    <link rel="stylesheet" href="statric/1-2/css/page.css"/>
-    <link rel="stylesheet" href="statric/1-2/css/banner.css"/>
-    <link rel="stylesheet" href="statric/1-2/css/tab.css"/>
-    <link rel="stylesheet" href="statric/1-2/css/table.css"/>
-    <link rel="stylesheet" href="statric/1-2/css/select.css">
-    <link rel="stylesheet" href="statric/1-2/css/font-awesome.min.css">
-    <link rel="stylesheet" href="statric/1-2/css/font-awesome-ie7.css">
-    <link rel="stylesheet" href="statric/1-2/css/hq.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>超鲜网-行情-实时成交价</title>
+    <link rel="stylesheet" href="static/1-2/css/public.css"/>
+    <link rel="stylesheet" href="static/1-2/css/page.css"/>
+    <link rel="stylesheet" href="static/1-2/css/banner.css"/>
+    <link rel="stylesheet" href="static/1-2/css/tab.css"/>
+    <link rel="stylesheet" href="static/1-2/css/table.css"/>
+    <link rel="stylesheet" href="static/1-2/css/select.css">
+    <link rel="stylesheet" href="static/1-2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/1-2/css/font-awesome-ie7.css">
+    <link rel="stylesheet" href="static/1-2/css/hq.css">
     <!--[if lt IE 10]>
     <script src="static/1-2/js/html5shiv.min.js"></script>
     <![endif]-->
 </head>
+
 <body>
 <!--网站顶部-->
 <div class="top">
@@ -305,330 +309,207 @@
             <!-- 搜索表格 -->
             <div class="lib-tab4">
                 <ul class="lib-menu">
-                    <li>实时成交价</li>
-                    <li class="hover">供应商报价</li>
-                    <li>指数</li>
-                    <li>近期价格概况</li>
+                    <li class="hover" onclick="toOtherJSP('djxqc/qrttpbpi');">实时成交价</li>
+                    <li onclick="toOtherJSP('djxqc/qsq');">供应商报价</li>
+                    <li onclick="toOtherJSP('djxqc/qi');">指数</li>
+                    <li onclick="toOtherJSP('djxqc/qrpo');">近期价格概况</li>
                 </ul>
                 <div class="lib-content">
                     <div class="child-content" style="display: block;">
-                        <div class="hq-tit">供应商报价专区</div>
-                        <!-- 供应商报价专区start -->
+                        <!-- 实时成交价start -->
                         <div class="bj_b">
-                            <table cellpadding="0" cellspacing="0" border="1" borderColor="#e5e5e5" rules="rows">
-                                <thead>
-                                    <tr>
-                                        <th colspan="5">
-                                           <span class="gz">
-                                               <i></i>加关注
-                                           </span> 
-                                           <p>供应商名称<br><span>2015-04-21更新</span></p>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5" aglin="right"><a href="">更多 >></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table cellpadding="0" cellspacing="0" border="1" borderColor="#e5e5e5" rules="rows">
-                                <thead>
-                                    <tr>
-                                        <th colspan="5">
-                                           <span class="gz">
-                                               <i></i>加关注
-                                           </span> 
-                                           <p>供应商名称<br><span>2015-04-21更新</span></p>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5" aglin="right"><a href="">更多 >></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table cellpadding="0" cellspacing="0" border="1" borderColor="#e5e5e5" rules="rows">
-                                <thead>
-                                    <tr>
-                                        <th colspan="5">
-                                           <span class="gz">
-                                               <i></i>加关注
-                                           </span> 
-                                           <p>供应商名称<br><span>2015-04-21更新</span></p>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5" aglin="right"><a href="">更多 >></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table cellpadding="0" cellspacing="0" border="1" borderColor="#e5e5e5" rules="rows">
-                                <thead>
-                                    <tr>
-                                        <th colspan="5">
-                                           <span class="gz">
-                                               <i></i>加关注
-                                           </span> 
-                                           <p>供应商名称<br><span>2015-04-21更新</span></p>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5" aglin="right"><a href="">更多 >></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table cellpadding="0" cellspacing="0" border="1" borderColor="#e5e5e5" rules="rows">
-                                <thead>
-                                    <tr>
-                                        <th colspan="5">
-                                           <span class="gz">
-                                               <i></i>加关注
-                                           </span> 
-                                           <p>供应商名称<br><span>2015-04-21更新</span></p>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5" aglin="right"><a href="">更多 >></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table cellpadding="0" cellspacing="0" border="1" borderColor="#e5e5e5" rules="rows">
-                                <thead>
-                                    <tr>
-                                        <th colspan="5">
-                                           <span class="gz">
-                                               <i></i>加关注
-                                           </span> 
-                                           <p>供应商名称<br><span>2015-04-21更新</span></p>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20%">鱿鱼</td>
-                                        <td width="20%">150/200g</td>
-                                        <td width="20%">A级</td>
-                                        <td width="20%">现货</td>
-                                        <td width="20%" class="red">58.00RMB</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5" aglin="right"><a href="">更多 >></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="kk-l"></div>
+                            <div class="s_type">
+                                <ul id="procategoryList" >
+                                    <c:forEach items="${procategoryList}" var="pl" varStatus="s">
+                                    	<li  ${s.index==0?"class='selected'":"" } onclick="showAllTransaction('${pl.categoryid}');">${pl.categoryName }</li>
+                                    </c:forEach>
+                                </ul>
+                            </div>
+                            <div class="s_l" style="display:block">
+                                <form action="">
+                             <div for="" class="select-b">
+                    <em>分类：</em>
+                    <select name="" id=""  class="selectpicker" data-width="150">
+                          <option value="">请选择</option>
+                          <option value="">类型一</option>
+                          <option value="">类型二</option>
+                          <option value="">类型三</option>
+                    </select>
+                </div>
+                            <label for="">规格: </label>
+                            <input type="text">
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
+                            </div>
+                             <div class="s_l">
+                                <form action="">
+                                    <label for="">分类: </label>
+                                <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select> 
+                                <label for="">规格: </label>
+                                 <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select>
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
+                            </div>
+                            <div class="s_l">
+                                <form action="">
+                                    <label for="">分类: </label>
+                                <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select> 
+                                <label for="">规格: </label>
+                                 <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select>
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
+                            </div>
+                            <div class="s_l">
+                                <form action="">
+                                    <label for="">分类: </label>
+                                <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select> 
+                                <label for="">规格: </label>
+                                 <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select>
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
+                            </div>
+                            <div class="s_l">
+                                <form action="">
+                                    <label for="">分类: </label>
+                                <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select> 
+                                <label for="">规格: </label>
+                                 <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select>
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
+                            </div>
+                            <div class="s_l">
+                                <form action="">
+                                    <label for="">分类: </label>
+                                <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select> 
+                                <label for="">规格: </label>
+                                 <select name="" id="" class="select">
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                            <option value="">请选择</option>
+                                </select>
+                            <label for="">供应商: </label>
+                            <input type="text">
+                            <label for="">商品名称: </label>
+                            <input type="text">
+                            <div class="cl"></div>
+                            <label for="" class="gjz">关键字: </label>
+                            <input type="text" class="search">
+                            <input type="submit" class="add_ress search_b" value="搜索">
+                                </form>
+                            </div>
+
+                            <div class="je_db">
+                                <table rules="rows" borderColor="#eee" id="transaction_suc_tb">
+                                   <thead>
+                                       <tr>
+
+                                           <th width="10%">分类</th>
+                                           <th width="10%">产品名称</th>
+                                           <th width="10%">产地</th>
+                                           <th width="10%">规格型号</th>
+                                           <th width="10%">级别</th>
+                                           <th width="10%">期/现货</th>
+                                           <th width="10%">今日报价</th>
+                                           <th width="10%">成交价</th>
+                                           <th width="10%">成交量（KG）</th>
+                                           <th width="10%">成交时间</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody>
+                                		
+                                       
+                                   </tbody>
+                               </table>
+                            </div>
                         </div>
-                        <!-- 供应商报价专区end -->
+                        <!-- page -->
+                        <!-- <div class="list-page">
+                            <ul>
+                                <li><a href="javascript:;" class="prev-listPage prev-disable">上一页</a></li>
+                                <li><a href="javascript:;" id="hover-listPage">1</a></li>
+                                <li><a href="javascript:;">2</a></li>
+                                <li><a href="javascript:;">3</a></li>
+                                <li><a href="javascript:;">4</a></li>
+                                <li><a href="javascript:;" class="omitted">...</a></li>
+                                <li><a href="javascript:;">100</a></li>
+                                <li><a href="javascript:;" class="next-listPage">下一页</a></li>
+                                <li><span>到第</span><input type="text"><span>页</span></li>
+                                <li><a href="javascript:;" class="jump-page">确定</a></li>
+                            </ul>
+                        </div> -->
+                        <!-- 实时成交价end -->
                         </div>
                         
                     </div>
@@ -693,6 +574,10 @@
 <script type="text/javascript" src="static/1-2/js/jquery.accordion.js"></script>
 <script type="text/javascript" src="static/1-2/js/jquery.selectBox.js"></script>
 <script type="text/javascript" src="static/1-2/js/hq.js"></script>
+<script src="static/1-2/js/amcharts.js" type="text/javascript"></script>
+<script src="static/1-2/js/serial.js" type="text/javascript"></script>
+<script src="static/1-2/js/dark.js" type="text/javascript"></script>
+<script src="static/1-2/js/select.js" type="text/javascript"></script>
 <script type="text/javascript">
     jQuery("#bannerIndex").slide({mainCell:".bd ul",autoPlay:true});
     jQuery(".banner-quotes01").each(function(){
@@ -707,6 +592,129 @@
     $(function(){
       $('dl#my-accordion').accordion({open:true});
      });
+</script>
+<script>
+    var chart = AmCharts.makeChart("chartdiv", {
+        "type": "serial",
+        "theme": "dark",
+        "dataDateFormat": "YYYY-MM-DD",
+        "color":"#666",
+
+        "dataProvider": [{
+            "date": "2013-11-30",
+            "value": 104
+        }, {
+            "date": "2013-12-01",
+            "value": 108
+        }, {
+            "date": "2013-12-02",
+            "value": 103
+        }, {
+            "date": "2013-12-03",
+            "value": 105
+        }, {
+            "date": "2013-12-04",
+            "value": 136
+        }, {
+            "date": "2013-12-05",
+            "value": 138
+        }, {
+            "date": "2013-12-06",
+            "value": 113
+        }, {
+            "date": "2013-12-07",
+            "value": 131
+        }, {
+            "date": "2013-12-08",
+            "value": 114
+        }, {
+            "date": "2013-12-09",
+            "value": 124
+        }],
+        "graphs": [{
+            "bullet": "round",
+            "dashLength": 4,
+            "valueField": "value"
+        }],
+        "chartCursor": {
+            "cursorAlpha": 0
+        },
+        "categoryField": "date",
+        "categoryAxis": {
+            "parseDates": true
+        }
+    });
+</script>
+<script type="text/javascript">
+	$(function(){
+		$.post("djxqc/qrttpbpi",{"parentid":1},function(data){
+    		$("#transaction_suc_tb tbody").html("");
+    		$.each(data,function(i,n){
+    			$("#transaction_suc_tb tbody").append("<tr><td>"+n.product.procategory.categoryName+"</td>"+
+    					"<td>"+n.product.proName+"</td>"+
+    					"<td>"+n.product.proPlace+"</td>"+
+    					"<td>"+n.product.proSpecific+"</td>"+
+    					"<td>"+n.product.proGrade+"</td>"+
+    					"<td>"+n.product.proCurrent+"</td>"+
+    					"<td>2060-2090</td>"+
+    					"<td>"+n.orderDetailsPrice+"</td>"+
+    					"<td>"+n.count+"</td>"+
+    					"<td>"+(new Date(n.ordertime)).Format("hh:mm")+"</td></tr>");
+    		});
+    		
+    	},"json");
+  	});
+  	function getMyDate(str){  
+        var oDate = new Date(str),  
+        oYear = oDate.getFullYear(),  
+        oMonth = oDate.getMonth()+1,  
+        oDay = oDate.getDate(),  
+        oHour = oDate.getHours(),  
+        oMin = oDate.getMinutes(),  
+        oSen = oDate.getSeconds(),  
+        oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);//最后拼接时间  
+        return oTime;  
+    }; 
+    Date.prototype.Format = function (fmt) { //author: meizz  
+        var o = {  
+            "M+": this.getMonth() + 1, //月份  
+            "d+": this.getDate(), //日  
+            "h+": this.getHours(), //小时  
+            "m+": this.getMinutes(), //分  
+            "s+": this.getSeconds(), //秒  
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度  
+            "S": this.getMilliseconds() //毫秒  
+        };  
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));  
+        for (var k in o)  
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
+        return fmt;  
+    }; 
+    
+
+    function showAllTransaction(parentid){
+  		
+    	$.post("djxqc/qrttpbpi",{"parentid":parentid},function(data){
+    		$("#transaction_suc_tb tbody").html("");
+    		$.each(data,function(i,n){
+    			$("#transaction_suc_tb tbody").append("<tr><td>"+n.product.procategory.categoryName+"</td>"+
+    					"<td>"+n.product.proName+"</td>"+
+    					"<td>"+n.product.proPlace+"</td>"+
+    					"<td>"+n.product.proSpecific+"</td>"+
+    					"<td>"+n.product.proGrade+"</td>"+
+    					"<td>"+n.product.proCurrent+"</td>"+
+    					"<td>2060-2090</td>"+
+    					"<td>"+n.orderDetailsPrice+"</td>"+
+    					"<td>"+n.count+"</td>"+
+    					"<td>"+(new Date(n.ordertime)).Format("hh:mm")+"</td></tr>");
+    		});
+    		
+    	},"json");
+    }
+    
+    function toOtherJSP(path){
+    	location.href=path;
+    }
 </script>
 </body>
 </html>

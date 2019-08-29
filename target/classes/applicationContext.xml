@@ -58,7 +58,8 @@
         <property name="dataSource" ref="dataSource"/>
         <!--扫描包,给包下的所有类起别名-->
         <property name="typeAliasesPackage" value="pojo"/>
-        <!-- 扫描单个mapper
+        <!--
+            扫描单个mapper
             <property name="mapperLocations" value="classpath:dao/IBookDAO.xml"/>
             <property name="mapperLocations">
             <array>
@@ -71,7 +72,9 @@
             <array>
                 <bean class="com.github.pagehelper.PageInterceptor">
                     <property name="properties">
-                        <value>helperDialect=mysql</value>
+                        <value>
+　　　　　　　　　　　　　　　　helperDialect=mysql
+　　　　　　　　　　　　　　</value>
                     </property>
                 </bean>
             </array>
@@ -119,7 +122,7 @@
     </bean>
 
     <!--开启事务注解-->
-    <tx:annotation-driven/>
+    <!-- <tx:annotation-driven/> -->
 
     <!--配置通知-->
 <!--    <tx:advice id="myadvice">-->
