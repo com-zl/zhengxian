@@ -50,10 +50,10 @@ public class PurchaseController {
 	@RequestMapping(value="details",method=RequestMethod.GET)
 	public String lisfa(Integer pur,Model model) {
 		Purchaseform pcf = purchaseService.findPurchaseformId(pur);
-		model.addAttribute("pcf", pcf);
 		Thread t = new Thread(myThread);
 		t.start();
 		System.out.println(myThread.getDate());
+		model.addAttribute("pcf", pcf);
 		model.addAttribute("time", myThread.getDate());
 		return "purchasefront/procurement/purchaseformdetails_show";
 	}

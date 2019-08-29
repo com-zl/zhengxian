@@ -309,8 +309,8 @@
         <div id="caigou">
             <div class="member-tit">
                 <p>采购单详情</p>
-                <div style="text-align:right ">有效期：</div>
-           	 	<div style="margin-left:800px;" id="countdown-1"></div>
+                <div style="text-align:right; ">有效期：</div>
+           	 	<div style="margin-left:1000px;" id="countdown-1"></div>
             </div>
             
              <div class="proof">
@@ -571,14 +571,14 @@
         <p>Copyright <i class="fa fa-copyright"></i> 超鲜网 粤ICP备 13013915号-3  ICP证：粤B2-201401448</p>
     </div>
 </footer>
- <script src="js/jquery.time-to.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="static/1-2/js/global.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery.accordion.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery.selectBox.js"></script>
+ <script src="static/1-2/js/jquery.time-to.js"></script>
  <script type="text/javascript"> $('#countdown-1').timeTo(${time}, function(){
      alert('Countdown finished');
  });
 </script>
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript" src="js/jquery.accordion.js"></script>
-<script type="text/javascript" src="js/jquery.selectBox.js"></script>
 </body>
 </html>
