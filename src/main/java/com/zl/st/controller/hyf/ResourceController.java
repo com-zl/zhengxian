@@ -63,6 +63,7 @@ public class ResourceController {
 			p.setProCurrent(proCurrent[i]);
 			p.setProRemarks(proRemarks[i]);
 			p.setStatus("已发布");
+			p.setSupid(1);
 			prolist.add(p);
 		}
 		resourceService.addProduct(prolist);
