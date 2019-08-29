@@ -6,5 +6,5 @@ import com.zl.st.pojo.Product;
 
 public interface IProductService {
 
-	List<Product> listBySupid(Integer supid);
+	List<Product> listProduct();
 }
