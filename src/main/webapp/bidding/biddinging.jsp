@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <% 
 	String path=request.getContextPath();
-	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/static/1-5/";
+	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/static/1-2/";
 %>
 <!DOCTYPE html>
 <html>

@@ -28,9 +28,12 @@
     <div class="container">
         <div class="top-left">
             <p>欢迎来到超鲜网</p>
-            <a href="javascript:;">请登录</a>
-            <span>|</span>
-            <a href="javascript:;">免费注册</a>
+            <div id="isloginDiv">
+	            <a href="javascript:;">请登录</a>
+	            <span>|</span>
+	            <a href="javascript:;">免费注册</a>
+            </div>
+            ${myUser.loginname }
         </div>
         <div class="top-right">
             <ul>
@@ -2938,8 +2941,7 @@
         <em></em>
     </a></li>
 </ul>
-<script type="text/javascript" src="static/1-2/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="static/1-2/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="static/1-2/js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="static/1-2/js/jquery.SuperSlide.2.1.1.js"></script>
 <script type="text/javascript" src="static/1-2/js/animateBackground-plugin.js"></script>
 <script type="text/javascript" src="static/1-2/js/global.js"></script>
@@ -2955,10 +2957,14 @@
         $(this).slide({mainCell:".bd ul",autoPlay:false});
     });
     jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:13});
-</script>
-<script type="text/javascript">
     $(function(){
       $('dl#my-accordion').accordion({open:true});
+      var u = "${myUser}";
+      if(!u){
+	      $("#isloginDiv").css("display","inline-block");
+      }else{
+    	  $("#isloginDiv").css("display","none");
+      }
      });
 </script>
 </body>
