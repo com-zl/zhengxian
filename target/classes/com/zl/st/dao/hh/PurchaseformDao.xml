@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zl.st.dao.hh.PurchaseformDao" >
+	
+	<select id="findAllDemandPurcha" resultType="com.zl.st.pojo.hh.Purchaseform" >
+		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, 
+			level, warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, 
+			receivaddress, purchasetime, certificate, create_date as createDate, supplierid, 
+			purchaserid, purchasestate, contacts,corporatename as companyname, contactphone from purchaseform
+	</select>
+	
+	<!-- 查询正在进行中和已结束的采购单sql语句 -->
+	<select id="findFormByContact"  resultMap="Purchaseforminfo" >
+		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, level, 
+		warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, receivaddress, 
+		purchasetime, certificate, create_date as createDate, supplierid, purchaserid, 
+		purchasestate from purchaseform where 1=1
+		<if test="_parameter!=null">
+			and purchasestate=#{_parameter,jdbcType=VARCHAR}
+		</if>
+		
+	</select>
+	
+	<select id="findForming" resultMap="Purchaseforminfo" >
+		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, level, 
+		warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, receivaddress, 
+		purchasetime, certificate, create_date as createDate, supplierid, purchaserid, 
+		purchasestate, contacts,corporatename as companyname, contactphone from purchaseform
+	</select>
+	
+	<resultMap type="com.zl.st.pojo.hh.Purchaseform" id="Purchaseforminfo">
+		<id column="purchaseid" property="purchaseid" />
+		<result column="purchasename" property="purchasename" />
+		<result column="purchasegoods" property="purchasegoods" />
+		<result column="placeorigin" property="placeorigin" />
+		<result column="specificationtype" property="specificationtype" />
+		<result column="level" property="level" />
+		<result column="warehouse" property="warehouse" />
+		<result column="spotgoods" property="spotgoods" />
+		<result column="price" property="price" />
+		<result column="purchasenote" property="purchasenote" />
+		<result column="purchasemode" property="purchasemode" />
+		<result column="invoicetype" property="invoicetype" />
+		<result column="receivaddress" property="receivaddress" />
+		<result column="purchasetime" property="purchasetime" />
+		<result column="certificate" property="certificate" />
+		<result column="create_date" property="createDate" />
+		<result column="supplierid" property="supplierid" />
+		<result column="purchaserid" property="purchaserid" />
+		<result column="purchasestate" property="purchasestate" />
+		<result column="contacts" property="contacts" />
+		<result column="corporatename" property="companyname" />
+		<result column="contactphone" property="contactphone" />
+		<association property="purchasecontact" column="purchaserid" select="com.zl.st.dao.hh.PurchasecontactDao.findContactByContactId"></association>
+	</resultMap>
+	
+	<insert id="listAddPurchaseFromRelease" parameterType="com.zl.st.pojo.hh.Purchaseform" >
+		insert into purchaseform(purchasename,purchasegoods,placeorigin,specificationtype,level,warehouse,spotgoods,price,purchasenote,purchasemode,invoicetype,receivaddress,purchasetime,certificate,create_date,supplierid,purchaserid,purchasestate,contacts,corporatename,contactphone) 
+		values(#{purchasename,jdbcType=VARCHAR},#{purchasegoods,jdbcType=VARCHAR},#{placeorigin,jdbcType=VARCHAR},#{specificationtype,jdbcType=VARCHAR},#{level,jdbcType=VARCHAR},#{warehouse,jdbcType=VARCHAR},#{spotgoods,jdbcType=VARCHAR},#{price,jdbcType=DOUBLE},#{purchasenote,jdbcType=VARCHAR},#{purchasemode,jdbcType=VARCHAR},#{invoicetype,jdbcType=VARCHAR},#{receivaddress,jdbcType=VARCHAR},#{purchasetime,jdbcType=VARCHAR},#{certificate,jdbcType=VARCHAR},SYSDATE(),#{supplierid,jdbcType=INTEGER},#{purchaserid,jdbcType=INTEGER},'进行中',#{contacts,jdbcType=VARCHAR},#{companyname,jdbcType=VARCHAR},#{contactphone,jdbcType=VARCHAR})
+	</insert>
+	
+	<!-- 根据ID查订单详情 -->
+	<select id="findPurchaseformId" resultType="com.zl.st.pojo.hh.Purchaseform" >
+		select purchaseid, purchasename, purchasegoods, placeorigin, specificationtype, 
+			level, warehouse, spotgoods, price, purchasenote, purchasemode, invoicetype, 
+			receivaddress, purchasetime, certificate, create_date as createDate, supplierid, 
+			purchaserid, purchasestate, contacts, companyname, contactphone from purchaseform where purchaseid=#{purchaseid}
+	</select>
+	
+	
+	
+</mapper>
