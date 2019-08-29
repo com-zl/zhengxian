@@ -34,7 +34,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
     
-    <!--数据源-->
+    <!--数据源	10.1.14.191-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
         <property name="url" value="jdbc:mysql://10.1.14.191:3306/shitian"/>
@@ -43,7 +43,7 @@
     </bean>
 
     <!--创建连接工厂-->
-    <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!--扫描包,给包下的所有类起别名-->
         <property name="typeAliasesPackage" value="pojo"/>
@@ -68,12 +68,7 @@
         <property name="basePackage" value="com.zl.st.dao"/>
     </bean>
 
-    <!-- 配置mp全局设置 -->
-    <bean id="globalConfiguration" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
-    	<property name="dbColumnUnderline" value="true"/>
-    	<property name="idType" value="0"/>
-    	<property name="tablePrefix" value="t_"/>
-    </bean>
+    
     
     <!-- 上传文件,springmvc上传图片（文件）是通过MultipartResolver(Multipart解析器)处理的 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

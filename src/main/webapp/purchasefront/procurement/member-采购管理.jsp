@@ -1,179 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<?xml version="1.0" encoding="UTF-8"?>
 <% 
 	String path=request.getContextPath();
 	String basepath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <base href="<%=basepath %>"/>
 <head lang="en">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>超鲜网-行情-实时成交价</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>供应商管理-采购管理</title>
     <link rel="stylesheet" href="static/1-2/css/public.css"/>
     <link rel="stylesheet" href="static/1-2/css/page.css"/>
+    <link rel="stylesheet" href="static/1-2/css/member.css"/>
     <link rel="stylesheet" href="static/1-2/css/banner.css"/>
     <link rel="stylesheet" href="static/1-2/css/tab.css"/>
     <link rel="stylesheet" href="static/1-2/css/table.css"/>
     <link rel="stylesheet" href="static/1-2/css/select.css">
     <link rel="stylesheet" href="static/1-2/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/1-2/css/font-awesome-ie7.css">
-    <link rel="stylesheet" href="static/1-2/css/hq.css">
-    <script type="text/javascript" src="static/1-2/js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="static/1-2/js/jquery.SuperSlide.2.1.1.js"></script>
-	<script type="text/javascript" src="static/1-2/js/global.js"></script>
-	<script type="text/javascript" src="static/1-2/js/jquery.accordion.js"></script>
-	<script type="text/javascript" src="static/1-2/js/jquery.selectBox.js"></script>
-	<script type="text/javascript" src="static/1-2/js/hq.js"></script>
-	<script src="static/1-2/js/amcharts.js" type="text/javascript"></script>
-	<script src="static/1-2/js/serial.js" type="text/javascript"></script>
-	<script src="static/1-2/js/dark.js" type="text/javascript"></script>
-	<script src="static/1-2/js/select.js" type="text/javascript"></script>
-    
-    <script type="text/javascript">
-    jQuery("#bannerIndex").slide({mainCell:".bd ul",autoPlay:true});
-    jQuery(".banner-quotes01").each(function(){
-        $(this).slide({mainCell:".bd ul",autoPlay:false});
-    });
-     jQuery(".banner-quotes02").each(function(){
-        $(this).slide({mainCell:".bd ul",autoPlay:false});
-    });
-    jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:13});
-</script>
-<script type="text/javascript">
-    $(function(){
-      $('dl#my-accordion').accordion({open:true});
-     });
-</script>
-<script>
-    var chart = AmCharts.makeChart("chartdiv", {
-        "type": "serial",
-        "theme": "dark",
-        "dataDateFormat": "YYYY-MM-DD",
-        "color":"#666",
-
-        "dataProvider": [{
-            "date": "2013-11-30",
-            "value": 104
-        }, {
-            "date": "2013-12-01",
-            "value": 108
-        }, {
-            "date": "2013-12-02",
-            "value": 103
-        }, {
-            "date": "2013-12-03",
-            "value": 105
-        }, {
-            "date": "2013-12-04",
-            "value": 136
-        }, {
-            "date": "2013-12-05",
-            "value": 138
-        }, {
-            "date": "2013-12-06",
-            "value": 113
-        }, {
-            "date": "2013-12-07",
-            "value": 131
-        }, {
-            "date": "2013-12-08",
-            "value": 114
-        }, {
-            "date": "2013-12-09",
-            "value": 124
-        }],
-        "graphs": [{
-            "bullet": "round",
-            "dashLength": 4,
-            "valueField": "value"
-        }],
-        "chartCursor": {
-            "cursorAlpha": 0
-        },
-        "categoryField": "date",
-        "categoryAxis": {
-            "parseDates": true
-        }
-    });
-</script>
-<script type="text/javascript">
-	$(function(){
-		$.post("djxqc/qrttpbpi",{"parentid":1},function(data){
-			console.log(data);
-    		$("#transaction_suc_tb tbody").html("");
-    		$.each(data,function(i,n){
-    			$("#transaction_suc_tb tbody").append("<tr><td>"+n.product.procategory.categoryName+"</td>"+
-    					"<td>"+n.product.proName+"</td>"+
-    					"<td>"+n.product.proPlace+"</td>"+
-    					"<td>"+n.product.proSpecific+"</td>"+
-    					"<td>"+n.product.proGrade+"</td>"+
-    					"<td>"+n.product.proCurrent+"</td>"+
-    					"<td>2060-2090</td>"+
-    					"<td>"+n.orderDetailsPrice+"</td>"+
-    					"<td>"+n.count+"</td>"+
-    					"<td>"+(new Date(n.ordertime)).Format("hh:mm")+"</td></tr>");
-    		});
-    		
-    	},"json");
-  	});
-  	function getMyDate(str){  
-        var oDate = new Date(str),  
-        oYear = oDate.getFullYear(),  
-        oMonth = oDate.getMonth()+1,  
-        oDay = oDate.getDate(),  
-        oHour = oDate.getHours(),  
-        oMin = oDate.getMinutes(),  
-        oSen = oDate.getSeconds(),  
-        oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);//最后拼接时间  
-        return oTime;  
-    }; 
-    Date.prototype.Format = function (fmt) { //author: meizz  
-        var o = {  
-            "M+": this.getMonth() + 1, //月份  
-            "d+": this.getDate(), //日  
-            "h+": this.getHours(), //小时  
-            "m+": this.getMinutes(), //分  
-            "s+": this.getSeconds(), //秒  
-            "q+": Math.floor((this.getMonth() + 3) / 3), //季度  
-            "S": this.getMilliseconds() //毫秒  
-        };  
-        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));  
-        for (var k in o)  
-            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
-        return fmt;  
-    }; 
-    
-
-    function showAllTransaction(parentid){
-  		
-    	$.post("djxqc/qrttpbpi",{"parentid":parentid},function(data){
-    		$("#transaction_suc_tb tbody").html("");
-    		$.each(data,function(i,n){
-    			$("#transaction_suc_tb tbody").append("<tr><td>"+n.product.procategory.categoryName+"</td>"+
-    					"<td>"+n.product.proName+"</td>"+
-    					"<td>"+n.product.proPlace+"</td>"+
-    					"<td>"+n.product.proSpecific+"</td>"+
-    					"<td>"+n.product.proGrade+"</td>"+
-    					"<td>"+n.product.proCurrent+"</td>"+
-    					"<td>2060-2090</td>"+
-    					"<td>"+n.orderDetailsPrice+"</td>"+
-    					"<td>"+n.count+"</td>"+
-    					"<td>"+(new Date(n.ordertime)).Format("hh:mm")+"</td></tr>");
-    		});
-    		
-    	},"json");
-    }
-    
-    function toOtherJSP(path){
-    	location.href=path;
-    }
-</script>
-    
+    <!--[if lt IE 10]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
 </head>
-
 <body>
 <!--网站顶部-->
 <div class="top">
@@ -195,14 +43,14 @@
             <div class="attention">
                 <p>关注我们：</p>
                 <a class="weixin" href="javascript:;">
-                    <img src="static/1-2/images/top-icon01.png" alt=""/>
+                    <img src="images/top-icon01.png" alt=""/>
                     <div class="weixin-erweima">
                         <i></i>
-                        <img src="static/1-2/images/erweima.png" alt=""/>
+                        <img src="images/erweima.png" alt=""/>
                     </div>
                 </a>
-                <a class="xl" href="javascript:;"><img src="static/1-2/images/top-icon02.png" alt=""/></a>
-                <a class="tx" href="javascript:;"><img src="static/1-2/images/top-icon03.png" alt=""/></a>
+                <a class="xl" href="javascript:;"><img src="images/top-icon02.png" alt=""/></a>
+                <a class="tx" href="javascript:;"><img src="images/top-icon03.png" alt=""/></a>
                 <span>|</span>
             </div>
             <a class="version" href="javascript:;">English</a></div>
@@ -212,7 +60,7 @@
 <header>
     <div class="container">
          <a href="javascript:;" class="logo">
-           <img src="static/1-2/images/logo.png" alt=""/>
+           <img src="images/logo.png" alt=""/>
          </a>
         <div class="search">
             <div class="search-form">
@@ -274,7 +122,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -308,7 +156,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -340,7 +188,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -371,7 +219,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -401,7 +249,7 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                     <li class="pro-sort">
@@ -427,243 +275,316 @@
                                     <span>|</span><a href="">红虾</a><span>|</span><a href="">基围虾</a><span>|</span><a href="">波士顿龙虾</a><span>|</span><a href="">海虎虾</a><span>|</span><a href="">大闸蟹</a><span>|</span><a href="">帝王蟹</a><span>|</span><a href="">阿拉斯加蟹脚</a><span>|</span><a href="">雪蟹</a>
                                 </div>
                             </div>
-                            <a class="second-add" href=""><img src="static/1-2/images/sort-add01.jpg" alt=""/></a>
+                            <a class="second-add" href=""><img src="images/sort-add01.jpg" alt=""/></a>
                         </div>
                     </li>
                 </ul>
             </dt>
-            <dd><a href="javascript:;">首页</a></dd>
+            <dd><a class="selected" href="javascript:;">首页</a></dd>
             <dd><a href="javascript:;">资源</a></dd>
             <dd><a href="javascript:;">采购</a></dd>
             <dd><a href="javascript:;">搜索</a></dd>
             <dd><a href="javascript:;">物流</a></dd>
-            <dd><a class="selected" href="javascript:;">行情</a></dd>
+            <dd><a href="javascript:;">行情</a></dd>
             <dd><a href="javascript:;">积分商城</a></dd>
             <dd><a href="javascript:;">会员俱乐部</a></dd>
         </dl>
     </div>
 </nav>
-<div class="content">
+<!-- 内容主体区 -->
+<div class="content-main">
     <div class="container">
         <!-- 面包屑导航 -->
         <div class="bread-crumbs">
             <a href="javascript:;">首页</a>
             <span><i class="fa fa-angle-double-right"></i></span>
-            <a href="javascript:;" class="selected">全部采购</a>
+            <a href="javascript:;">会员中心</a>
+            <span><i class="fa fa-angle-double-right"></i></span>
+            <a href="javascript:;" class="selected">采购管理</a>
         </div>
-        <!-- 内容主体区 -->
-        <div class="content-main">
-            <!-- 内页标题 -->
-            <!-- 搜索表格 -->
-            <div class="lib-tab4">
-                <ul class="lib-menu">
-                    <li class="hover" onclick="toOtherJSP('djxqc/qrttpbpi');">实时成交价</li>
-                    <li onclick="toOtherJSP('djxqc/qsq');">供应商报价</li>
-                    <li onclick="toOtherJSP('djxqc/qi');">指数</li>
-                    <li onclick="toOtherJSP('djxqc/qrpo');">近期价格概况</li>
-                </ul>
-                <div class="lib-content">
-                    <div class="child-content" style="display: block;">
-                        <!-- 实时成交价start -->
-                        <div class="bj_b">
-                            <div class="kk-l"></div>
-                            <div class="s_type">
-                                <ul id="procategoryList" >
-                                    <c:forEach items="${procategoryList}" var="pl" varStatus="s">
-                                    	<li  ${s.index==0?"class='selected'":"" } onclick="showAllTransaction('${pl.categoryid}');">${pl.categoryName }</li>
-                                    </c:forEach>
-                                </ul>
-                            </div>
-                            <div class="s_l" style="display:block">
-                                <form action="">
-                             <div for="" class="select-b">
-                    <em>分类：</em>
-                    <select name="" id=""  class="selectpicker" data-width="150">
-                          <option value="">请选择</option>
-                          <option value="">类型一</option>
-                          <option value="">类型二</option>
-                          <option value="">类型三</option>
-                    </select>
-                </div>
-                            <label for="">规格: </label>
-                            <input type="text">
-                            <label for="">供应商: </label>
-                            <input type="text">
-                            <label for="">商品名称: </label>
-                            <input type="text">
-                            <div class="cl"></div>
-                            <label for="" class="gjz">关键字: </label>
-                            <input type="text" class="search">
-                            <input type="submit" class="add_ress search_b" value="搜索">
-                                </form>
-                            </div>
-                             <div class="s_l">
-                                <form action="">
-                                    <label for="">分类: </label>
-                                <select name="" id="" class="select">
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                                </select> 
-                                <label for="">规格: </label>
-                                 <select name="" id="" class="select">
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                                </select>
-                            <label for="">供应商: </label>
-                            <input type="text">
-                            <label for="">商品名称: </label>
-                            <input type="text">
-                            <div class="cl"></div>
-                            <label for="" class="gjz">关键字: </label>
-                            <input type="text" class="search">
-                            <input type="submit" class="add_ress search_b" value="搜索">
-                                </form>
-                            </div>
-                            <div class="s_l">
-                                <form action="">
-                                    <label for="">分类: </label>
-                                <select name="" id="" class="select">
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                                </select> 
-                                <label for="">规格: </label>
-                                 <select name="" id="" class="select">
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                                </select>
-                            <label for="">供应商: </label>
-                            <input type="text">
-                            <label for="">商品名称: </label>
-                            <input type="text">
-                            <div class="cl"></div>
-                            <label for="" class="gjz">关键字: </label>
-                            <input type="text" class="search">
-                            <input type="submit" class="add_ress search_b" value="搜索">
-                                </form>
-                            </div>
-                            <div class="s_l">
-                                <form action="">
-                                    <label for="">分类: </label>
-                                <select name="" id="" class="select">
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                                </select> 
-                                <label for="">规格: </label>
-                                 <select name="" id="" class="select">
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                                </select>
-                            <label for="">供应商: </label>
-                            <input type="text">
-                            <label for="">商品名称: </label>
-                            <input type="text">
-                            <div class="cl"></div>
-                            <label for="" class="gjz">关键字: </label>
-                            <input type="text" class="search">
-                            <input type="submit" class="add_ress search_b" value="搜索">
-                                </form>
-                            </div>
-                            <div class="s_l">
-                                <form action="">
-                                    <label for="">分类: </label>
-                                <select name="" id="" class="select">
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                                </select> 
-                                <label for="">规格: </label>
-                                 <select name="" id="" class="select">
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                                </select>
-                            <label for="">供应商: </label>
-                            <input type="text">
-                            <label for="">商品名称: </label>
-                            <input type="text">
-                            <div class="cl"></div>
-                            <label for="" class="gjz">关键字: </label>
-                            <input type="text" class="search">
-                            <input type="submit" class="add_ress search_b" value="搜索">
-                                </form>
-                            </div>
-                            <div class="s_l">
-                                <form action="">
-                                    <label for="">分类: </label>
-                                <select name="" id="" class="select">
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                                </select> 
-                                <label for="">规格: </label>
-                                 <select name="" id="" class="select">
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                            <option value="">请选择</option>
-                                </select>
-                            <label for="">供应商: </label>
-                            <input type="text">
-                            <label for="">商品名称: </label>
-                            <input type="text">
-                            <div class="cl"></div>
-                            <label for="" class="gjz">关键字: </label>
-                            <input type="text" class="search">
-                            <input type="submit" class="add_ress search_b" value="搜索">
-                                </form>
-                            </div>
-
-                            <div class="je_db">
-                                <table rules="rows" borderColor="#eee" id="transaction_suc_tb">
-                                   <thead>
-                                       <tr>
-
-                                           <th width="10%">分类</th>
-                                           <th width="10%">产品名称</th>
-                                           <th width="10%">产地</th>
-                                           <th width="10%">规格型号</th>
-                                           <th width="10%">级别</th>
-                                           <th width="10%">期/现货</th>
-                                           <th width="10%">今日报价</th>
-                                           <th width="10%">成交价</th>
-                                           <th width="10%">成交量（KG）</th>
-                                           <th width="10%">成交时间</th>
-                                       </tr>
-                                   </thead>
-                                   <tbody>
-                                		
-                                       
-                                   </tbody>
-                               </table>
-                            </div>
-                        </div>
-                        <!-- page -->
-                        <!-- <div class="list-page">
-                            <ul>
-                                <li><a href="javascript:;" class="prev-listPage prev-disable">上一页</a></li>
-                                <li><a href="javascript:;" id="hover-listPage">1</a></li>
-                                <li><a href="javascript:;">2</a></li>
-                                <li><a href="javascript:;">3</a></li>
-                                <li><a href="javascript:;">4</a></li>
-                                <li><a href="javascript:;" class="omitted">...</a></li>
-                                <li><a href="javascript:;">100</a></li>
-                                <li><a href="javascript:;" class="next-listPage">下一页</a></li>
-                                <li><span>到第</span><input type="text"><span>页</span></li>
-                                <li><a href="javascript:;" class="jump-page">确定</a></li>
-                            </ul>
-                        </div> -->
-                        <!-- 实时成交价end -->
-                        </div>
-                        
+         <!-- 会员左侧 -->
+         <div class="member-left">
+            <dl>
+                <dt>会员中心</dt>
+                <dd><a href="javascript:;" class="menuPro-first">基本信息</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我的收藏</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我的关注</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">账户安全</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我的积分</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我的站内信<span style="color:#b0e78e;">(8)</span></a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">升级会员</a></dd>
+                <dt>供应商管理</dt>
+                <dd>
+                    <a href="javascript:;" class="menuPro-first"><i class="fa fa-plus-square"></i>我的资源单</a>
+                    <div class="menuPro-second">
+                        <a href="javascript:;"><i class="fa fa-angle-right"></i>上传资源单</a>
+                        <a href="javascript:;"><i class="fa fa-angle-right"></i>资源预览</a>
+                        <a href="javascript:;"><i class="fa fa-angle-right"></i>修改价格发布</a>
+                        <a href="javascript:;"><i class="fa fa-angle-right"></i>待审核资源单</a>
+                        <a href="javascript:;"><i class="fa fa-angle-right"></i>已关闭资源单</a>
                     </div>
-                </div>
+                </dd>
+                <dd><a href="javascript:;" class="menuPro-first">我参与的竞标</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我收到的订单</a></dd>
+                <dt>采购管理</dt>
+                <dd><a href="javascript:;" class="menuPro-first selected">我的采购单</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我的订单</a></dd>
+                <dt>托运管理</dt>
+                <dd><a href="javascript:;" class="menuPro-first">我要找车</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我的托运信息</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我的托运单</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">使用过的托运商</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">关注的承运商</a></dd>
+                <dt>承运管理</dt>
+                <dd><a href="javascript:;" class="menuPro-first">我的车辆</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我的路线</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">承运简介</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我的网点</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我参与的竞价</a></dd>
+                <dd><a href="javascript:;" class="menuPro-first">我的承运单</a></dd>
+            </dl>
+         </div>
+         <!-- 会员右侧 -->
+         <div class="member-right">
+            <!-- 搜索列表 -->
+            <div class="search-member">
+                 <dl>
+                    <dd>
+                        <label for="">
+                            <p>供应商：</p>
+                            <input type="text" class="input02 w125"/>
+                        </label>
+                        <label for="">
+                            <p>商品名称：</p>
+                            <input type="text" class="input02 w125"/>
+                        </label>
+                    </dd>
+                    <dd>
+                        <label for="">
+                            <p>订单时间：</p>
+                            <input type="text" class="input02 w125 date"/>
+                            <select class="w100">
+                                <option value="0">请选择</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <span>时</span>
+                            <input type="text" class="input02 w45"/>
+                            <span>分</span>
+                        </label>
+                        <label for="">
+                            <span>至</span>
+                            <input type="text" class="input02 w125 date"/>
+                            <select class="w100">
+                                <option value="0">请选择</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <span>时</span>
+                            <input type="text" class="input02 w45"/>
+                            <span>分</span>
+                        </label>
+                        <div class="search-btn">
+                            <input type="submit" class="btn03" value="检索">
+                        </div>
+                    </dd>
+                </dl>
             </div>
-        </div>
+            <!-- 我收到的订单 -->
+            <div class="order-received">
+               <table>
+                   <thead>
+                       <tr>
+                           <th width="110px;"><input type="checkbox" class="check-all"><label for="">全选</label></th>
+                           <th width="120px;">商品信息</th>
+                           <th width="110px;">规格</th>
+                           <th width="165px;">单价</th>
+                           <th width="130px">数量(千克)</th>
+                           <th width="120px;">总金额</th>
+                           <th width="110px;">订单状态</th>
+                           <th>操作</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                        <!-- 控制间距 -->
+                        <tr>
+                            <td colspan="8" style="height: 10px; border: none;"></td>
+                        </tr>
+                       <tr class="order-tit">
+                           <td colspan="8">
+                               <div class="buyers">采购商：深圳XXXX公司</div>
+                               <div class="num">订单编号：201505070001</div>
+                               <div class="time">订单时间：2014-07-10 11:12:25</div>
+                               <div class="tel">联系电话：18911111111</div>
+                               <div class="address">地址：福建省福州市XXXXXX工业园</div>
+                           </td>
+                       </tr>
+                       <tr class="order-con">
+                           <td><input type="checkbox"></td>
+                           <td colspan="4" class="pro-infors">
+                                <table>
+                                    <tr>
+                                        <td><a href="javascript:;">牛圈肉</a></td>
+                                        <td>160g</td>
+                                        <td><span>￥500.00</span>RBM/kg</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>牛圈肉</td>
+                                        <td>160g</td>
+                                        <td><span>￥500.00</span>RBM/kg</td>
+                                        <td>1000</td>
+                                    </tr>
+                                </table>
+                           </td>
+                           <td>
+                            <div class="pro-totalPrice">￥100000.00</div>
+                           </td>
+                           <td>已生成</td>
+                           <td><a href="javascript:;" class="btn04">上传付款凭证</a></td>
+                       </tr>
+                   </tbody>
+                   <tbody>
+                        <!-- 控制间距 -->
+                        <tr>
+                            <td colspan="8" style="height: 10px; border: none;"></td>
+                        </tr>
+                       <tr class="order-tit">
+                           <td colspan="8">
+                               <div class="buyers">采购商：深圳XXXX公司</div>
+                               <div class="num">订单编号：201505070001</div>
+                               <div class="time">订单时间：2014-07-10 11:12:25</div>
+                               <div class="tel">联系电话：18911111111</div>
+                               <div class="address">地址：福建省福州市XXXXXX工业园</div>
+                           </td>
+                       </tr>
+                       <tr class="order-con">
+                           <td><input type="checkbox"></td>
+                           <td colspan="4" class="pro-infors">
+                                <table>
+                                    <tr>
+                                        <td>牛圈肉</td>
+                                        <td>160g</td>
+                                        <td><span>￥500.00</span>RBM/kg</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>牛圈肉</td>
+                                        <td>160g</td>
+                                        <td><span>￥500.00</span>RBM/kg</td>
+                                        <td>1000</td>
+                                    </tr>
+                                </table>
+                           </td>
+                           <td>
+                            <div class="pro-totalPrice">￥100000.00</div>
+                            <a href="javascript:;" class="pro-note pop-btn"><img src="images/pro-note.png" alt=""></a>
+                            <!-- 弹层02 -->
+                            <div class="pop pop03">
+                                <div class="tit"><i class="fa fa-times-circle-o"></i></div>
+                                <div class="con">
+                                    <p>备注：经协商同意降价出售</p>
+                                </div>
+                            </div>
+                           </td>
+                           <td>已生成</td>
+                           <td><a href="javascript:;" class="btn04">上传付款凭证</a></td>
+                       </tr>
+                   </tbody>
+                    <tbody>
+                        <!-- 控制间距 -->
+                        <tr>
+                            <td colspan="8" style="height: 10px; border: none;"></td>
+                        </tr>
+                       <tr class="order-tit">
+                           <td colspan="8">
+                               <div class="buyers">采购商：深圳XXXX公司</div>
+                               <div class="num">订单编号：201505070001</div>
+                               <div class="time">订单时间：2014-07-10 11:12:25</div>
+                               <div class="tel">联系电话：18911111111</div>
+                               <div class="address">地址：福建省福州市XXXXXX工业园</div>
+                           </td>
+                       </tr>
+                       <tr class="order-con">
+                           <td><input type="checkbox"></td>
+                           <td colspan="4" class="pro-infors">
+                                <table>
+                                    <tr>
+                                        <td>牛圈肉</td>
+                                        <td>160g</td>
+                                        <td><span>￥500.00</span>RBM/kg</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>牛圈肉</td>
+                                        <td>160g</td>
+                                        <td><span>￥500.00</span>RBM/kg</td>
+                                        <td>1000</td>
+                                    </tr>
+                                </table>
+                           </td>
+                           <td>
+                            <div class="pro-totalPrice">￥100000.00</div>
+                           </td>
+                           <td>已付款</td>
+                           <td>
+                               <a href="javascript:;" class="btn04 pop-pay" data-src="images/upload-img02.png">查看付款凭证</a>
+                               <a href="javascript:;" class="btn04">查看开票信息</a>
+                               <a href="javascript:;" class="btn04">给交易员评分</a>
+                           </td>
+                       </tr>
+                   </tbody>
+                    <tbody>
+                        <!-- 控制间距 -->
+                        <tr>
+                            <td colspan="8" style="height: 10px; border: none;"></td>
+                        </tr>
+                       <tr class="order-tit">
+                           <td colspan="8">
+                               <div class="buyers">采购商：深圳XXXX公司</div>
+                               <div class="num">订单编号：201505070001</div>
+                               <div class="time">订单时间：2014-07-10 11:12:25</div>
+                               <div class="tel">联系电话：18911111111</div>
+                               <div class="address">地址：福建省福州市XXXXXX工业园</div>
+                           </td>
+                       </tr>
+                       <tr class="order-con">
+                           <td><input type="checkbox"></td>
+                           <td colspan="4" class="pro-infors">
+                                <table>
+                                    <tr>
+                                        <td>牛圈肉</td>
+                                        <td>160g</td>
+                                        <td><span>￥500.00</span>RBM/kg</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>牛圈肉</td>
+                                        <td>160g</td>
+                                        <td><span>￥500.00</span>RBM/kg</td>
+                                        <td>1000</td>
+                                    </tr>
+                                </table>
+                           </td>
+                           <td>
+                            <div class="pro-totalPrice">￥100000.00</div>
+                           </td>
+                           <td>已完成</td>
+                           <td>
+                               <a href="javascript:;" class="btn04 pop-pay" data-src="images/upload-img02.png">查看付款凭证</a>
+                               <a href="javascript:;" class="btn04">查看开票信息</a>
+                               <a href="javascript:;" class="btn04">已评分</a>
+                           </td>
+                       </tr>
+                   </tbody>
+               </table>
+            </div>
+            <div class="member-upgrade">
+                <img src="images/member-upgrade03.png" alt="">
+            </div>
+         </div>
     </div>
 </div>
 <!--网站底部-->
@@ -671,30 +592,30 @@
     <div class="footer-top">
         <div class="container">
             <div class="footer-left">
-                <div class="footer-logo"><img src="static/1-2/images/logo.png" alt=""/></div>
+                <div class="footer-logo"><img src="images/logo.png" alt=""/></div>
                 <div class="footer-tel">
                     <h6>服务热线：</h6>
                     <p>400-888-8888</p>
                 </div>
             </div>
             <div class="footer-nav">
-                <dl style="background: url(static/1-2/images/footer-icon01.png) no-repeat top left;">
+                <dl style="background: url(images/footer-icon01.png) no-repeat top left;">
                     <dt><a href="javascript:;">购物指南</a></dt>
                     <dd><a href="">购物流程</a><a href="">订货方式</a><a href="">联系客服</a><a href="">交易条款</a></dd>
                 </dl>
-                <dl style="background: url(static/1-2/images/footer-icon02.png) no-repeat top left;">
+                <dl style="background: url(images/footer-icon02.png) no-repeat top left;">
                     <dt><a href="javascript:;">支付方式</a></dt>
                     <dd><a href="">银行付款</a><a href="">在线支付</a><a href="">组合支付</a></dd>
                 </dl>
-                <dl style="background: url(static/1-2/images/footer-icon03.png) no-repeat top left;">
+                <dl style="background: url(images/footer-icon03.png) no-repeat top left;">
                     <dt><a href="javascript:;">物流帮助</a></dt>
                     <dd><a href="">如何找车</a><a href="">常见问题</a><a href="">运送流程</a></dd>
                 </dl>
-                <dl style="background: url(static/1-2/images/footer-icon04.png) no-repeat top left;">
+                <dl style="background: url(images/footer-icon04.png) no-repeat top left;">
                     <dt><a href="javascript:;">售后服务</a></dt>
                     <dd><a href="">售后服务总则</a><a href="">服务政策</a></dd>
                 </dl>
-                <dl style="background: url(static/1-2/images/footer-icon05.png) no-repeat top left;">
+                <dl style="background: url(images/footer-icon05.png) no-repeat top left;">
                     <dt><a href="javascript:;">帮助中心</a></dt>
                     <dd><a href="">网点分布</a><a href="">加盟商区</a></dd>
                 </dl>
@@ -716,7 +637,19 @@
         <p>Copyright <i class="fa fa-copyright"></i> 超鲜网 粤ICP备 13013915号-3  ICP证：粤B2-201401448</p>
     </div>
 </footer>
-
-
+<!-- 预览大图 -->
+<div class="mask">
+    <div class="bg-mask"></div>
+    <div class="bigPic">
+        <div class="tit"><p>查看大图</p><i class="fa fa-times-circle-o"></i></div>
+        <div class="img">
+            <img src="" alt="">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/jquery.accordion.js"></script>
+<script type="text/javascript" src="js/select.js"></script>
 </body>
 </html>
