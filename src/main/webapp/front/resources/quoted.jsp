@@ -15,9 +15,19 @@
 	<link rel="stylesheet" href="static/1-5/css/css.css">
 	<link rel="stylesheet" href="static/1-5/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/1-5/css/font-awesome-ie7.css">
-    <!--[if lt IE 10]>
-    <script src="static/1-5/js/html5shiv.min.js"></script>
-    <![endif]-->
+    
+    <script>
+    	function choose(no){
+    		
+    		
+    		$.post("hyf/rc/fpro",{"proid":no},function(data){
+    			
+    			 $("#proname").val(data.proName); 
+    			 $("#proprice").val(data.proPrice);
+    			
+    		},"json");
+    	}
+    </script>
 </head>
 <body class="rel">
 	<div class="header">
@@ -260,20 +270,20 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                       <select name="proid" class="w80">
+                                       <select name="proid" class="w80" onchange="choose(this.value)">
                                             <option value="0">请选择</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                         </select>
                                     </td>
+                                    <td><input type="text" class="input05" id="proname"></td>
                                     <td><input type="text" class="input05"></td>
                                     <td><input type="text" class="input05"></td>
                                     <td><input type="text" class="input05"></td>
                                     <td><input type="text" class="input05"></td>
                                     <td><input type="text" class="input05"></td>
-                                    <td><input type="text" class="input05"></td>
-                                    <td><input type="text" class="input05"></td>
+                                    <td><input type="text" class="input05" id="proprice"></td>
                                     <td>
                                        <select class="w80">
                                             <option value="0">请选择</option>
