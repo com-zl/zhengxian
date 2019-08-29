@@ -365,7 +365,7 @@
             </div>
             <!-- 搜索表格 -->
             <div class="lib-tab4">
-                <a href="javascript:;" class="btn02 w100">上传资源单</a>
+                <a href="hyf/rc/goadd" class="btn02 w100">上传资源单</a>
                 <ul class="lib-menu">
                     <li class="hover">全部资源单</li>
                     <li>我的关注（4）</li>

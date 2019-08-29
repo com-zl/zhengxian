@@ -2,7 +2,62 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zl.st.dao.hyf.IResourceDAO">
-	<select id="findAllResource" resultType="com.zl.st.pojo.hyf.Resource">
+	<select id="findAllResource" resultType="com.zl.st.pojo.Proresources">
 		select supid,supname,supcategory,major,instruction,uploaddate,downtimes from proresources
 	</select>
+	
+	<select id="findProductBySupid" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Product">
+		select proid,proname,proplace,probrand,prospecific,prograde,pronum,proprice,money,prowave,procurrent,supname from product where supid=#{supid} and status="已发布"
+	</select>
+	
+	<insert id="addProduct" parameterType="java.util.List">
+		insert into product 
+		values
+		<foreach collection="list" item="item" index="index" separator=",">
+		(
+		#{item.proid}, 
+		#{item.proCategory,jdbcType=VARCHAR}, 
+		#{item.proName,jdbcType=VARCHAR}, 
+		#{item.proPlace,jdbcType=VARCHAR}, 
+		#{item.proBrand,jdbcType=VARCHAR}, 
+		#{item.proSpecific,jdbcType=VARCHAR}, 
+		#{item.proGrade,jdbcType=VARCHAR}, 
+		#{item.proNum,jdbcType=NUMERIC}, 
+		#{item.proPrice,jdbcType=DOUBLE}, 
+		#{item.money,jdbcType=VARCHAR}, 
+		#{item.proWave,jdbcType=VARCHAR}, 
+		#{item.proCurrent,jdbcType=VARCHAR},  
+		#{item.proRemarks,jdbcType=VARCHAR}, 
+		#{item.supid,jdbcType=NUMERIC}, 
+		#{item.supName,jdbcType=VARCHAR}, 
+		#{item.storeHouse,jdbcType=VARCHAR}, 
+		#{item.proCateNum,jdbcType=VARCHAR}, 
+		#{item.userid,jdbcType=NUMERIC}, 
+		#{item.createTime,jdbcType=DATE}, 
+		#{item.updateTime,jdbcType=DATE}, 
+		#{item.status,jdbcType=VARCHAR}, 
+		#{item.type,jdbcType=VARCHAR}
+		)
+		</foreach>
+	</insert>
+	
+	
+	<select id="findProByProid" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Product">
+		select proid,proName,proSpecific,proPlace,proPrice from product where proid=#{proid}
+	</select>
+	
+	
+	<select id="findAllPurchase" resultType="com.zl.st.pojo.Purchaseform">
+		select purchaseid,purchasename,purchasenote,create_date,purchasestate from purchaseform	
+	</select>
+	
+	<select id="findPurchaseByPurid" parameterType="java.lang.Integer" resultType="com.zl.st.pojo.Purchaseform">
+		select purchaseid,purchasegoods,placeorigin,specificationtype,level,warehouse,spotgoods,price,purchasenote,purchasemode,invoicetype,receivaddress,purchasetime 
+		from purchaseform where purchaseid=#{purid}
+	</select>
+	
+	<insert id="insertMiddle" parameterType="java.util.Map">
+		insert into middle values   
+		(#{m_id},#{purid},#{proid})
+	</insert>
 </mapper>
