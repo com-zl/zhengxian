@@ -1130,6 +1130,9 @@
     jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:13});
 </script>
 <script type="text/javascript">
+function toOtherJSP(path){
+	location.href=path;
+}
     $(function(){
       $('dl#my-accordion').accordion({open:true});
      });
