@@ -707,6 +707,9 @@
     $(function(){
       $('dl#my-accordion').accordion({open:true});
      });
+    function toOtherJSP(path){
+    	location.href=path;
+    }
 </script>
 </body>
 </html>
