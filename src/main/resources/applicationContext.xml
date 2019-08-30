@@ -48,7 +48,7 @@
         <!--扫描包,给包下的所有类起别名-->
         <property name="typeAliasesPackage" value="pojo"/>
 		<!-- 添加mp配置 -->
-		<property name="globalConfig" ref="globalConfiguration"/>       
+		<!-- <property name="globalConfig" ref="globalConfiguration"/> -->       
         <!-- 分页pagehelper配置 -->
         <property name="plugins">
             <array>
@@ -68,10 +68,10 @@
         <property name="basePackage" value="com.zl.st.dao"/>
     </bean>
     
-    <bean id="globalConfiguration" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+    <!-- <bean id="globalConfiguration" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
     	<property name="dbColumnUnderline" value="true"/>
     	<property name="idType" value="0"/>
-    </bean>
+    </bean> -->
 
     
     

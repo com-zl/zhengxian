@@ -13,7 +13,7 @@ import java.io.Serializable;
  * @author yk
  * @since 2019-08-29
  */
-@TableName("t_userType")
+@TableName("t_usertype")
 public class TUsertype extends Model<TUsertype> {
 
     private static final long serialVersionUID = 1L;

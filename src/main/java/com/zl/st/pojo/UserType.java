@@ -2,6 +2,8 @@ package com.zl.st.pojo;
 
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotations.TableName;
+
 /**
  * 	商人类别
  * @author Administrator
